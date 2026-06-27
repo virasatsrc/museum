@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Gobind Singh Ji - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Guru Gobind Singh Ji</h1>
+        
+        <div class="photo-wrapper">
+            <img class="photo-background" src="assets/art/art_10.png" alt="" onerror="this.style.display='none'">
+            <img class="photo-main" src="assets/art/art_10.png" alt="Art Piece 10" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'">
+        </div>
+
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_10.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <div class="description-box">
+            <strong>Title:</strong> Guru Gobind Singh Ji<br>
+            <strong>Category:</strong> Religious Corner<br>
+            <strong>Artist:</strong> Historical Figure<br>
+            <strong>Year:</strong> 1666 – 1708
+        </div>
+
+        <div class="description-box">
+            <strong>GURU GOBIND SINGH JI</strong><br><br>
+            He was born at Patna on 22 December 1666 to Guru Tegh Bahadur and Mata Gujri. Taking over at the age of nine, the experience of his father's martyrdom shaped his future outlook and actions. At Anandpur, he had to face belligerence of the Hill Rajas, who were irked by Sikhism's egalitarian character and growing popularity. Guru Gobind established a new settlement, Paonta Sahib in the foothills, from where he fought several decisive battles against the Hill Rajas. Around Anandpur, he built several strong fortifications, completed 'Bachittar Natak' and oversaw translations of many scriptures including the Upanishads. On Baisakhi Day in 1699, he proclaimed birth of the Khalsa ('pure ones') baptizing the Sikhs into a casteless fraternity, giving them a distinctive cultural identity. He also prescribed five emblems for the Khalsa and gave them one family name - 'Singh', meaning 'Lion'. The Guru's army fought valiantly against Mughals at Anandpur, Chamkaur, Machiwara, Kot Kapura &amp; Khidrana. While camping at Nanded on the banks of Godavari River, the tenth Guru died on 07 October 1708 due to an assassination attempt made earlier. Before dying, he proclaimed that the line of living Gurus would end with him and the Sikhs would look upon the Guru Granth Sahib as a symbol of all the ten Gurus and be their constant guide.<br><br>
+            <em>'O Lord, these boons of Thee I ask,<br>
+            Let me never shun a righteous task.<br>
+            Let me be fearless when I go to battle,<br>
+            Give me faith that victory will be mine.<br>
+            Give me power to sing Thy praise.<br>
+            And when comes the time to end my life,<br>
+            Let me fall in mighty strife'</em><br><br>
+            <strong>Guru Gobind Singh</strong>, in Chandi Charitra
+        </div>
+
+        <div class="navigation">
+            <a href="art9.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Piece 10 / 60</span>
+            <a href="art11.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_10.png" alt="Scan for mobile">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this art record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+
+            audio.addEventListener('pause', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            audio.addEventListener('ended', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            
+            // Attempt autoplay
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented by browser:", error);
+                    const startAudioOnInteract = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudioOnInteract);
+                        document.body.removeEventListener('touchstart', startAudioOnInteract);
+                    };
+                    document.body.addEventListener('click', startAudioOnInteract);
+                    document.body.addEventListener('touchstart', startAudioOnInteract);
+                });
+            }
+        });
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>

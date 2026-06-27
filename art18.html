@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Anglo-Sikh War - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Second Anglo-Sikh War (1848–49)</h1>
+        
+        <div class="photo-wrapper">
+            <img class="photo-background" src="assets/art/art_18.png" alt="" onerror="this.style.display='none'">
+            <img class="photo-main" src="assets/art/art_18.png" alt="Art Piece 18" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'">
+        </div>
+
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_18.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <div class="description-box">
+            <strong>Title:</strong> Second Anglo-Sikh War<br>
+            <strong>Category:</strong> Religious Corner<br>
+            <strong>Artist:</strong> Historical<br>
+            <strong>Year:</strong> 1848 – 1849
+        </div>
+
+        <div class="description-box">
+            <strong>THE SECOND ANGLO-SIKH WAR (1848-49)</strong><br><br>
+            The war commenced with a brief skirmish at Ramnagar (22 November 1848) where the Sikhs inflicted heavy casualties on the enemy. However, the major battle was fought at Chillianwala (along Jhelum River), on 13 January 1849 where the British suffered the worst defeat since their occupation of India. The fight put by the Sikh soldiers under their commander, Sher Singh Attariwala, surprised the British Army which suffered nearly 3000 soldiers dead or wounded. The British Subaltern wrote, <em>&quot;The Sikhs fought like devils... fierce and untamed even in their dying struggle.... such a mass of men I never set eye on and as plucky as lions; they ran right on our bayonets and struck at their assailants when they were transfixed.&quot;</em><br><br>
+            As in the First Anglo-Sikh War, the Sikh Army failed to drive home their advantage to a conclusive victory. This led to their defeat in the Battle of Gujrat fought on 21 February 1849, which was the conclusive battle before final fall of the Lahore Durbar.<br><br>
+            Though the results of the First and Second Anglo-Sikh War were not in the favour of the Sikhs, their fighting prowess clearly came to the fore, and the British found the Khalsas to be formidable soldiers.
+        </div>
+
+        <div class="navigation">
+            <a href="art17.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Piece 18 / 60</span>
+            <a href="art19.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_18.png" alt="Scan for mobile">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this art record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+
+            audio.addEventListener('pause', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            audio.addEventListener('ended', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            
+            // Attempt autoplay
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented by browser:", error);
+                    const startAudioOnInteract = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudioOnInteract);
+                        document.body.removeEventListener('touchstart', startAudioOnInteract);
+                    };
+                    document.body.addEventListener('click', startAudioOnInteract);
+                    document.body.addEventListener('touchstart', startAudioOnInteract);
+                });
+            }
+        });
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>

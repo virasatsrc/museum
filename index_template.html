@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Gallery - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        
+        <!-- Navigation Bar Injected by Python -->
+        {{ nav_html }}
+
+        <h1>Welcome to the Museum Gallery</h1>
+        
+        <!-- Dynamic Image Scroller -->
+        <div class="scroller-container">
+            <div class="scroller-track">
+                {{ scroller_images_html }}
+                <!-- Duplicate images for seamless looping -->
+                {{ scroller_images_html }}
+            </div>
+        </div>
+
+        <div class="description-box">
+            Welcome to the digital museum gallery. Use the navigation above to explore our collections or scan the QR codes on individual pages to view them on your mobile device.
+        </div>
+
+        <!-- Side-by-Side Content -->
+        <div style="display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
+            <!-- Additional Text Box -->
+            <div class="description-box" style="flex: 1; min-width: 300px; margin-bottom: 0; display: flex; flex-direction: column; justify-content: center;">
+                This space is reserved for special announcements or featured exhibits. You can update this text in the index_template.html file.
+            </div>
+
+            <!-- Featured Photo Window -->
+            <div class="photo-wrapper" style="flex: 1; min-width: 300px; margin-bottom: 0; min-height: 250px;">
+                <img class="photo-background" src="assets/bg.png" alt="" onerror="this.style.display='none'">
+                <img class="photo-main" src="assets/bg.png" alt="Featured Exhibit" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Featured+Photo'">
+            </div>
+        </div>
+
+        <!-- Photo Button Navigation Grid -->
+        {{ photo_nav_html }}
+
+    </div>
+
+    <script>
+        function toggleDropdown(event, id) {
+            event.stopPropagation();
+            
+            // Close all other dropdowns
+            const dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                if (dropdowns[i].id !== id) {
+                    dropdowns[i].classList.remove('show');
+                }
+            }
+            
+            // Toggle the targeted dropdown
+            document.getElementById(id).classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.nav-btn') && !event.target.matches('.photo-nav-btn')) {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
