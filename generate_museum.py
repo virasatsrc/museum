@@ -33,7 +33,8 @@ os.makedirs(QR_DIR, exist_ok=True)
 nav_html = '<div class="top-nav">\n'
 for cat in range(1, CATEGORIES + 1):
     nav_html += f'    <div class="nav-dropdown">\n'
-    nav_html += f'''        <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-{cat}')">Category {cat} ▼</button>\n'''
+    cat_title = "Comdts' Gallery" if cat == 4 else f"Category {cat}"
+    nav_html += f'''        <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-{cat}')">{cat_title} ▼</button>\n'''
     nav_html += f'        <div id="dropdown-{cat}" class="dropdown-content">\n'
     for i in range(1, ART_PER_CAT + 1):
         art_num = (cat - 1) * ART_PER_CAT + i
@@ -81,8 +82,9 @@ print(f"Starting generation using IP {SERVER_IP}...")
 
 # Generate art pages
 for art_num in range(1, TOTAL_ART + 1):
-    if art_num <= 60:
-        category_name = f"Category {((art_num - 1) // ART_PER_CAT) + 1}"
+    if art_num <= 71:
+        cat_num = ((art_num - 1) // ART_PER_CAT) + 1
+        category_name = "Comdts' Gallery" if (cat_num == 4 or art_num in [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71]) else f"Category {cat_num}"
     else:
         category_name = f"Photo Category {((art_num - 61) // ART_PER_PHOTO_CAT) + 1}"
     
