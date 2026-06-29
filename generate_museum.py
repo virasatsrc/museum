@@ -96,7 +96,7 @@ for art_num in range(1, TOTAL_ART + 1):
     qr_relative_path = f"assets/qrcodes/{qr_file_name}"
     
     # Generate QR Code
-    mobile_url = f"https://offrsmesssrc-museum.netlify.app/art{art_num}.html"
+    mobile_url = f"https://museumsrc.netlify.app/art{art_num}"
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
     qr.add_data(mobile_url)
     qr.make(fit=True)
