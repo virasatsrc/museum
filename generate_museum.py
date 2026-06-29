@@ -51,7 +51,7 @@ for p_cat in range(1, PHOTO_CATEGORIES + 1):
     photo_nav_html += f'        <div id="photo-dropdown-{p_cat}" class="dropdown-content photo-nav-dropdown">\n'
     for i in range(1, ART_PER_PHOTO_CAT + 1):
         art_num = 60 + (p_cat - 1) * ART_PER_PHOTO_CAT + i
-        photo_nav_html += f'            <a href="art{art_num}.html">Art {art_num}</a>\n'
+        photo_nav_html += f'            <a href="file:///D:/antigravity/museum/art{art_num}.html">Art {art_num}</a>\n'
     photo_nav_html += f'        </div>\n'
     photo_nav_html += f'    </div>\n'
 photo_nav_html += '</div>\n'
@@ -96,7 +96,7 @@ for art_num in range(1, TOTAL_ART + 1):
     qr_relative_path = f"assets/qrcodes/{qr_file_name}"
     
     # Generate QR Code
-    mobile_url = f"http://{SERVER_IP}:{PORT}/art{art_num}.html"
+    mobile_url = f"https://offrsmesssrc-museum.netlify.app/art{art_num}.html"
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
     qr.add_data(mobile_url)
     qr.make(fit=True)
@@ -104,10 +104,10 @@ for art_num in range(1, TOTAL_ART + 1):
     img.save(qr_file_path)
     
     # Navigation logic
-    prev_link = f"art{art_num-1}.html" if art_num > 1 else "#"
+    prev_link = f"file:///D:/antigravity/museum/art{art_num-1}.html" if art_num > 1 else "#"
     prev_disabled = "disabled" if art_num == 1 else ""
     
-    next_link = f"art{art_num+1}.html" if art_num < TOTAL_ART else "#"
+    next_link = f"file:///D:/antigravity/museum/art{art_num+1}.html" if art_num < TOTAL_ART else "#"
     next_disabled = "disabled" if art_num == TOTAL_ART else ""
     
     # Generate page content

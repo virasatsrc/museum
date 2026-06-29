@@ -1,14 +1,14 @@
 import os
 import qrcode
 
-# GitHub Pages base URL
-BASE_URL = "https://offrsmesssrc-sketch.github.io/museum"
+# Netlify base URL
+BASE_URL = "https://offrsmesssrc-museum.netlify.app"
 TOTAL_ART = 160
 QR_DIR = r"d:\antigravity\museum\assets\qrcodes"
 
 os.makedirs(QR_DIR, exist_ok=True)
 
-print(f"Regenerating {TOTAL_ART} QR codes pointing to GitHub Pages...")
+print(f"Regenerating {TOTAL_ART} QR codes pointing to Netlify URLs...")
 
 for art_num in range(1, TOTAL_ART + 1):
     qr_file_path = os.path.join(QR_DIR, f"qr_art_{art_num}.png")
