@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Havildar Joginder Singh, AC - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>HAVILDAR JOGINDER SINGH, AC</h1>
+        
+        <!-- Portrait Image -->
+        <div class="photo-wrapper" style="margin-bottom: 30px; display: flex; justify-content: center; align-items: center;">
+            <img class="photo-background" src="assets/art/art_208_portrait.webp" alt="" onerror="this.style.display='none'">
+            <img class="photo-main" src="assets/art/art_208_portrait.webp" alt="Havildar Joginder Singh, AC" style="border-radius: 16px; border: 2px solid var(--glass-border); box-shadow: 0 8px 32px rgba(0,0,0,0.5); max-height: 550px; width: auto; object-fit: contain;">
+        </div>
+
+        <!-- Audio Section -->
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_208.mp3"></audio>
+            <button class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <!-- Metadata Description Box -->
+        <div class="description-box">
+            <strong>Title:</strong> Havildar Joginder Singh, AC<br>
+            <strong>Category:</strong> Hall of Fame<br>
+            <strong>Award:</strong> Ashok Chakra<br>
+            <strong>Era / Action:</strong> Naga Hills, 1956
+        </div>
+
+        <!-- Written Citation Box -->
+        <div class="description-box" style="line-height: 1.6;">
+            <strong>Citation (Written):</strong><br>
+            <p style="margin-top: 10px; color: #cbd5e1; font-size: 1.05rem;">Havildar Joginder Singh, AC (Naga Hills, 1956) Havildar Joginder Singh was escorting a small convoy of three jeeps carrying important stores for a forward post in Phake in Naga Hills. As the leading jeep in which he was sitting was negotiating a bend on the road, hostiles suddenly opened Light Machine Gun fire from a hillock nearby. Though wounded in the right leg, Havildar Joginder Singh, leaving his jeep ran forward to attack the hostiles. He was wounded again in the right shoulder, but he continued his charge undeterred, followed by six other members of his party. When Havildar Joginder Singh was about 25 yards from the hostiles, a Light Machine Gun burst hit him in his stomach and he fell down. Despite his wounds, he continued to crawl forward and threw two grenades on the hostile post and silenced it. Unmindful of his wounds, he continued to inspire his men to advance, who pressed forward and cleared the hostile location. A few moments later he succumbed to his injuries. Inspired by his gallant leadership, Havildar Joginder Singh's men were able to remove the road block which enabled the movement of the much needed stores to reach the forward company in time.</p>
+        </div>
+
+        <!-- Citation / Writeup Image Box -->
+        <div class="description-box" style="display: flex; flex-direction: column; align-items: center; background: rgba(0,0,0,0.4); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border); margin-top: 20px;">
+            <h3 style="color: var(--accent-color); margin-bottom: 15px; font-weight: 600; font-size: 1.2rem; letter-spacing: 1px;">ORIGINAL CITATION CARD</h3>
+            <img src="assets/art/art_208_writeup.webp" alt="Citation for Havildar Joginder Singh, AC" style="max-width: 100%; height: auto; max-height: 650px; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 16px rgba(0,0,0,0.6); cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 10px; font-style: italic;">* Double-click either image above to view in fullscreen</p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation" style="margin-top: 40px;">
+            <a href="art207.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Piece 208 / 209</span>
+            <a href="art209.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Narration`;
+            });
+
+            audio.addEventListener('pause', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            audio.addEventListener('ended', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            btn.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+            
+            // Attempt autoplay
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented by browser:", error);
+                    const startAudioOnInteract = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudioOnInteract);
+                        document.body.removeEventListener('touchstart', startAudioOnInteract);
+                    };
+                    document.body.addEventListener('click', startAudioOnInteract);
+                    document.body.addEventListener('touchstart', startAudioOnInteract);
+                });
+            }
+        });
+
+        // Double-click images to toggle fullscreen mode
+        document.addEventListener('dblclick', function (event) {
+            if (event.target && event.target.tagName === 'IMG' && !event.target.classList.contains('photo-background')) {
+                if (!document.fullscreenElement) {
+                    if (event.target.requestFullscreen) {
+                        event.target.requestFullscreen();
+                    } else if (event.target.webkitRequestFullscreen) { // Safari
+                        event.target.webkitRequestFullscreen();
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { // Safari
+                        document.webkitExitFullscreen();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

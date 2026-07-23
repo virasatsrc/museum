@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle of OP Hill (1965) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Battle of OP Hill (1965)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image1.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image2.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image3.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image4.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image5.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image6.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image7.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image8.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image9.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art412/image10.webp"
+                        alt="BATTLE OF OP HILL - 1965" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">Battle of OP Hill (1965)</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 10</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_412.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+        <div class="description-box">
+            <strong>Title:</strong> Battle of OP Hill (1965)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p>The Battle of OP Hill (located on a hill feature called 'Chuh-i-Nar') took place after the cease fire
+                came into effect on 23 September in the Indo-Pakistan War, 1965. OP Hill was an important Observation
+                Post (OP) of Pakistani Army in Balnoi Sector, 20 km South-West of Poonch, from where the Pakistani
+                Artillery brought direct artillery fire on the Mendhar-Poonch road axis. The tactical feature was also a
+                foothold for the adversary to launch future operations towards Mendhar - it was thus, essential to
+                capture OP Hill. Following a failed battalion-level offensive on 06-07 October 1965, a full-fledged
+                brigade attack under 120 Infantry Brigade was mounted on 02 November 1965 - 7 SIKH, 2 DOGRA, 5 SIKH
+                LIGHT INFANTRY, 169 Mountain Regiment and 23 Mountain Composite Regiment were part of this attack.</p>
+            <p>The plan involved an enveloping attack from three directions, combined with company strength stops in the
+                rear, to prevent reinforcements and ambush the withdrawing enemy. 7 SIKH attack was launched in three
+                phases, going almost frontal. In the First Phase, Alpha Company was to capture Jungle Hill. In Second
+                Phase, Bravo Company was to take OP Hill and Charlie Company was held as Reserve.</p>
+            <p>At 0310 hrs on 03 November 1965, with just two hours of darkness left, the attack was launched on Jungle
+                Hill. This was led by Alpha Company, under Captain Sansar Singh, and was followed by Major Sharma's
+                Bravo Company. The climb was extremely steep, and adding to the difficulty was blistering enemy
+                artillery shelling, with Machine Guns and other support weapons firing from the adjoining features,
+                which were still held by the enemy. The advance slowed, men dispersed and casualties mounted. Yet the
+                companies continued to move steadily forward, all the time being exhorted and encouraged by the
+                Commanding Officer, Lieutenant Colonel Bhagat Singh. To take pressure off from the frontal attack,
+                Charlie Company, under Major (later Major General) Trilochan Singh approached its objective, Long Tree
+                from both ends of a precipitous rock face. The going was tough, and the company had to literally clamber
+                up on hands and feet. On reaching the top, besides the very intense enemy fire, they were confronted
+                with heavy density of Anti-Personnel Mines and Booby Traps.</p>
+            <p>Eventually having gained adequate ground, the Sikhs made a bayonet charge, and fierce hand-to-hand
+                fighting ensued. The enemy continued to put up strong resistance, but could not check the determined
+                offensive. Each enemy bunker had to be fiercely fought for and destroyed. Wave after wave, the
+                assaulting troops overcame all resistance, capturing lines of trenches, one after another. Soon, OP Hill
+                was captured by 7 SIKH, thus ensuring victory in this battle. Outstanding leadership was displayed at
+                all levels. Major (later Major General) Trilochan Singh, Captain (later Colonel) Sansar Singh,
+                Lieutenant (later Colonel) Hardial Singh, four JCOs and a number of NCOs were severely wounded.</p>
+            <p>The battalion losses were not substantial, considering the ferocity of fighting. 21 men were killed,
+                mostly from Subedar Bikkar Singh's leading platoon, and 50 were wounded. By contrast, the enemy suffered
+                very heavy casualties. 7 SIKH was awarded Battle Honour - 'OP Hill' and Theatre Honour - 'Jammu and
+                Kashmir 1965' for its gallant actions in the 1965 Indo-Pakistan War.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art411.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="art413.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_412.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "Foot Track leading to OP Hill Complex",
+                "Sketch showing the tactical significance of OP Hill for Rajauri - Mendhar -Poonch Axis",
+                "Bravehearts of 7 SIKH during 1965 Operations",
+                "Lieutenant Colonel Bhagat Singh with other officers and men of 7 SIKH",
+                "A Sainik  Sammelan held before the 1965 operations",
+                "Paying farewell to martyrs fallen in operations at Mendhar",
+                "Officers of 7 SIKH share a light moment",
+                "Captain (later Lieutenant Colonel) Sansar Singh receiving the Vir Chakra from Dr S Radhakrishnan, President of India",
+                "Commanding Officer addressing the Battalion",
+                "Makeshift arrangements for mass cremation on 24 September 1965",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>

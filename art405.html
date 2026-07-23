@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burma Campaign (1941-45) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Burma Campaign (1941-45)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image1.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image2.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image3.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image4.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image5.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image6.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image7.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image8.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image9.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image10.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image11.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image12.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image13.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image14.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image15.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art405/image16.webp"
+                        alt="BURMA CAMPAIGN - 1941-45" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">Burma Campaign (1941-45)</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 16</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_405.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+        <div class="description-box">
+            <strong>Title:</strong> Burma Campaign (1941&ndash;45)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p>The 1/11 SIKH (XIV) or 1st Battalion The Sikh Regiment was mobilized for war in February 1942, and moved
+                to Burma by March 1942, where they stayed in operations for over three years, till August 1945. On 03
+                February 1944, the Japanese launched their assault on the 7th Division. The Allied plan was to advance
+                up to Japanese positions in the tunnels. As part of this offensive, the 5th Division on the left was to
+                take Razabil, while the 7th Division (of which 1/11 SIKH was part) was to take Buthidaung and then
+                attack Letwedet. The brunt of the attack fell on the 89th Brigade and Charlie Company of 1/11 SIKH. On
+                06 February, the personnel withdrew to what famously came to be known as the Battle of Admin Box. The
+                Japanese shortly captured Ngakyedauk Pass on 07 February, and tried to batter the besieged Division into
+                submission, but the troops stood firm everywhere. Some of the severe fighting took place around the
+                Admin Box. In this melee, Charlie Company fought a stubborn defensive battle to protect the Headquarters
+                of 89th Brigade, and also defended the guns.</p>
+            <p>Bravo Company carried out raids and offensive patrolling. Eventually, the Japanese offensive petered out,
+                and the scattered enemy in the area were steadily mopped up. By March 1944, 1/11 SIKH was back with 33th
+                Brigade, now as an Integrated Battalion and its full combat potential was ready to be exploited. They
+                were tasked to capture Buthidaung and the surrounding area, leading the advance. In the Battle for
+                Buthidaung, one of the hill features, which later came to be known as India Hill, was left unoccupied.
+                The Japanese were quick to exploit this. Characteristically, they dug in fast and began to interfere
+                with troops on the neighbouring feature.</p>
+            <p>Charlie Company Commander, Major John Brough, was ordered to clear the enemy from India Hill. He deputed
+                Jemadar Mehar Singh's platoon to capture it. As part of this platoon, on 12 March, Naik Nand Singh
+                displayed outstanding valour and determination of an extremely high order. The only possible approach to
+                the hill followed a narrow track, leading to the enemy position. Along this track, Naik Nand Singh led
+                his section. Reaching the crest, the section came under heavy Machine Gun and rifle fire, and every man
+                was knocked over, either being killed or wounded. Nonetheless, Naik Nand Singh dashed forward alone,
+                under intense fire, at point blank range, and killed its two occupants with the bayonet, thus capturing
+                the trench. Not far was another trench.</p>
+            <p>Under continuous heavy fire, Naik Nand Singh jumped up and charged on it. He was again wounded by grenade
+                blast and knocked down, but he got up and hurled himself into the trench, again killing both occupants
+                with the bayonet. He moved on further and captured a third trench, still single handed. With the capture
+                of this third trench, the enemy fire died away. Naik Nand Singh's encounter had taken little time. The
+                remainder of the platoon, checked for the moment by the sudden heavy fire, now moved up and captured the
+                remainder of the position, killing with bayonets and grenades, 37 out of the 40 Japanese, who had been
+                holding it. Nand Singh's part in this brilliant action, his splendid resolution and utter disregard for
+                his own life were fittingly recognized by an immediate award of the Victoria Cross.</p>
+            <p>The 89th Brigade, of which 1/11 SIKH was a part, was detailed to carry out the subsidiary crossing of the
+                Irrawaddy at Pagan. They were to hold the Division's firm base at Pauk, where the assaulting force was
+                to assemble and carry out final rehearsals. In conformity with the plan, the 89th Brigade on an all-pack
+                basis with Mountain Artillery, was sent off on a left hook, South of Gangaw, between Myotha and
+                Chindwin. Gangaw fell in the first week of January 1945. 1/11 SIKH, as part of 89th Brigade, moved South
+                to cut off the road from tilinto Pauk. On 29 January, the Battalion captured Sinthi and helped construct
+                an airstrip which served as an airhead for the Irrawaddy crossing. On 05 February, the battalion
+                captured Myit Chay. It earned the distinction of becoming the first troops to reach the Irrawaddy River,
+                South of Mandalay. The crossing of the Irrawaddy at Nyaung-U was the longest opposed river crossing
+                attempted in any theatre of the Second World War.</p>
+            <p>The river at this point was over 2000 yards wide and fairly fast flowing. The Southern Bank has sheer 100
+                feet cliffs, while the Northern Bank, from where the assault was being launched, consisted of paddy
+                fields, devoid of cover, and was just a few feet above flood level. The roads serving the area were
+                deeply rutted, and every vehicle raised a great column of dust clearly visible by day from the South
+                Bank, thus not leaving much chance for surprise. Added to this, on the night of the crossing, there were
+                strong winds and the water was churned. 1/11 SIKH was already across and located at Pagan. It was given
+                the responsibility of intensive patrolling of the area. During these operations, the Battalion had two
+                major brushes with the Japanese. In the first instance, on 11 November, two of their patrols were
+                ambushed.</p>
+            <p>The Sikhs made a determined charge, during which most of the 150 Japanese facing them were either killed
+                or routed. The Sikhs themselves suffered only 15 casualties. In the second case, on 05 May, the Vanguard
+                Company of 1/11 SIKH, leading the 89th Brigade, was confronted with a similar force of Japanese. The
+                Sikhs charged with blazing Bren Guns, and scattered the Japanese, killing 21 and taking one
+                prisoner.Thereafter, there was a pause in battle. However, in the last major act, the Battalion,
+                effectively blocked two important routes through which the Japanese had concentrated for a break
+                through,i.e., Yenan and Shan.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art404.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="art406.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_405.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "Painting of the Ava Bridge over the Irrawady River after a span was blown up during the Allied Retreat – 1/11 SIKHS reached here on 30 April 1942 to cover the withdrawing forces",
+                "Initial crossing to Pagan in country boats",
+                "1/11 SIKHS with 3\" Mortars ready to fire",
+                "The Campaign in Mandalay, February - March 1945: Men of 1/11  SIKHS clear a Japanese foxhole at Mandalay with Machine Gun fire after throwing in a Phosphorus Grenade",
+                "The terrain conditions in Burma (now Myanmar) were energy sapping – Sikhs cutting through dense under growth of jungles and crossing quagmirish  ground conditions",
+                "A British Officer briefing some NCOs before the assault",
+                "Entrance to one of a disused Railway Tunnel on the Maungdaw- Buthidaung Road, captured by allied troops in March 1944",
+                "Troops cross a river during",
+                "Deliberate crossing of a water body",
+                "The Sikh Machine Gunners in action at Burma",
+                "Detachment of Machine Gun in Action",
+                "Naik Nand Singh, Victoria Cross with his Section",
+                "Relaxing after the capture of Pagan",
+                "Captured weapons and flag",
+                "Naik Nand Singh of 1/11 SIKHS was awarded Victoria Cross at India Hill (near Maungdaw- Buthidaung Road) on 12 March 1944 in",
+                "Officers and VCOs of 1 Sikh at Anand Parbat Lines, New Delhi in November/December 1946 on their return from Malaya after 2 nd World War",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>

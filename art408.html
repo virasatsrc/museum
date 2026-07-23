@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defence of Tawang (1962) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Defence of Tawang (1962)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image1.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image2.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image3.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image4.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image5.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image6.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image7.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image8.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image9.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image10.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image11.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image12.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image13.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image14.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image15.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image16.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art408/image17.webp"
+                        alt="DEFENCE OF TAWANG - 1962" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">Defence of Tawang (1962)</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 17</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_408.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+        <div class="description-box">
+            <strong>Title:</strong> Defence of Tawang (1962)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p>The Defence of Tawang was under Commander 4 Artillery Brigade, with 1 SIKH and 4 GARHWAL RIFLES, plus one
+                Field Artillery Regiment, a Mountain Battery and a Mortar Battery in support. The Garhwalis were
+                deployed at Tawang, to its East and the South. 1 SIKH was deployed ahead of Tawang and had the advantage
+                of having spent some days in the construction of defences. Delta Company, under Lieutenant Hari Pal
+                Kaushik, was occupying one of the front-line positions at Tongpen La, with a platoon, commanded by
+                Subedar Joginder Singh, further deployed at IB Ridge. The IB Ridge post was naturally strong but being
+                isolated, was vulnerable to multi-directional attacks. Bravo Company was on the Pamdir Ridge, leading to
+                the Taktsang Gompa. The rest of 1 SIKH was at Milaktong La and Pengteng Tso. The rifle companies were
+                deficient of warm clothing and had no heating arrangements in the prevailing sub-zero temperatures.</p>
+            <p>On 23 October 1962, at 0600 hrs, a wave of Chinese troops assaulted IB Ridge. To ensure that maximum
+                casualties are inflicted on the enemy, Subedar Joginder Singh ordered his men to hold fire until they
+                could see the enemy clearly. Indian Mountain Guns and Mortars sniffed their fire on to the approaching
+                enemy, and there was some pause in the enemy's movement up the ridge. It was only then that Subedar
+                Joginder Singh ordered his troops to open fire. The enemy line shimmered up the slope, only to be struck
+                by sustained fire from the platoon, and fell apart, as they took shelter behind boulders and retraced
+                their route.</p>
+            <p>Two more waves soon appeared from flanks of the ridge. The Chinese had apparently climbed unobserved,
+                while the platoon had been engaged in beating back the first echelon. Another Machine Gun began firing
+                from the right of the ridge, which hit Subedar Joginder Singh, who was moving between the two sections.
+                Wounded on the thigh, the daring JCO dragged himself into the Platoon Headquarters Bunker, but continued
+                the fire fight. His platoon accounted for most of the Chinese casualties. However, by now, most of the
+                platoon had been either killed or seriously wounded, leaving just a handful of unhurt men.</p>
+            <p>The Chinese then moved some 200 men from the flank, and continued to clamber up. Subedar Joginder limped
+                out of his bunker, and exhorted the living few, to be prepared to move out with fixed bayonets and
+                charge on the enemy. Most of the enemy had been decimated, and the charge that followed, made sure that
+                some 20 of those remaining were bayoneted and killed. At about this time, Lieutenant Hari Pal Kaushik,
+                the Company Commander, came on the radio set and asked Subedar Joginder Singh if he could fire artillery
+                and mortars onto the post (IB Ridge) itself. "Yes, Sahib" was the prompt reply. The artillery was then
+                ordered to immediately engage the post with defensive fire 'Red-Over-Red', which meant, firing onto own
+                positions with the likelihood of casualties to own troops. However, this would definitely take a heavier
+                toll on the enemy, who were in the open. Three Other Ranks could however out mvre the enemy and get to
+                the main defences at Sela.</p>
+            <p>Their actions recounted the resilience of the platoon, and the bravery of Subedar Joginder Singh in
+                particular. This battle was fought for over Subedar Joginder Singh later succumbed to his injuries, and
+                was posthumously awarded the Param Vir Chakra, for his gallant defence of Bum La. While the platoon at
+                IB Ridge was fighting, the balance of Delta Company at Tongpen La had also beaten back a few attacks
+                inflicting heavy casualties on the Chinese, who seemed to have broken contact and fallen back. However,
+                in reality, the Chinese were planning to envelop the Company from the left and through the Geshe La
+                Gorge, while simultaneously making deeper infiltration towards Tawang. Within an hour, a fresh
+                enveloping attack developed on the two forward platoons. A concentration of about 700 Chinese was also
+                observed in the nala (stream) below.</p>
+            <p>The company's MMGs and rifles laid concentrated fire on the enemy, who tried to rush through the
+                platoons, by a wide hook around the Twin Peaks. However, the approach being narrow, the enemy could not
+                push more than 150 men at a time along this route. Havildar Sarup Singh and his section, positioned
+                there as a Protective Patrol, played havoc, resulting in heavy Chinese casualties. Utterly confused, the
+                Chinese retreated, and the attack was temporarily beaten back. The enemy, however, re-mustered to make
+                another determined attack on the left platoon, with the intention of rushing it by the sheer weight of
+                numbers.</p>
+            <p>The troops were gallantly led by Lieutenant Hari Pal Kaushik, who moved from one section to another,
+                encouraging his men to fight on with determination. He was awarded the Vir Chakra for his gallant
+                actions. While the troops were fully entrenched and prepared to fight till the last, the Company was
+                ordered to pull back as part of the overall plan, initially to the main defences at Milaktonga, which
+                they did most successfully, and subsequently by 26 October 1962, with the Battalion, to Sela.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art407.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="art409.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_408.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "Troops of 1 SIKH fighting in Tawang Sector, 1962",
+                "Tawang War Memorial as it stands today",
+                "Tongpeng La at 15,200 feet near the Sino-Indian border where Delta Company 1 SIKH fought valiantly against the Chinese",
+                "1 SIKH Troops fighting in Tawang Sector",
+                "Sela Pass and Memorial",
+                "Ashes of Sub Joginder Singh, PVC being handed over to his wife with full Military Honours",
+                "Tongpeng La View Point",
+                "Prime Minister Jawaharlal Nehru visiting troops at Tawang, 1962, with Colonel Harwant Singh, MC",
+                "Military Honour being given to Subedar Joginder Singh, PVC",
+                "Lieutenant Colonel Haripal Kaushik, Vir Chakra as Adjutant, IMA from 1969-71",
+                "Indian Troops pull a vehicle up the inhospitable terrain in Tawang Sector",
+                "Delta Company, 1 SIKH fought under the command of the outstanding Olympian, Lieutenant Haripal Kaushik who won a Vir Chakra",
+                "An Indian Army Mule Column carrying supplies to Tawang , 1962",
+                "Bum La as it looks today",
+                "Subedar Joginder Singh, PVC memorial at Bum La",
+                "Subedar Joginder Singh, PVC made the supreme sacrifice at Bum Laa as it looks today",
+                "Orientation of Tawang Sector  - 1962",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>

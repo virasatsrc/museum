@@ -167,7 +167,7 @@ h1 {
 
 .scroller-track {
     display: inline-block;
-    animation: scroll 30s linear infinite;
+    animation: scroll 290s linear infinite;
 }
 
 /* Pause animation on hover */
@@ -444,6 +444,34 @@ h1 {
     box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
 }
 
+.photo-nav-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.photo-nav-item:hover .photo-nav-number {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 15px rgba(245, 158, 11, 0.3);
+}
+
 @media (max-width: 1024px) {
     .photo-nav-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -454,4 +482,148 @@ h1 {
     .photo-nav-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Nested Dropdown Styles */
+.nested-dropdown {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nested-btn {
+    background: transparent;
+    color: var(--text-main);
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+.nested-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+}
+.nested-btn.open .arrow-icon {
+    transform: rotate(90deg);
+    color: var(--accent-color);
+}
+.nested-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 2px;
+    background-color: var(--primary-bg);
+    min-width: 180px;
+    box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.9);
+    z-index: 105;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+.nested-dropdown-content.show {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+.nested-dropdown-content a {
+    padding-left: 16px !important;
+}
+
+/* Allow flyout menu to overflow Beyond Battle Fd, Hall of Fame, and Chapter 1 dropdown containers on desktop */
+#dropdown-6.dropdown-content,
+#dropdown-7.dropdown-content,
+#photo-dropdown-2.dropdown-content {
+    overflow: visible !important;
+    max-height: none !important;
+}
+
+/* Mobile Responsive overrides */
+@media (max-width: 768px) {
+    .nested-dropdown-content {
+        position: static;
+        width: 100%;
+        margin-left: 0;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    #dropdown-6.dropdown-content,
+    #dropdown-7.dropdown-content,
+    #photo-dropdown-2.dropdown-content {
+        overflow-y: auto !important;
+        max-height: 300px !important;
+    }
+    .nested-dropdown-content a {
+        padding-left: 28px !important;
+    }
+}
+
+/* Fullscreen styling for scroller images */
+.scroller-track img:fullscreen,
+.scroller-track img:-webkit-full-screen {
+    object-fit: contain;
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Featured Scroller Styles */
+.featured-scroller-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.featured-scroller-track {
+    display: inline-block;
+    animation: scroll 145s linear infinite;
+}
+
+.featured-scroller-container:hover .featured-scroller-track {
+    animation-play-state: paused;
+}
+
+.featured-scroller-track img {
+    height: 380px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 2px solid var(--glass-border);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.featured-scroller-track img:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-color);
+}
+
+.featured-scroller-track img:fullscreen,
+.featured-scroller-track img:-webkit-full-screen {
+    object-fit: contain;
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Portrait Page Layout Optimization */
+.portrait-page .photo-main {
+    width: auto;
+    height: 75vh;
+    max-height: 75vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }

@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle of Raja Picquet (1965) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Battle of Raja Picquet (1965)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image1.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image2.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image3.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image4.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image5.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image6.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image7.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image8.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image9.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image10.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image11.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image12.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image13.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art411/image14.webp"
+                        alt="BATTLE OF RAJA PICQUET -1965" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">Battle of Raja Picquet (1965)</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 14</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_411.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+        <div class="description-box">
+            <strong>Title:</strong> Battle of Raja Picquet (1965)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p>After the Hajipir Pass was captured on 28 August 1965, the focus shifted to capture of Raja and Rani
+                Picquets, which were critical to establishment of the Uri-Poonch Link. On 29 August 1965, 2 SIKH was
+                moved to Poonch after the Battalion's gallant action in Chhamb where it had captured 10 enemy posts
+                within three days. The Raja Picquet on the feature Point 7702 was a key defended locality and important
+                to the enemy's forward defence line. 2 SIKH was tasked to capture Raja Picquet - a challenging task,
+                demanding not only determination, but also tactical ingenuity.</p>
+            <p>Lieutenant Colonel Narendra Nath Khanna, Commanding Officer, 2 SIKH was confident of capturing Raja
+                Piquet. His plan of attack was to employ Alpha, Bravo and Delta Companies in a simultaneous attack from
+                two directions. The battle commenced on night 5/6 September when Alpha Company reached the Forming Up
+                Place. The enemy seemed to have discovered the forward movement and deployment - there was heavy and
+                concentrated artillery and Machine Gun fire which delayed the assault by an hour. It was already
+                daylight when the assaulting companies approached the objective. The troops got into assaulting
+                formation and moved up, hitting the folds in the ground, and then began crawling up. As Alpha Company
+                approached the objective, men began to fall to enemy fire, the first among them being Naib Subedar
+                Darshan Singh, a former national athlete. Casualties of the company piled on, and troops were pinned
+                down.</p>
+            <p>The situation of Bravo Company was no different. Its first casualty was the Company Commander, Major KC
+                Kalley, who was seriously wounded. In true spirit, his Second-in-Command, Subedar Balwant Singh, proved
+                his worth - he assumed command and continued the attack, until he himself was killed. The three
+                assaulting companies kept moving up along with the Commanding Officer's party, all under intense enemy
+                fire. The assault was held up at the wire obstacle in front of the picquet. Behind this were the main
+                defences, comprising trenches and pill boxes, with a dense minefield in front. The Commanding Officer
+                ordered his men to move forward and continue the assault. As troops were crossing the wire obstacle,
+                Lieutenant Colonel NN Khanna was hit by the fire of .50 Anti-Aircraft Gun. Yet, he kept inspiring his
+                men to keep attacking- their leader's injury electrified the men and they were all over the enemy
+                trenches.</p>
+            <p>The three Company Commanders, Captains Jai Singh, Surjit Singh and AS Dharni, also led their men from the
+                front. Acts of gallantry and junior leadership were witnessed all over the objective area. It was Naik
+                Chand Singh (an outstanding javelin thrower), who single-handedly silenced an enemy Machine Gun, which
+                was holding up the assault, as the officers and men fought for every inch and moved from bunker to
+                bunker. Lieutenant Colonel NN Khanna, along with his party was continuously in the open, when he was
+                again hit by Machine Gun fire. He was carried down immediately by the Intelligence Havildar Ujjagar
+                Singh and others to the Regimental Aid Post. He breathed his last while being evacuated to the Advanced
+                Dressing Station - his last question was whether Raja Picquet had been captured successfully.</p>
+            <p>After many hours of dogged resistance by the enemy, Raja Picquet was captured by 2 SIKH - the troops
+                aptly described the outcome in Puniabi, "Raia litta, Raja ditta" (we captured 'Raja' (Picquet), only to
+                lose our Raja (King)). 2 SIKH was awarded Battle Honour - 'Raja' and Theatre Honour-Jammu and Kashmir
+                1965' for its operations. Lieutenant Colonel NN Khanna was awarded the Maha Vir Chakra (posthumous).
+                Naik Chand Singh was awarded Vir Chakra, Havildar Baldev Singh Sena Medal (posthumous, and Major (later
+                Colonel) KC Kalley, Lieutenant (later Major General) Keshav Singh, Havildar Dalip Singh and Naik Surjit
+                Singh were Mentioned-in-Dispatches for their gallantry and leadership.</p>
+            <p>The unit lost 40 brave Sikhs including the Commanding Officer while 104 men were wounded. Among the
+                martyred was the battalion's entire Hockey Team and many other outstanding sportsmen.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art410.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="art412.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_411.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "2 SIKH Troops in Action at Poonch",
+                "View of the Raja Defences from the Ridge connecting Point 405 to Raja – the Bhai-Bhai Trees are along the ridge in the foreground",
+                "2 SIKH Troops in Action at Poonch Troops taking a difficult and unexpected approach to capture Raja",
+                "Troops advancing during the battle",
+                "A Sketch of Raja Picquet as seen from Point 405",
+                "Troops covering the advance of the battalion",
+                "Raja Defences as seen from the direction of Rani",
+                "Raja Defences as seen from the South Eastern Spur - Shell craters are visible in the foreground",
+                "Cremation of Lieutenant Colonel NN Khanna at Poonch, 07 September 1965",
+                "Another Sketch showing features leading to Raja and its deployment",
+                "Naik Chand Singh receiving Vir Chakra from Dr S Radhakrishnan, President of India",
+                "Major General Gurbaksh Singh GOC 4 Infantry Division with     2 SIKH Hockey Team prior to 1965 Operations – all the men were either killed or wounded at Raja",
+                "Lieutenant Colonel Narendra Nath Khanna, the Commanding Officer made the supreme sacrifice and was awarded the Maha Vir Chakra, posthumously – \"We live for this day!\" were his final words",
+                "Reconnaissance of Raja Defences",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>

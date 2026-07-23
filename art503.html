@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Gun Companies and Battalion - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            z-index: 5;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+            line-height: 1.4;
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Machine Gun Companies and Battalion</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/art/slide_155.webp" alt="MG Section 2/11 SIKH"
+                        loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/art/slide_156.webp" alt="Vickers Mark I MG"
+                        loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/art/slide_157.webp" alt="Brass Band in Afghanistan"
+                        loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/art/slide_158.webp"
+                        alt="Raising of SIKH MACHINE GUNNERS" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/art/slide_159.webp" alt="Officers at Nowshera"
+                        loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/art/slide_160.webp"
+                        alt="SIKH MACHINE GUNNERS Final Salute" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/art/slide_161.webp" alt="Collar Badge"
+                        loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/art/slide_162.webp"
+                        alt="Short Magazine Lee-Enfield Rifles" loading="lazy"></div>
+            </div>
+
+            <!-- caption at bottom -->
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">A MG Section of 2/11 SIKH, 1938</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 8</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_503.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <div class="description-box">
+            <strong>Title:</strong> Machine Gun Companies and Battalion<br>
+            <strong>Category:</strong> Beyond Battle Fd<br>
+            <strong>Artist:</strong> Sikh Regimental Centre<br>
+            <strong>Year:</strong> Historical
+        </div>
+
+        <div class="description-box">
+            <p>During the Army's Reorganisation post the First World War, a need was felt to enhance the fire power of a
+                battalion. Therefore, the Delta Company of each unit was converted into a Machine Gun (MG) Company which
+                had six Machine Guns manned by 87 men who were a mix of Sikhs and Punjabi Mussalmans. The gun was a
+                Point .303 inch Vickers Mk I and the men were armed with .303 inch Short Magazine Lee-Enfield Rifles.
+            </p>
+            <p>Later on, at the end of 1941, the General Headquarters India decided to raise a MG Battalion for each
+                infantry group. The MG Battalion of SIKH Regiment, 11 SIKH REGIMENT was raised on 15 January 1942 by
+                Lieutenant Colonel JCB Church who had prewar experience on Vickers Machine Guns. The nucleus of this new
+                raising consisted of manpower drawn from MG Companies of various battalions of the Regiment.</p>
+            <p>The Battalion had four MG Companies, each comprising of 200 All Ranks. Alpha and Bravo Companies were
+                Sikhs, while Charlie and Delta Companies comprised of Punjabi Mussalmans. The Battalion was equipped
+                with 48 MGs, 102 Wheeled and eight Tracked Vehicles.</p>
+            <p>After raising, the Battalion underwent Jungle Warfare training at Chhindwara in 1943 and then moved to
+                Ranchi where it was equipped with Medium Machine Guns (MMGs). The Battalion joined 19 Infantry Division
+                at Nasik in July 1944. It moved to Imphal on 01 November 1944 and served in the allied campaign against
+                the Japanese in Burma. During operations, the MG Battalion was distributed with 64 and 98 Indian
+                Infantry Brigades.</p>
+            <p>The Battalion crossed the Chindwin River on 16 December 1944. Battalion Headquarters and two
+                Punjabi-Mussalman Companies were involved in the Battle of Kabwet on the Irrawaddy River from 11 January
+                to 02 February 1945. At Mandalay, 36 Guns of the Battalion deployed massive firepower, supporting 19
+                Division through Meiktila, Thazi, and along the Mawchi Road. The Battalion sailed for Calcutta in April
+                1946 and relocated to Nowshera. On 10 November 1946, the Battalion was disbanded after proving its
+                mettle and devotion of the highest order.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art502.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Piece 503 / 60</span>
+            <a href="art504.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_503.png" alt="Scan for mobile">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this art record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            // Attempt autoplay
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented by browser:", error);
+                    const startAudioOnInteract = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudioOnInteract);
+                        document.body.removeEventListener('touchstart', startAudioOnInteract);
+                    };
+                    document.body.addEventListener('click', startAudioOnInteract);
+                    document.body.addEventListener('touchstart', startAudioOnInteract);
+                });
+            }
+        });
+
+        // ── MG Carousel Logic ─────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const counter = document.getElementById('slideCounter');
+            const dotsContainer = document.getElementById('carouselDots');
+            if (!track) return;
+
+            const descriptions = [
+                "A MG Section of 2/11 SIKH, 1938",
+                ".303 inch Vickers Mark I MG used by the MG Sections",
+                "Brass Band in Afghanistan, 1878",
+                "Officers and men interacting on Raising of SIKH MACHINE GUNNERS, 15 January 1942",
+                "Officers of the SIKH MACHINE GUNNERS Battalion, 10 November 1946 at Nowshera",
+                "SIKH MACHINE GUNNERS Battalion commanded by Captain MWZ Khan giving the Final Salute prior to its disbandment",
+                "The collar badge worn on uniform by MG Sections",
+                "Men were armed with .303 inch Short Magazine Lee-Enfield Rifles"
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                const titleEl = document.querySelector('.battle-carousel-title');
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000); // 3 seconds interval
+            }
+
+            // Pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // Touch swipe support
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) {
+                    if (diff > 0) goTo(current + 1);
+                    else goTo(current - 1);
+                }
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+
+</html>

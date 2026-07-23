@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naik Nand Singh, VC, MVC - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>NAIK NAND SINGH, VC, MVC</h1>
+        
+        <!-- Portrait Image -->
+        <div class="photo-wrapper" style="margin-bottom: 30px; display: flex; justify-content: center; align-items: center;">
+            <img class="photo-background" src="assets/art/art_201_portrait.webp" alt="" onerror="this.style.display='none'">
+            <img class="photo-main" src="assets/art/art_201_portrait.webp" alt="Naik Nand Singh, VC, MVC" style="border-radius: 16px; border: 2px solid var(--glass-border); box-shadow: 0 8px 32px rgba(0,0,0,0.5); max-height: 550px; width: auto; object-fit: contain;">
+        </div>
+
+        <!-- Audio Section -->
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_201.mp3"></audio>
+            <button class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <!-- Metadata Description Box -->
+        <div class="description-box">
+            <strong>Title:</strong> Naik Nand Singh, VC, MVC<br>
+            <strong>Category:</strong> Hall of Fame<br>
+            <strong>Award:</strong> Victoria Cross<br>
+            <strong>Era / Action:</strong> Second World War, 1944
+        </div>
+
+        <!-- Written Citation Box -->
+        <div class="description-box" style="line-height: 1.6;">
+            <strong>Citation (Written):</strong><br>
+            <p style="margin-top: 10px; color: #cbd5e1; font-size: 1.05rem;">Naik Nand Singh, VC (Second World War, 1944) On the night of I I March 1944, a Japanese platoon infiltrated through the battalion covering Maungdaw-Buthidaung road in Burma. Naik Nand Singh was commanding the leading section of a platoon which was ordered to re-capture the position at all costs. He led his section up a steep knife-edged ridge under heavy Machine Gun and rifle fire. Although wounded in the thigh, he rushed ahead and captured the first enemy trench by himself with the bayonet. Though wounded again in the face and shoulder by a grenade which burst only a few yards away, he crawled forward and captured the second trench. A short time later, when all the men of his section had either been killed or wounded, Naik Nand Singh dragged himself out of the trench and captured a third trench, bayoneting the occupants. With capture of three trenches, the platoon was able to seize the hill-top and deal with the enemy. Naik Nand Singh personally killed seven of the enemy soldiers. It was due to his determination, outstanding dash and magnificent courage that the position was won back.</p>
+        </div>
+
+        <!-- Citation / Writeup Image Box -->
+        <div class="description-box" style="display: flex; flex-direction: column; align-items: center; background: rgba(0,0,0,0.4); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border); margin-top: 20px;">
+            <h3 style="color: var(--accent-color); margin-bottom: 15px; font-weight: 600; font-size: 1.2rem; letter-spacing: 1px;">ORIGINAL CITATION CARD</h3>
+            <img src="assets/art/art_201_writeup.webp" alt="Citation for Naik Nand Singh, VC, MVC" style="max-width: 100%; height: auto; max-height: 650px; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 16px rgba(0,0,0,0.6); cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 10px; font-style: italic;">* Double-click either image above to view in fullscreen</p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation" style="margin-top: 40px;">
+            <a href="art200.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Piece 201 / 209</span>
+            <a href="art202.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Narration`;
+            });
+
+            audio.addEventListener('pause', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            audio.addEventListener('ended', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            btn.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+            
+            // Attempt autoplay
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented by browser:", error);
+                    const startAudioOnInteract = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudioOnInteract);
+                        document.body.removeEventListener('touchstart', startAudioOnInteract);
+                    };
+                    document.body.addEventListener('click', startAudioOnInteract);
+                    document.body.addEventListener('touchstart', startAudioOnInteract);
+                });
+            }
+        });
+
+        // Double-click images to toggle fullscreen mode
+        document.addEventListener('dblclick', function (event) {
+            if (event.target && event.target.tagName === 'IMG' && !event.target.classList.contains('photo-background')) {
+                if (!document.fullscreenElement) {
+                    if (event.target.requestFullscreen) {
+                        event.target.requestFullscreen();
+                    } else if (event.target.webkitRequestFullscreen) { // Safari
+                        event.target.webkitRequestFullscreen();
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { // Safari
+                        document.webkitExitFullscreen();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9th Battalion The Sikh Regiment - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Carousel ── */
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 24px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+            background: #111;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+            will-change: transform;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 620px;
+            object-fit: contain;
+            display: block;
+            filter: sepia(12%) contrast(1.05);
+        }
+        .carousel-slide .slide-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.80));
+            color: #f5e6c8;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            padding: 32px 18px 10px;
+            font-style: italic;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%; transform: translateY(-50%);
+            background: rgba(0,0,0,0.50);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            transition: background 0.2s;
+            z-index: 10;
+        }
+        .carousel-btn:hover { background: rgba(0,0,0,0.80); }
+        .carousel-btn.prev { left: 12px; }
+        .carousel-btn.next { right: 12px; }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+            padding: 10px 0 4px;
+        }
+        .carousel-dots span {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>9th Battalion The Sikh Regiment</h1>
+
+        <!-- Auto-scrolling Photo Carousel -->
+        <div class="carousel-wrapper" id="carousel505">
+            <div class="carousel-track" id="carouselTrack505">
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s1.webp" alt="Sikh soldiers group photograph">
+                    <div class="slide-caption">Officers and men of the Sikh Regiment — battalion group photograph</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s2.webp" alt="Battalion parade">
+                    <div class="slide-caption">The Battalion on parade — full battalion strength assembled with vehicles</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s3.webp" alt="Sikh Regiment officers in dress uniform">
+                    <div class="slide-caption">Sikh Regiment officers in full dress uniform with decorations</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s4.webp" alt="Grenade training">
+                    <div class="slide-caption">Grenade throwing training — Sikh soldier in full battle kit</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s5.webp" alt="Signallers with equipment">
+                    <div class="slide-caption">Signallers with communications equipment — field training</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s6.webp" alt="Officer inspection">
+                    <div class="slide-caption">General Officer inspecting troops on parade</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s7.webp" alt="Anti-tank rifle training">
+                    <div class="slide-caption">Anti-tank rifle training — Sikh soldiers in prone firing position</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s8.webp" alt="General introducing officers">
+                    <div class="slide-caption">Major General being introduced to the Regiment's officers</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/art/art_505_s9.webp" alt="VB gun training">
+                    <div class="slide-caption">Bren gun section in fire position during training exercise</div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" id="prevBtn505" aria-label="Previous">&#8249;</button>
+            <button class="carousel-btn next" id="nextBtn505" aria-label="Next">&#8250;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots505"></div>
+
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_505.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <div class="description-box">
+            <strong>Title:</strong> 9th Battalion The Sikh Regiment<br>
+            <strong>Category:</strong> Beyond Battle Fd<br>
+            <strong>Artist:</strong> Sikh Regimental Centre<br>
+            <strong>Year:</strong> Historical
+        </div>
+
+        <div class="description-box">
+            <p>The Battalion was raised on 01 April 1964 at Meerut, initially under Major (later Major General) RT Morlin; on 17 September 1964, Lieutenant Colonel Harbans Singh took over as the first Commanding Officer. Post raising, the Battalion moved to Misamari. During Indo-Pakistan War of 1965, it was earmarked to launch a diversionary attack into erstwhile East Pakistan but was re-located to the Western Front. Before it could join the battle, ceasefire was declared and it returned to the Eastern Theatre. It moved to Amritsar in March 1967 for a peace tenure. On 02 March 1968, the Battalion received its first Colours at the Regimental Centre in Meerut. In June 1969, it moved to Tangdhar Sector in Jammu and Kashmir and the Battalion less a company was deployed in a defensive role in Naugam Sub-Sector, over a 10-kilometre frontage and at heights ranging from 9000 feet to 12000 feet.</p>
+            <p>At the outbreak of the 1971 Indo-Pakistan War, the Commanding Officer, Lieutenant Colonel (later, Major General and Colonel of the Sikh Regiment) Sam Chengapa was tasked to plan a limited offensive, with two companies supported by an artillery battery of 4.2-inch Mortars, with one company holding the firm base. Initial objectives were aimed to provide depth to the forward defences and establish a launch pad for further operations. Operations started on night of 06/07 December by Bravo Company, under Major KC Bali which captured enemy post of Thanda Pani. The commando platoon under Captain Karam Singh cut off the enemy rear. The next night, the enemy position at Kaiyan was attacked and captured by Charlie Company under Major Jai Narain and the commandos; among the large booty was a .30 Browning MMG, three POW and 12 enemy killed; the Battalion had one killed and three wounded. Next day, a fierce enemy counter-attack was beaten back under the dynamic leadership of 2nd Lieutenant Pushpinder. Delta Company, under Major Balu Ram was tasked for a special mission, to establish a Road Block on Road Muzaffarabad-Lipa. They infiltrated over 20 Kilometres to establish a Road Block by 0500 hrs on 09 December till 12 December 1971.</p>
+            <p>On 15 December, Alpha and Charlie Companies moved to capture Three Pimples in broad daylight. The enemy suffered heavily; weapons captured included four 3-inch Mortars, one 83mm Rocket Launcher, two LMGs, many rifles with huge quantity of ammunition. Further exploitation was stopped as ceasefire was announced on 17 December. By then, 9 SIKH had single-handedly captured 46 Square Kilometres of enemy territory, by unconventional tactics, speed, and surprise. Awards surprisingly were restricted to three Sena Medals and one Mention-in-Dispatches. An extremely high intensity and brave battle over two days was again fought by 9 SIKH at Three Pimples against a Pakistani Brigade in May 1972.</p>
+            <p>Throughout its service, 9 SIKH excelled in all military spheres — operational, training, sports and administration and was counted amongst the most distinguished Infantry Battalions of the Indian Army. It always lived up to its special motto, <em>'Sir Qaim, Jang Daim'</em> (Till the Head is Firm, Battle will be won!). 9 SIKH won the prestigious General Chaudhary Trophy (awarded to the toughest professional Infantry Battalion of the Army) twice running (1966–67 and 1967–68) and its record of 383.16 points out of 400 was never bettered. The Battalion was sadly disbanded in September 1985 due to post-Operation Blue Star disturbances.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art504.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Piece 505 / 60</span>
+            <a href="art507.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_505.png" alt="Scan for mobile">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this art record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ── Carousel Logic ──
+        (function() {
+            const track = document.getElementById('carouselTrack505');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const dotsContainer = document.getElementById('carouselDots505');
+            const total = slides.length;
+            let current = 0;
+            let timer;
+
+            // Build dots
+            slides.forEach((_,i) => {
+                const d = document.createElement('span');
+                if(i===0) d.classList.add('active');
+                d.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(d);
+            });
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = (n + total) % total;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dots.forEach((d,i) => d.classList.toggle('active', i===current));
+            }
+
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+
+            document.getElementById('nextBtn505').addEventListener('click', () => { clearInterval(timer); next(); startTimer(); });
+            document.getElementById('prevBtn505').addEventListener('click', () => { clearInterval(timer); prev(); startTimer(); });
+
+            function startTimer() { timer = setInterval(next, 4000); }
+
+            const wrapper = document.getElementById('carousel505');
+            wrapper.addEventListener('mouseenter', () => clearInterval(timer));
+            wrapper.addEventListener('mouseleave', startTimer);
+
+            // Touch/swipe support
+            let startX = 0;
+            wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+            wrapper.addEventListener('touchend', e => {
+                const dx = e.changedTouches[0].clientX - startX;
+                if(Math.abs(dx) > 40) { clearInterval(timer); dx < 0 ? next() : prev(); startTimer(); }
+            }, {passive:true});
+
+            startTimer();
+        })();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            // Attempt autoplay
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented by browser:", error);
+                    const startAudioOnInteract = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudioOnInteract);
+                        document.body.removeEventListener('touchstart', startAudioOnInteract);
+                    };
+                    document.body.addEventListener('click', startAudioOnInteract);
+                    document.body.addEventListener('touchstart', startAudioOnInteract);
+                });
+            }
+        });
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+
+</html>

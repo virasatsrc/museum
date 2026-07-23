@@ -27,7 +27,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     ip = get_ip()
-    print(f"\n🚀 Museum Gallery Server is running over HTTP!")
+    print(f"\nMuseum Gallery Server is running over HTTP!")
     print(f"--------------------------------------")
     print(f"Local Access:   http://localhost:{PORT}")
     print(f"LAN Access:     http://{ip}:{PORT}")

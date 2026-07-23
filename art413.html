@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defence of Chhamb (1971) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Defence of Chhamb (1971)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image1.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image2.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image3.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image4.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image5.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image6.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image7.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image8.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image9.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image10.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image11.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image12.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image13.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image14.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image15.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image16.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art413/image17.webp"
+                        alt="DEFENCE OF CHHAMB - 1971" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">Defence of Chhamb (1971)</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 17</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_413.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+        <div class="description-box">
+            <strong>Title:</strong> Defence of Chhamb (1971)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p> 5 SIKH under Lieutenant Colonel Prem Khanna, was deployed at Chhamb in a Brigade Group along with 5
+                ASSAM and 4/1 GORKHA RIFLES. 5 SIKH defences covered Point 303, Phagla and Mandiala, all located West of
+                Munawar Tawi. At the beginning of December 1971, Pakistan Artillery and Air Force were very active in
+                the areas of 5 SIKH and 5 ASSAM. Pakistan had employed its 23 Infantry Division with three Brigades,
+                three Armoured Regiments, plus numerous additional units, including Mujahids, Scouts, Militia and
+                Rangers, for operations. Their aim was to capture Chhamb by a swift armoured thrust, crossing the
+                Munawar Tawiand capturing all territory up to Akhnoor. The Indian plan initially was also to take up an
+                offensive in the same sector.</p>
+            <p> The Pakistan Offensive was launched at 2050 hrs on 03 December 1971. It concentrated heavy bombardment
+                on Pir Jamal and Moel which were ahead of 5 SIKH main defences. Heavy fighting took place at these
+                positions and troops at Moel repulsed three attacks by night, inflicting heavy casualties on the enemy.
+                However, with very few survivors to fight on, they were finally forced back by repeated armoured
+                assaults, supported by the infantry. This resilient action of holding the enemy at bay for more than 18
+                hours, put the enemy's time plan completely out of gear, and gained critical hours for improving
+                defences in the depth areas. By mid-night, the enemy also attacked Phagla, Gurha and Mandiala, and
+                contacted Point 303. The tanks deployed there fell back to Mandiala South and held on to this position
+                till the evening of 06 December, against heavy odds. Phagla and Point 303 were again attacked on 04 and
+                05 December, but all attacks were beaten back most valiantly, with heavy casualties on the enemy.
+                However, the posts had to finally fall back and withdraw East of Munawar Tawi.</p>
+            <p> The enemy was able to infiltrate across Munawar Tawi and some of its troops reached the bridge over
+                the river. As this posed a threat to this vital link, it became expedient to re-capture the Chhamb
+                Bridge. A quick reflex action by own infantry and armoured elements took the Pakistani troops by
+                surprise, and the bridge was taken back in a swift action. A number of subsequent counter-attacks by the
+                enemy were also foiled. On the afternoon of 05 December, the enemy made several attempts to capture
+                Phagla and Point 303. These positions were defended by Alpha Company, whose gallant commander, Major DS
+                Pannu, continuously beat back enemy's battalion strength attacks over two nights, till he was mortally
+                wounded by a shell. His martyrdom inspired his men to fight tenaciously despite the lack of rest and
+                sleep. 5 SIKH withstood the continuous enemy infantry and armour assaults and successfully beat back
+                most of these attacks, inflicting heavy casualties on the enemy.</p>
+            <p> On 06 December, Point 303 exchanged hands within four hours. The Pakistani troops captured it, but
+                were soon to face a quick counterattack led by Captain Kamal Bakshi. Three hours later, Point 303 was
+                recaptured by 5 SIKH, an action in which the brave officer laid down his life. The enemy fled, leaving
+                behind 70 dead, two Medium Machine Guns and 70 rifles, and the position was stabilised. Phag La defended
+                locality was attacked next in overwhelming numbers by Pakistan Army - this position was under the
+                unshakeable command of Major (later Colonel) Jaivir Singh. In intense hand-to-hand fighting, the heavy
+                enemy force was beaten back. However, during the night of 06/07 December, 5 SIKH was pulled back to a
+                position in depth. After Pakistan's failure to capture any territory across Munawar Tawi, it decided to
+                consolidate defences on the Western side, before the cease-firecame into effect on 17 December 1971.</p>
+            <p> The battles fought in the open, undulating ground of Phagla Point 303 were short, but very intense. In
+                these 72 hours, 5 SIKH valiantly defended an area, where Pakistan employed infantry and armoured forces
+                in much superior numbers - almost two infantry brigades and two armoured regiments launched incessant
+                attacks in overwhelming strength across the battalion's frontage, allowing no rest to its beleaguered
+                troops. The positions occupied by 5 SIKH were continuously softened either by infantry and armour
+                attacks, or artillery and air strikes. The Sikhs displayed their resilience to remain in a state of high
+                morale and fight over a prolonged period. The Pakistan Army had evidently forgotten the level of
+                motivation, capability and capacity of the Sikh troops to withstand such continuous assaults.</p>
+            <p> Lieutenant Colonel Prem Khanna, CO and Major Jaivir Singh were later awarded the Maha Vir Chakra, while
+                Lance Naik Richhpal Singh and Major DS Pannu were awarded the Vir Chakra, the latter posthumously. 5
+                SIKH also received the Theatre Honour - 'Jammu and Kashmir-1971' for its distinguished performance in
+                operations.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art412.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="art414.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_413.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "Sketch showing Cease Fire Line and Pakistan Army's offensive towards Akhnoor",
+                "An old picture of 5 SIKH War Memorial at Akhnoor",
+                "Pakistan Army Document quoting a Staff Officer of 23 Infantry Division",
+                "Subedar Assa Singh, 5 SIKH valiantly commanded his sub unit at a key tactical locality in Chhamb",
+                "Headlines in a national daily dated 11 December 1971",
+                "A 106 MM RCL Gun mounted on a Jeep, employed by 5 SIKH in the Defence of Chhamb",
+                "Major D S Pannu, Alpha Company Commander with other officers and men prior to Battle of Chhamb",
+                "COAS General Sam Manekshaw meeting Jawans after the cease fire",
+                "Jawans carrying ammunition boxes during Battle of Chhamb",
+                "5 SIKH preparing defences along the Munawar Tawi",
+                "Mandiala Bridge on the day of its destruction",
+                "An RCL Jeep of 5 SIKH in action at Chhamb",
+                "Major DS Pannu was awarded the Vir Chakra, posthumously for his gallantry",
+                "Mandiala Bridge before destruction",
+                "Lieutenant Colonel (later Major General) KL Rattan receiving Maha Vir Chakra from President VV Giri, August 1972",
+                "Officers at 5 SIKH Officers Mess prior to Chhamb Operations – from Right to Left are Lieutenant Colonel Prem Khanna, Captain Devraj Singh, Major DS Pannu and Captain PK Handa",
+                "5 SIKH Veterans paying homage at Chhamb Memorial at Akhnoor , 2018",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>

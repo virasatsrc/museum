@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle of Gallipoli (1915) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Battle of Gallipoli (1915)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image1.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image2.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image3.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image4.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image5.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image6.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image7.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image8.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image9.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image10.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image11.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image12.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art402/image13.webp"
+                        alt="BATTLE OF GALLIPOLI -1915" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">Battle of Gallipoli (1915)</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 13</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_402.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+        <div class="description-box">
+            <strong>Title:</strong> Battle of Gallipoli (1915)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p>During the Gallipoli campaign between April 1915 to January 1916 in the First World War, a joint British
+                and French Operation was mounted to capture the Ottoman capital of Constantinople, and secure a sea
+                route to Russia. On 26 April 1915, British and French forces suffered disastrously from the determined
+                counter-attacks by the Turks on their earlier beach</p>
+            <p>landing at Cape Helles, at the Southern tip of the Gallipoli Peninsula, in the Ottoman Empire. General
+                Sir lan Hamilton, Commander-in-Chief of the Mediterranean Expeditionary Force, determined that the
+                British and French should try to take two strategic inland points, the village of Krithia, and a
+                neighbouring hill, Achi Baba, from where they could push North. The Allies were sent into battle on 28
+                April 1915, to which the Turkish forces resisted strongly. Allied planning was uncoordinated, and the
+                attacks were poorly led.</p>
+            <p>The Allies suffered heavy losses, and were forced to abandon the attacks after 10 hours. It was at this
+                stage that XIV SIKHS, as part of the 29th Indian Brigade, was detached from Egypt as reinforcement, and
+                arrived at Cape Helles, on 30 April 1915. XIV SIKHS had moved into trenches facing Krithia, surviving
+                the misery of the first night, in wet and broken trenches, with Turkish snipers inflicting casualties.
+                The Second Battle of Krithia was fought between 06-08 May, during which about 600 yards were gained. The
+                battle maintained the front from 9 May till relieved, showing great resilience. XIV SIKHS were tasked to
+                relieve the 89th PUNJABIS, the right flanking unit to the Gurkhas, and also two companies of the 6th
+                GURKHAS, despite not having seen very active action. The battle lost three British Officers and 78 All
+                Ranks, as a consequence of devastating Turkish artillery shelling, and sniping by small arms.</p>
+            <p>All British attacks were from the front, and none succeeded, except in altering the frontline by perhaps
+                a few hundred yards. The front was then advanced by digging a forward line by night, abandoning it in
+                the day, and reoccupying it on the subsequent night. This led to some of these forward lines being
+                occupied by the Turks, which had to be recaptured at considerable cost. On 04 June, full-scale attacks
+                were launched in two waves, with the objective of first capturing, and then passing over the Turkish
+                line. A mixed force of XIV SIKHS (Half Battalion), Gurkhas (Half Battalion) and the LANCASHIRE FUSILIERS
+                formed part of the first wave of the brigade attacks. The assault was meticulously planned to the
+                minute, but the end result was the capture of a single enemy trench, at the cost of 82 per cent
+                casualties of the total strength launched into attack. In this battle, XIV SIKHS lost 371 officers and
+                men, killed or wounded. It was the highest sacrifice after the Battle of Samana Ridge. On the morning of
+                04 June, artillery opened up, but had little effect on the enemy.</p>
+            <p>At noon, the first wave of the Fusiliers dashed forward which was mowed down by the enemy fire and their
+                advance was held up. The Gurkhas on the left gained a little ground, but were forced to withdraw to
+                their original line on the face of very heavy Machine Gun fire, hidden on both sides of the ravine. Two
+                British officers were killed, but the Sikhs rushed on and captured the first line of the enemy trenches.
+                Havildar Maghar Singh (later Subedar Major and decorated with the OBI), particularly showed courage and
+                determination during the assault. The unit suffered very heavy casualties, and was reduced to a fraction
+                in a very short time. The second wave of the attacks, comprising Number 1 and No 3 Companies and the
+                Battalion Headquarters, was launched at 1215 hrs. This wave went through to the enemy's third line of
+                trenches and held on to it till the morning of 05 June, when troops had to be withdrawn as they were
+                being encircled. By then, the CO, the Medical Officer and only 47 men were left unwounded. The Regiment
+                Camp was being guarded by the carpenters, armourers and boot-makers.</p>
+            <p>Over the next two days, the total number of survivors rose to three British Officers and 134 VCOs /
+                Sepoys, from the assaulting strength of 15 Officers and 574 VCOs / Sepoys. It was sheer slaughter, but
+                there were words of great praise from General Hamilton. The Secretary of State for India, paid a glowing
+                tribute to the Sikh Battalion in the House of Commons. A new offensive was launched at the end of June.
+                XIV SIKHS, now reduced to skeleton strength, still acted as reserve to the 29th Division. Although
+                General Sir lan Hamilton was neither able to achieve the assured victory envisaged, nor to beat back the
+                frontal attack, he was full of admiration for the Sikhs.</p>
+            <p>The Battle of Sari Bair, also known as the August Offensive, was the final attempt made by the British in
+                August 1915, to seize control of the Gallipoli Peninsula, from the Ottoman Empire. XIV SIKHS took part
+                in the Battle of Sari Bair as part of the Indian Brigade, under Field Marshal Birdwood, commanding the
+                Allied Forces, and formed part of the left assaulting column. XIV SIKHS was allotted to the Northern
+                column, as part of 29th Indian Brigade, which along with 4th Australian Brigade, were to capture 'Hill
+                Q' and Koja Chemen Tepe. The battle got over by the end of December 1915, after having suffered an
+                enormous number of casualties (27 British Officers, 20 VCOs and 1000 men), after which, XIV SIKHS moved
+                to Egypt. XIV SIKHS left Gallipoli with a great reputation, and their gallantry and devotion to duty was
+                recognized by the award of 35 Indian Distinguished Service Medals (IDSM).</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art421.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="art403.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_402.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "Overview of the area near Gallipoli",
+                "British Officers of XIV SIKH at El Kantara in Egypt 1914 - It was commonplace for Officers associated with Sikh Units to sport a beard and wear a Turban",
+                "Flags and Weapons of Turkish Army captured during Gallipoli Campaign",
+                "Scouts of XIV SIKHS at El Kantara during a Reconnaissance Mission in 1914",
+                "Men of XIV SIKHS working with a Bomb Catapult in the ravines of Gallipoli, 1915",
+                "Landing of Troops on the Gallipoli Peninsula",
+                "Embarking at Alexandria",
+                "XIV SIKHS Soldiers in trenches at Krithia",
+                "Overview of terrain in Gallipoli",
+                "Trenches on the Gallipoli Battlefield",
+                "Terrain of Gallipoli",
+                "Sikh Troops disembarking for Gallipoli Campaign",
+                "Three wounded Sikh Soldiers on board Hospital Ship Glengorm Castle",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>

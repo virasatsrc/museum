@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxing, Wrestling and Wider Achievement - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Boxing, Wrestling and Wider Achievement</h1>
+        
+        <div class="photo-wrapper">
+            <img class="photo-background" src="assets/art/art_225.webp" alt="" onerror="this.style.display='none'">
+            <img class="photo-main" src="assets/art/art_225.webp" alt="Boxing, Wrestling and Wider Achievement" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'">
+        </div>
+
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_225.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <div class="description-box">
+            <strong>Title:</strong> Boxing, Wrestling and Wider Achievement<br>
+            <strong>Category:</strong> Boxing, Wrestling and Wider Achievement<br>
+            <strong>Artist:</strong> Sikh Regimental Centre<br>
+            <strong>Year:</strong> Historical
+        </div>
+
+        <div class="description-box">
+            Boxing rose from Havildar Joginder Singh's national title in 1960 to international distinction. Naik Bakshish Singh and Havildar Major Singh succeeded at the 1974 Asian Games. Subedar Kaur Singh became a four-time national champion, won Asian Games gold in 1982, received the Padma Shri and Arjuna Award and represented India at the 1984 Los Angeles Olympics. Naib Subedar Gurcharan Singh competed at the 1996 Atlanta and 2000 Sydney Olympics, while Manpreet Singh won Asian Games silver in 2010. In wrestling, Subedar Madho Singh placed fourth at the 1960 Rome Olympics after winning two Asian Games gold medals, while Subedar Jit Singh, Hind Kesri, competed at Tokyo in 1964 and won Commonwealth and Asian medals.<br><br>The Regiment also produced notable swimmers, mountaineers, rowers, shooters, basketball and football players. Lieutenant Colonel J.C. Joshi joined the successful 1965 Everest expedition; Colonel D.N. Tankha led the 1971 Nun Kun expedition; and Ranjit Singh won two Asian rowing silvers in 2010. The Regimental Centre shooting team won the ARA Tournament and President's Banner in 1967.<br><br>The chapter's spirit is best represented by Sepoy Darbara Singh of 9 Sikh, who fractured his knee during the 1966 General Choudhary Trophy at Mhow but completed the course, carried by his comrades over every obstacle. The team finished eight minutes ahead, earning the Chief of Army Staff's praise for its exceptional teamwork and comradeship.
+        </div>
+
+        <div class="navigation">
+            <a href="art224.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Piece 225 / 60</span>
+            <a href="art188.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_225.png" alt="Scan for mobile">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this art record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+
+            audio.addEventListener('pause', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            audio.addEventListener('ended', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            
+            // Attempt autoplay
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented by browser:", error);
+                    const startAudioOnInteract = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudioOnInteract);
+                        document.body.removeEventListener('touchstart', startAudioOnInteract);
+                    };
+                    document.body.addEventListener('click', startAudioOnInteract);
+                    document.body.addEventListener('touchstart', startAudioOnInteract);
+                });
+            }
+        });
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>

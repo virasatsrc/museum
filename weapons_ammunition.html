@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapons & Ammunition - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Slider Specific Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 950px;
+            margin: 30px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .slides-wrapper {
+            position: relative;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #050b14;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide-image-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 60px 100px 60px; /* Space for arrow controls on sides, caption on bottom */
+        }
+
+        .weapon-img {
+            max-width: 85%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .weapon-img:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 32px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Fullscreen slide style */
+        .weapon-img:fullscreen {
+            object-fit: contain;
+            background-color: #000;
+            border: none;
+            transform: none;
+        }
+
+        .caption-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+            padding: 40px 20px 25px 20px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .caption-text {
+            color: var(--text-main);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Controls */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .slider-arrow:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            border-color: var(--accent-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-prev {
+            left: 20px;
+        }
+
+        .arrow-next {
+            right: 20px;
+        }
+
+        /* Dots Indicator */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            flex-wrap: wrap;
+            padding: 0 10px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .dot.active {
+            background: var(--accent-color);
+            transform: scale(1.2);
+            box-shadow: 0 0 8px var(--accent-color);
+        }
+
+        .slide-counter {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .slides-wrapper {
+                height: 400px;
+            }
+            .slide-image-container {
+                padding: 30px 40px 80px 40px;
+            }
+            .weapon-img {
+                max-width: 95%;
+            }
+            .caption-text {
+                font-size: 1.05rem;
+            }
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+            <span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">WALL ATRIUM</span>
+        </div>
+
+        <h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">WEAPONS & AMMUNITION</h1>
+        <p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+            Explore the historical weapons, light artillery, and ammunition from the Sikh Regiment Museum's collections. Double-click the photo to view in fullscreen.
+        </p>
+
+        <!-- Slider Section -->
+        <div class="slider-container">
+            <!-- Arrows -->
+            <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="slider-arrow arrow-next" onclick="changeSlide(1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- Slides Wrapper (Dynamically Populated) -->
+            <div class="slides-wrapper" id="slidesWrapper"></div>
+        </div>
+
+        <!-- Slide Counter -->
+        <div class="slide-counter" id="slideCounter">Loading exhibit...</div>
+
+        <!-- Dots Indicator -->
+        <div class="slider-dots" id="dotsContainer"></div>
+
+    </div>
+
+    <script>
+        // Generate the 78 weapons slides data
+        const weapons = [];
+        for (let i = 0; i < 78; i++) {
+            const sNum = 254 + i;
+            let caption = `Weapons & Ammunition - Exhibit ${i + 1}`;
+            
+            // Detailed overrides based on stenciling/models seen in photographs
+            if (sNum === 254) caption = `Bren Light Machine Gun (BREN MK II)`;
+            else if (sNum === 255) caption = `Machine Gun Receiver & Barrel`;
+            else if (sNum === 256) caption = `Light Mortar`;
+            else if (sNum === 257) caption = `Grenade Launcher / Spigot Mortar`;
+            else if (sNum === 264) caption = `German Rifle (RIF GERMAN)`;
+            else if (sNum === 265) caption = `Rifle No. 5 Mk I`;
+            
+            weapons.push({
+                src: `assets/art/weapons/weapon_${sNum}.webp`,
+                alt: caption,
+                caption: caption
+            });
+        }
+
+        const wrapper = document.getElementById('slidesWrapper');
+        const dotsContainer = document.getElementById('dotsContainer');
+        const slideCounter = document.getElementById('slideCounter');
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Render slides & dots
+        weapons.forEach((weapon, index) => {
+            // Slide div
+            const slideDiv = document.createElement('div');
+            slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
+            slideDiv.innerHTML = `
+                <div class="slide-image-container">
+                    <img src="${weapon.src}" class="weapon-img" alt="${weapon.alt}">
+                </div>
+                <div class="caption-bar">
+                    <div class="caption-text">${weapon.caption}</div>
+                </div>
+            `;
+            wrapper.appendChild(slideDiv);
+
+            // Dot
+            const dot = document.createElement('div');
+            dot.className = `dot ${index === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetAutoplay();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    dots[index].classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                    dots[index].classList.remove('active');
+                }
+            });
+            slideCounter.textContent = `Exhibit ${currentSlide + 1} of ${slides.length}`;
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            updateSlide();
+            resetAutoplay();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // Double-click image to toggle fullscreen mode
+        document.addEventListener('dblclick', function(e) {
+            if (e.target.classList.contains('weapon-img')) {
+                const img = e.target;
+                if (!document.fullscreenElement) {
+                    if (img.requestFullscreen) {
+                        img.requestFullscreen();
+                    } else if (img.webkitRequestFullscreen) { // Safari
+                        img.webkitRequestFullscreen();
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { // Safari
+                        document.webkitExitFullscreen();
+                    }
+                }
+            }
+        });
+
+        // Pause autoplay during fullscreen
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+        function handleFullscreenChange() {
+            if (document.fullscreenElement || document.webkitFullscreenElement) {
+                clearInterval(slideInterval);
+            } else {
+                resetAutoplay();
+            }
+        }
+
+        // Autoplay
+        function startAutoplay() {
+            slideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 6000); // changes slide every 6 seconds
+        }
+
+        function resetAutoplay() {
+            clearInterval(slideInterval);
+            startAutoplay();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
+        // Initialize display and start autoplay
+        updateSlide();
+        startAutoplay();
+    </script>
+</body>
+</html>

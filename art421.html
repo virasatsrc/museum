@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle of Ypres (1915) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Battle of Ypres (1915)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image1.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image2.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image3.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image4.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image5.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image6.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image7.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image8.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image9.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image10.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image11.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image12.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image13.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art421/image14.webp"
+                        alt="BATTLE OF YPRES -1915" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">State of defences after the battle</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 14</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_421.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <div class="description-box">
+            <strong>Title:</strong> Battle of Ypres (1915)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p>In March 1915, XV SIKHS were allotted a prestigious objective. The trench line on the Aubers Ridge,
+                Ligny-de-Grande, which was to become the Second Battle of Ypres. The battle raged on for four days,
+                trenches exchanging hands several times. However, the final gain of the entire Corps was only a salient,
+                around 1000 yards deep, with a two mile plus wide frontage. On 27 April 1915, XV SIKHS played a unique
+                part in the Battle of Ypres. When the joint Anglo-French Offensive failed, the Commanding Officer saw
+                the French not only withdrawing from the line of action, but also from their trenches. He sent a company
+                of XV SIKHS to plug the French defences, and save it from falling into German hands. The final action of
+                XV SIKHS hinged around Aubers, where the battalion occupied a trench line, just 200 yards away from that
+                of the Germans.</p>
+            <p>On 16 May 1915, XV SIKHS was moved to the trenches running parallel to the Rue-des-Chevaliers. They
+                stayed there during the subsequent nights. On 18 May, XV SIKHS occupied the captured German trenches
+                near Richebourg L’Avoue, where they remained till 20 May. The Sikhs were in occupation of a section of a
+                German trench, while the Germans had succeeded in erecting a strong barricade between themselves and the
+                British. A hail of bombs began to fall among the Sikhs, who replied vigorously with considerable effect.
+                Towards noon, their supply of bombs began to run out. The situation turned critical, and only a speedy
+                arrival of a bombing party from the reserve trenches would enable them to hold out.</p>
+            <p>The reserve trench was only 250 yards away. But the ground between was so exposed to enemy fire, that it
+                rendered the dispatch of reinforcements a most desperate undertaking. 10 men were selected and placed
+                under the command of Lieutenant John Smyth, who had already distinguished himself, on more than one
+                occasion, by his dashing courage. He and his small band of Sikhs set out on their perilous enterprise,
+                taking with them two boxes, containing 96 bombs. The ground over which they had to traverse was
+                absolutely devoid of any natural cover. Tying their pagris to the boxes, the Sikhs in front pulled at
+                them, while those behind pushed with all their might, thus transporting the bombs across the exposed
+                ground, and through dead bodies. The enemy had observed them cross, and Rifle and Machine Gun bullets
+                ripped the ground around them, while air bursts scattered shrapnel. It was certain that if a single
+                fragment of shell penetrated one of the boxes of explosives, the men would be blown to smithereens.</p>
+            <p>When they had advanced a little distance on their horrific journey, four Sikhs—Sepoys Fateh Singh, Sucha
+                Singh, Ujagar Singh and Surinder Singh—were wounded, leaving Lieutenant Smyth with only six men to
+                propel the boxes along. However, spurred on by the thought of the dire necessity of their comrades
+                ahead, through superhuman effort and good fortune, courage and fortitude, they succeeded in dragging the
+                boxes nearly to the end of the trench.</p>
+            <p>However, in quick succession, two more men—Naik Mangal Singh and Sepoy Ganga Singh—were wounded, and
+                three Sepoys—Saran Singh, Haram Singh and Sampooran Singh—killed. The second box of bombs, had therefore
+                to be abandoned. For the two remaining men, to haul even one box along in the face of such difficulties
+                appeared an impossible task. But anxious watchers in the trench ahead saw them wriggling their way, yard
+                by yard, into the open, hauling the box with them.</p>
+            <p>As the bombing party emerged from comparative shelter of the trench, a veritable hail of lead burst upon
+                them. Miraculously eluding them, struggling with their precious burden, the two brave men—Lieutenant
+                John Smyth and Sepoy Lal Singh—were within minutes, amongst their cheering comrades. Both were unhurt,
+                though their clothes were perforated with bullet holes. Scarcely had they reached their trench, when the
+                gallant Sepoy Lal Singh, the last man standing with Smyth, was struck by a bullet, and killed instantly.
+            </p>
+            <p>Lieutenant Smyth’s determination was triumphant, the task having been facilitated to the last, by the 10
+                brave Sikhs. For his most conspicuous bravery, Lieutenant John Smyth was awarded the Victoria Cross, and
+                each of the brave men who accompanied him were awarded an Indian Distinguished Service Medal (IDSM),
+                while Nk Mangal Singh won an Indian Order of Merit (IOM).</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art401.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="art402.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_421.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "State of defences after the battle",
+                "Aerial view of town near harbour",
+                "Aerial view of the town",
+                "Ruins of Ypres",
+                "Defences near a village",
+                "Sikhs at France",
+                "Sikhs marching to the",
+                "Aftermath of the Battle",
+                "XV SIKH soldiers preparing for Battle at Ypres",
+                "Troops crossing a damaged foot bridge",
+                "Troops marching in the city",
+                "House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915",
+                "Artist's impression of Lieutenant John Smyth of XV SIKHS who won a Victoria Cross for his gallant action at Richebourg  L'Avoue",
+                "State of trenches at Ypres",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>

@@ -22,10 +22,10 @@ PHOTO_CATEGORIES = 10
 ART_PER_PHOTO_CAT = 10
 PORT = 8001
 SERVER_IP = get_ip()
-OUTPUT_DIR = r"d:\antigravity\museum"
-ART_TEMPLATE_PATH = os.path.join(OUTPUT_DIR, "art_template.html")
-INDEX_TEMPLATE_PATH = os.path.join(OUTPUT_DIR, "index_template.html")
-QR_DIR = os.path.join(OUTPUT_DIR, "assets", "qrcodes")
+OUTPUT_DIR = "."
+ART_TEMPLATE_PATH = "art_template.html"
+INDEX_TEMPLATE_PATH = "index_template.html"
+QR_DIR = os.path.join("assets", "qrcodes")
 
 os.makedirs(QR_DIR, exist_ok=True)
 
@@ -57,9 +57,14 @@ for p_cat in range(1, PHOTO_CATEGORIES + 1):
 photo_nav_html += '</div>\n'
 
 # Get scroller images
-scroller_images_dir = os.path.join(OUTPUT_DIR, "assets", "scroller_images")
-os.makedirs(scroller_images_dir, exist_ok=True)
-scroller_images = glob.glob(os.path.join(scroller_images_dir, "*.*"))
+scroller_images_dir = os.path.join("assets", "pic1web")
+import re
+def natural_sort_key(s):
+    return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
+
+scroller_images = []
+if os.path.exists(scroller_images_dir):
+    scroller_images = sorted([f for f in os.listdir(scroller_images_dir) if f.lower().endswith('.webp')], key=natural_sort_key)
 
 scroller_html = ""
 if not scroller_images:
@@ -67,9 +72,9 @@ if not scroller_images:
     for i in range(1, 6):
         scroller_html += f'<img src="https://placehold.co/350x250/1e293b/f59e0b?text=Scroller+Image+{i}" alt="Scroller Placeholder">\n'
 else:
-    for img_path in scroller_images:
-        img_name = os.path.basename(img_path)
-        scroller_html += f'<img src="assets/scroller_images/{img_name}" alt="Scroller Image">\n'
+    for img_name in scroller_images:
+        safe_name = img_name.replace('"', '&quot;')
+        scroller_html += f'                <img src="assets/pic1web/{safe_name}" alt="{safe_name}">\n'
 
 # Read templates
 with open(ART_TEMPLATE_PATH, 'r', encoding='utf-8') as f:
@@ -89,7 +94,7 @@ for art_num in range(1, TOTAL_ART + 1):
         category_name = f"Photo Category {((art_num - 61) // ART_PER_PHOTO_CAT) + 1}"
     
     # Paths
-    photo_path = f"assets/art/art_{art_num}.png" # placeholder path
+    photo_path = f"assets/art/art_{art_num}.webp" # placeholder path
     audio_path = f"assets/audio/audio_{art_num}.mp3" # placeholder path
     qr_file_name = f"qr_art_{art_num}.png"
     qr_file_path = os.path.join(QR_DIR, qr_file_name)
@@ -112,6 +117,8 @@ for art_num in range(1, TOTAL_ART + 1):
     
     # Generate page content
     page_html = art_template
+    if 21 <= art_num <= 71:
+        page_html = page_html.replace("<body>", '<body class="portrait-page">')
     page_html = page_html.replace("{{ nav_html }}", nav_html)
     page_html = page_html.replace("{{ art_title }}", f"Art Piece {art_num}")
     page_html = page_html.replace("{{ category }}", category_name)

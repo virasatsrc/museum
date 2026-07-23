@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kargil Operations (1999) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Kargil Operations (1999)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image1.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image2.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image3.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image4.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image5.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image6.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image7.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image8.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image9.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image10.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image11.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image12.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image13.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image14.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image15.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image16.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art417/image17.webp"
+                        alt="KARGIL OPERATIONS - 1999" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">Kargil Operations (1999)</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 17</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_417.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+        <div class="description-box">
+            <strong>Title:</strong> Kargil Operations (1999)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p> In1999, 8 SIKH commanded by Colonel SP Singh, had just moved from Pathankot to Pulwama, when it received
+                orders to move to the Drass Sub-Sector on 12 May. The Battalion was inducted in Operation Vijay on 14
+                May 1999 and tasked to evict a few intruders from the dominating heights in Drass and Kargil. With
+                limited acclimatization and winter clothing, the Battalion was launched into the operation to clear
+                Tiger Hill, Point 4460 and Point 4195, at altitudes ranging from 13,500 feet to 16,000 feet. Rugged
+                terrain, invincible heights, extreme climate and the absence of enemy intelligence and lack of artillery
+                support made the task a formidable one</p>
+            <p> Alpha Company was tasked to capture Point 4195 and Point 4460. Taking up the challenge up-front, the
+                troops moved straight up the formidable height, braving the steep climbs and descent over glaciated
+                terrain. By 18 May, Point 4460 and Point 4195 were captured, and the Battalion's Tactical Headquarters
+                was established at Point 4460. On the same night of 18 May, Bravo Company, while negotiating the steep,
+                snow covered Southern slopes of Tiger Hill, came under heavy automatic fire from Tiger Hill. This
+                confirmed heavy enemy concentration in the Tiger Hill Complex, to include Tiger Hill Top, Eastern Spur
+                and Western Spur (comprising India Gate, Helmet, Rocky Knob and Rhino Horn). This was contrary to the
+                previous intelligence reports, which indicated the presence of only a few intruders at Tiger Hill Top.
+                Two companies then attempted to clear Tiger Hill from the East and the North, but intense enemy
+                automatic fire stalled any further progress.</p>
+            <p> Delta Company was then ordered to circumvent the Tiger Hill feature. Accordingly, they occupied
+                Pariyon-Ka-Talab from the North. The initial task for 8 SIKH was to cut off the Western Ridge of Tiger
+                Hill. Later, the Battalion was ordered to isolate Tiger Hill from all directions, and cut off any
+                reinforcement or withdrawal from the top. However, heavy enemy fire including artillery, Machine Guns
+                and rockets, prevented attempts to secure a foothold. Casualties mounted as the Battalion was totally
+                exposed on barren mountain face. A platoon of Bravo Company, led by Subedar Sardar Singh, was tasked to
+                invest Umba La, to prevent enemy infiltration from the South of Drass. They got to Point 4245, and
+                established a block, which remained in position for the next 35 days, i.e., till 30 June. A number of
+                attempts were made to cut off Tiger Hill from the Western side by sub-units of 8 SIKH and other units,
+                including Special Forces Teams, but these were mostly unsuccessful. During these forays, a few
+                casualties were also suffered.</p>
+            <p> On the night of 03/04 July, 18 GRENADIERS was tasked to capture Tiger Hill, and 8 SIKH to provide a firm
+                base, simulate attacks from the Southern and Northern directions, and provide one company strength as
+                reserve to deal with any contingency. 18 GRENADIERS launched their attack from the Eastern and
+                South-Eastern approaches. After the Eastern Spur was cleared, further advance towards Tiger Hill Top was
+                effectively interfered with enemy fire on 04 July. 8 SIKH was tasked to gain a foothold on the Western
+                Spur of Tiger Hill, with a view to cut it off and provide a firm base for its subsequent capture. The
+                Western Spur, comprising of features Rhino Horn, Rocky Knob, Helmet and India Gate, was strongly held by
+                the enemy, and was totally dominated by Tiger Hill Top. The approach to establish the firm base was
+                extremely steep, with a gradient of 60-80 degrees. It was not only a very challenging objective to
+                capture, but extremely difficult to hold, due to the limited space available and enemy domination.</p>
+            <p> The plan was to capture India Gate and Helmet from the Western approach, with surprise being the vital
+                ingredient. Accordingly, on the night of 04/05 July, an ad-hoc company of two officers, led by Major
+                Ravindra Singh, four JCOs and 52 OR, traversed the difficult terrain, amidst enemy shelling and
+                automatic fire, to the base of the objective. Extremely bad weather, fog and rain came as a boon. The
+                company negotiated the steep slopes undetected, with high standards of mountaineering skills. Three
+                different teams probed towards the objective. The enemy was totally surprised with the sudden assault of
+                these teams on India Gate and Helmet and opened up with automatic weapons. But the brave Khalsas
+                retaliated with Rocket Launcher fire, and forced the enemy to flee. India Gate and helmet were captured
+                at 0400 hrs on 05 July and Tiger Hill Top was completely cut off from the Western Spur.</p>
+            <p> The enemy was desperate to keep the Western route of maintenance open. At first light, the enemy
+                defences
+                on Tiger Hill opened up in full fury, with the artillery firing air-bursts, and multiple Air Defence
+                Guns firing from two directions. This firing continued unabated for 24 hours. Own troops endured not
+                only the withering fire and bombardment, but the freezing temperatures, without food or medical aid. It
+                was followed by several counter-attacks, including one led by two Pakistani officers, who nearly reached
+                the inner defence perimeter of India Gate. 8 SIKH was resolute in defending its territory - Subedar
+                Nirmal Singh who was severely wounded, did a bayonet charge on the advancing enemy and halted the
+                attack. Both Pakistani officers were killed in this action - one was later identified as Captain Karnal
+                Sher Khan of 12 NLI, who was awarded Pakistan's highest gallantry award 'Nishan-e-Haider', based on the
+                account of his bravery penned by 8 SIKH. Subedar Nirmal Singh and Naib Subedar Karnail Singh made the
+                supreme sacrifice in this action.</p>
+            <p> The gallant Sikhs held on to Western Spur, and repulsed the two counter attacks by 0630 hrs, inflicting
+                heavy casualties on the enemy. The enemy suffered more than 30 killed, including three officers. They
+                fled, leaving behind the bodies of their soldiers, including officers. Major Ravindra Singh, though
+                wounded, held on to the Western Spur for the rest of the day. Reinforcement from Alpha Company arrived
+                at night and some of the wounded were evacuated. 18 GRENADIERS then resumed the assault and occupied
+                Tiger Hill Complex by 0800 hrs on 08 July. For display of resilience of a high order and marked
+                gallantry, Subedar Nirmal Singh, Naib Subedar Karnail Singh and Sepoy Satpal Singh were awarded the Vir
+                Chakra. The Battalion was awarded Battle Honour - 'Tiger Hill', Theatre Honour-Kargil, COAS Unit
+                Citation and a Special Citation by Punjab Government. In addition to three Vir Chakras, it also earned
+                11 Sena Medals and 12 Mention-in-Dispatches.</p>
+            <p> 14 SIKH also participated with elan and gave an excellent account of itself at Chorbat La during the
+                Kargil War in 1999. It was airlifted from Chandigarh to Leh and tasked to plug the gap between Turtuk
+                and Yaldor sectors which were lightly held earlier. The Battalion achieved complete moral ascendancy
+                over the enemy and won One Vir Chakra, three Sena Medals, two Mention-in-Dispatches and a number of
+                other awards.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art416.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="index.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_417.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "8 SIKH troops move up an icy slope during operations",
+                "Victorious troops of 8 SIKH pose in front of the mighty Tiger Hill feature",
+                "8 SIKH Soldiers after capture of Tiger Hill",
+                "8 SIKH delegation at Drass War Memorial",
+                "Colonel SP Singh and Subedar Major Amrik Singh receiving Citation from COAS General VP Malik",
+                "Colonel SP Singh, CO 8 SIKH (right) and Coy Cdr, Major Anshoo Saxena after capture of Point 4460 on the foot hill of Tiger Hill",
+                "Indian Flag on top of Tiger Hill",
+                "Terrain of Tiger Hill",
+                "Panoramic view of Tiger Hill Complex",
+                "Colonel SP Singh flanked by the valiant Khalsas of 8 SIKH",
+                "Captain (later Colonel) Praveen Kumar Barak, 14 SIKH receiving Vir Chakra from the President of India",
+                "Two other Vir Chakra winners of 8 SIKH- Naib Subedar Karnail Singh and Havildar Satpal Singh",
+                "Colonel (later Major General) KK Sinha, CO, Captain (now Colonel) Rohit Khanna, JCOs and men of 14 SIKH after a successful operation during Kargil War",
+                "The heroes of 8 SIKH in – Lieutenant Kanad Bhattacharya, SM (left) and Subedar Nirmal Singh, Vir Chakra",
+                "Officers get a short respite in intense operations",
+                "A Jawan evacuating an injured comrade during operations",
+                "8 SIKH Tactical Headquarters at Point 4460, 22 June 1999",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>

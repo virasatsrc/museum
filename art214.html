@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colours of the Original Battalions - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Colours of the Original Battalions</h1>
+        
+        <div class="photo-wrapper">
+            <img class="photo-background" src="assets/art/art_214.webp" alt="" onerror="this.style.display='none'">
+            <img class="photo-main" src="assets/art/art_214.webp" alt="Colours of the Original Battalions" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'">
+        </div>
+
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_214.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+
+        <div class="description-box">
+            <strong>Title:</strong> Colours of the Original Battalions<br>
+            <strong>Category:</strong> Colours of the Original Battalions<br>
+            <strong>Artist:</strong> Sikh Regimental Centre<br>
+            <strong>Year:</strong> Historical
+        </div>
+
+        <div class="description-box">
+            The tradition began soon after the first Sikh battalions were raised. Lord Gough presented XIV Ferozepore Sikhs, now 4 Mechanised Infantry (1 Sikh), its first Colours at Ambala on 20 December 1846; new Colours followed on 15 March 1894. XV Ludhiana Sikhs, now 2 Sikh, received its first Colours from Major General Sir John Grey at Meerut on 11 November 1847 and its second from the Governor of the North-West Frontier Province at Nowshera on 22 March 1939.<br><br>XLV Rattray's Sikhs, now 3 Sikh, received its first Colours from General Sir Henry Norman at Alipore in 1877 and its second from General Sir Edmund Barrow at Nasirabad on 15 February 1911. XXXVI Sikhs, now 4 Sikh, received Colours in 1876, again in 1897 after Saragarhi, and a third set from the Prince of Wales in 1922. XLVII Sikhs, now 5 Sikh, received its first Colours from Lieutenant General Sir Bindon Blood at Sialkot on 10 March 1904 and the New King's Colours from Lieutenant General Sir William Heneker at Baroda on 14 February 1931.<br><br>XXXV Sikhs, later the Sikh Regimental Centre, received Colours in 1887 and 1897. After becoming the Training Battalion on 1 February 1922, it received another set from HRH the Prince of Wales at Topi Park, Lahore, in March 1922. These original Colours were subsequently preserved at the Regimental Centre.
+        </div>
+
+        <div class="navigation">
+            <a href="art213.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Piece 214 / 60</span>
+            <a href="art215.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_214.webp" alt="Scan for mobile">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this art record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+
+            audio.addEventListener('pause', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            audio.addEventListener('ended', function() {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            
+            // Attempt autoplay
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented by browser:", error);
+                    const startAudioOnInteract = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudioOnInteract);
+                        document.body.removeEventListener('touchstart', startAudioOnInteract);
+                    };
+                    document.body.addEventListener('click', startAudioOnInteract);
+                    document.body.addEventListener('touchstart', startAudioOnInteract);
+                });
+            }
+        });
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>

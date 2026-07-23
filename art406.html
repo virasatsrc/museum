@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle of Shalateng (1947) - Museum Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ── Battle Carousel (replaces main photo) ──────────────────── */
+        .battle-carousel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 0 24px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            background: #0a0a0a;
+        }
+
+        .battle-carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .battle-carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .battle-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* bottom gradient + title overlay */
+        .battle-carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 48px 24px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .battle-carousel-title {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .battle-carousel-counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* dot indicators */
+        .battle-carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .battle-carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .battle-carousel-dots span.active {
+            background: #f59e0b;
+            transform: scale(1.35);
+        }
+
+        /* prev / next arrows */
+        .battle-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #f59e0b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .battle-carousel-arrow:hover {
+            background: rgba(245, 158, 11, 0.25);
+        }
+
+        .battle-carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .battle-carousel-arrow.next {
+            right: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="gallery-container">
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-link"
+                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="margin-right: 8px;">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1>Battle of Shalateng (1947)</h1>
+
+        <!-- Battle Carousel (auto-scrolling) -->
+        <div class="battle-carousel" id="battleCarousel">
+            <div class="battle-carousel-track" id="carouselTrack">
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image1.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image2.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image3.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image4.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image5.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image6.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image7.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image8.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image9.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image10.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image11.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image12.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image13.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image14.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image15.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image16.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+                <div class="battle-carousel-slide"><img src="assets/battles/art406/image17.webp"
+                        alt="BATTLE OF SHALATENG & DEFENCE OF URI - 1947" loading="lazy"></div>
+            </div>
+
+            <div class="battle-carousel-caption">
+                <div class="battle-carousel-title">Battle of Shalateng (1947)</div>
+                <div class="battle-carousel-counter" id="slideCounter">1 / 17</div>
+            </div>
+
+            <!-- dot indicators -->
+            <div class="battle-carousel-dots" id="carouselDots"></div>
+
+            <!-- arrows -->
+            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
+            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
+        </div>
+        <div class="audio-section">
+            <audio id="artAudio" autoplay src="assets/audio/audio_406.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to Narration
+            </button>
+        </div>
+        <div class="description-box">
+            <strong>Title:</strong> Battle of Shalateng (1947)<br>
+            <strong>Category:</strong> Battle Gallery<br>
+            <strong>Regiment:</strong> Sikh Regiment<br>
+        </div>
+
+        <div class="description-box">
+            <p>The decisive Battle of Shalateng, fought on 07 November 1947, was part of overall operations for the
+                Defence of Kashmir, 1947-48. This battle removed the threat to Srinagar and the Kashmir Valley. On the
+                night of 06 November, Bravo Company, 1 SIKH was attacked by nearly 5000 raiders. But all attacks were
+                beaten back, inflicting heavy casualties on the enemy. The nest day in a brilliant tactical move, while
+                enveloping attacks were carried out by the Kumaonis, and a troop of Armoured Cars of 7 CAVALRY, 1 SIKH
+                launched frontal attacks. Totally astounded by this assault from three sides, the enemy started fleeing
+                desperately along the road to Baramulla, leaving behind their lorries, dumps of ammunition and supplies.
+                The raiders rout was complete, and they fled back in panic, leaving about 500 raiders dead.</p>
+            <p>An immediate advance was then launched along the main axis, with a company of 1 SIKH closely pursuing the
+                fleeing enemy in civilian buses. 1 SIKH recaptured Pattan the same evening by 1830 hrs, killed another
+                150 and wounded 200 of the raiders. They also captured vehicles, wireless sets, arms and ammunition.
+                Some of the captured Pathans belonged to the Frontier Force regular troops, apparently on leave, thus,
+                immediately exposing Pakistan's perfidy. On the morning of 08 November, the Battalion moved ahead and
+                flushed out several enemy positions. It entered a devastated Baramulla Town, which was captured by 1600
+                hrs.</p>
+            <p>The Battalion continued its advance. It reached Rampur (Buniyar) by 10 November, and captured Uri by 13
+                November. The retreating raiders blew off all bridges enroute, but this did not hinder the Battalion's
+                advance, as they crossed over the affected nalas/streams using makeshift arrangements of temporary
+                bridges. Post this, defensive picquets were established at Uri to cover the road leading from Uri to
+                Domel. Meanwhile, the regular Pakistan Army was by now fully committed to battle, and adopted an
+                aggressive posture. A number of heavy engagement took place between the enemy and 1 SIKH. As a part of
+                the defenses, 1 SIKH had established a small picquet anointed 'Nalwa') across the Jhelum River that was
+                held by 20 men, and commanded by a JCO. It was this isolated post, difficult to reinforce, on which the
+                enemy attacked repeatedly on the night of 22/23 November. One of the fiercest fighting took place at the
+                Nalwa Picquet where about 400 enemy personnel were killed.</p>
+            <p>Skirmishes with the enemy continued on a daily basis from 10 December. The tempo of activities suddenly
+                increased. The raiders concentrated on the high hills overlooking Uri from the South-East and posed a
+                threat to Uri. 1 SIKH, now concentrated at Uri was tasked to dislodge the enemy from there. On 12
+                December, the Battalion was launched to clear Bhatgiran, which saw fierce fighting as part of a frontal
+                daylight attack.</p>
+            <p>Jemadar Nand Singh, VC, led his platoon into a well-entrenched enemy position. After a desperate fight,
+                his platoon was able to extricate Bravo Company, which was pinned down by the enemy with concentrated
+                fire. Though severely wounded, he continued to lead till he was killed by a burst of LMG fire. His
+                repeated acts of valour, leadership and devotion to duty won him a posthumous Maha Vir Chakra. Thus,
+                Jemadar Nand Singh, a military legend, passed away as one of the highest decorated soldiers of the
+                Commonwealth. Heavy losses were inflicted on the enemy (of whom 300 were killed and 500 wounded). The
+                unit also suffered casualties (one officer, two JCOs and 57 Other Ranks killed and two officers,
+                including the CO, four JCOs and 55 Other Ranks wounded).</p>
+            <p>To perpetuate the memory of this gallant warrior, the main bridge over the Uri Nala, has been named as
+                'Nand Singh Bridge' and the road to Salamabad as 'Nand Singh Road'. An imposing memorial has been built
+                here overlooking the bridge. Meanwhile, as this was going on, Subedar Bishan Singh, Military Cross, of
+                Delta Company launched a counter-attack, and in severe hand-to-hand fighting, threw the enemy back. Even
+                as more waves of enemy troops were thrown into battle, Bishan Singh continued to cheer and encourage his
+                men, and was killed in action. His cool courage, inspiring leadership and dogged determination against
+                heavy odds earned him a posthumous Maha Vir Chakra. The gallant actions of the Sikh Regt in the 1947-48
+                Kashmir Operations were specially commended by Prime Minister Jawaharlal Nehru: -</p>
+            <p>"The Sikh Regiment played a gallant role in the Kashmir Operations and reached Srinagar just in time to
+                save the country from the aggressor. Valour and spirit of sacrifice displayed by the men of the Sikh
+                Regiment were examples worthy of emulate."</p>
+        </div>
+
+        <div class="navigation">
+            <a href="art405.html" class="nav-link ">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Previous Piece
+            </a>
+            <span style="color: #94a3b8;">Battle Gallery</span>
+            <a href="art407.html" class="nav-link ">
+                Next Piece
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img src="assets/qrcodes/qr_art_406.png" alt="Scan for mobile" onerror="this.style.display='none'">
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this battle record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+
+
+        // ── Battle Carousel ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const counter = document.getElementById('slideCounter');
+            const titleEl = document.querySelector('.battle-carousel-title');
+            if (!track) return;
+
+            const descriptions = [
+                "IAF Dakotas landing at Srinagar Airfield on 27 October 1947",
+                "1 SIKH troops with an aircraft of 12 Squadron, IAF",
+                "State of Baramulla-Uri Axis in December 1947",
+                "Colonel Harwant Singh, MC standing on a hill overlooking Baramulla - 1 SIKH fought their first historic battle against thousands of well-armed Pakistani raiders on 28 th Oct 1947 here",
+                "A view of Jhelum river and of area East of Hill near Mile 32 on Srinagar – Baramulla Road where 1 SIKH fought on 28 Oct 1947",
+                "Jem Nand Singh Memorial at Uri as it stands today",
+                "A party comprising of Major Harwant Singh, MC, Capt AC Roy, RMO, Sub Maj Gurbachan Singh MC, OBI, IDSM and a few NCOs had gone to Baramulla in Jan 1948 to collect nearly 130 Kashmiri orphan boys whose parents were killed by the raiders in Baramulla",
+                "Artillery firing in support of 1 SIKH Operations",
+                "Colonel (later Lieutenant General) Harbaksh Singh paying homage to Lt Col Dewan Ranjit Rai at his memorial",
+                "Nand Singh Bridge, Uri in 1951",
+                "Troops landing at Srinagar Airfield on 27 October 1947",
+                "Memorial of 1 SIKH at Mile 32 Hill (near Baramulla)",
+                "Battle in Uri Sector fought by    1 SIKH in December 1947",
+                "Major Ajaib Singh conducting the Battle at Shalateng , November 1947",
+                "1 SIKH troops fighting at Shalateng",
+                "Major (Later Colonel) Harwant Singh, MC of 1 SIKH was the officer-in-charge of the flag-hoisting ceremony on Independence Day in 1947 – he commanded Delta Company of 1 SIKH in Baramulla Operations",
+                "Lieutenant Colonel Dewan Ranjit Rai, MVC, CO 1 SIKH led the action of the unit at Mile 32 Hill, near Baramulla and made the supreme sacrifice",
+            ];
+
+            const total = track.children.length;
+            let current = 0;
+            let timer;
+
+            // Generate dots dynamically
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const span = document.createElement('span');
+                if (i === 0) span.className = 'active';
+                span.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(span);
+            }
+            const dots = dotsContainer.querySelectorAll('span');
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                counter.textContent = (current + 1) + ' / ' + total;
+
+                if (titleEl && descriptions[current]) {
+                    titleEl.textContent = descriptions[current];
+                }
+                resetTimer();
+            }
+
+            window.goTo = goTo;
+            window.nextSlide = function () { goTo(current + 1); };
+            window.prevSlide = function () { goTo(current - 1); };
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 3000);
+            }
+
+            // pause on hover
+            const el = document.getElementById('battleCarousel');
+            if (el) {
+                el.addEventListener('mouseenter', () => clearInterval(timer));
+                el.addEventListener('mouseleave', resetTimer);
+            }
+
+            // touch swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+            });
+
+            resetTimer();
+        })();
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+
+</html>
