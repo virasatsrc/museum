@@ -7,127 +7,7 @@
     <title>XLV Rattray's Sikhs - Museum Gallery</title>
     <link rel="stylesheet" href="css/style.css">
 
-    <style>
-        /* ── Battle Carousel (replaces main photo) ──────────────────── */
-        .battle-carousel {
-            position: relative;
-            width: 100%;
-            height: 480px;
-            border-radius: 16px;
-            overflow: hidden;
-            margin: 0 0 24px 0;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
-            background: #0a0a0a;
-        }
-
-        .battle-carousel-track {
-            display: flex;
-            height: 100%;
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform;
-        }
-
-        .battle-carousel-slide {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .battle-carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
-        /* bottom gradient + title overlay */
-        .battle-carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 48px 24px 20px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .battle-carousel-title {
-            color: #f59e0b;
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-align: center;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-        }
-
-        .battle-carousel-counter {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.75rem;
-            letter-spacing: 0.08em;
-        }
-
-        /* dot indicators */
-        .battle-carousel-dots {
-            position: absolute;
-            bottom: 14px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 6px;
-            z-index: 10;
-        }
-
-        .battle-carousel-dots span {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.35);
-            transition: background 0.3s, transform 0.3s;
-            cursor: pointer;
-        }
-
-        .battle-carousel-dots span.active {
-            background: #f59e0b;
-            transform: scale(1.35);
-        }
-
-        /* prev / next arrows */
-        .battle-carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.45);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            color: #f59e0b;
-            border-radius: 50%;
-            width: 38px;
-            height: 38px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transition: background 0.2s;
-            user-select: none;
-        }
-
-        .battle-carousel-arrow:hover {
-            background: rgba(245, 158, 11, 0.25);
-        }
-
-        .battle-carousel-arrow.prev {
-            left: 12px;
-        }
-
-        .battle-carousel-arrow.next {
-            right: 12px;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -148,30 +28,26 @@
 
         <h1>XLV Rattray's Sikhs</h1>
 
-        <!-- Battle Carousel (auto-scrolling) -->
-        <div class="battle-carousel" id="battleCarousel">
-            <div class="battle-carousel-track" id="carouselTrack">
-                <div class="battle-carousel-slide"><img src="assets/battles/art603/image1.webp" alt="Belt Buckle of RATTRAY'S SIKHS" loading="lazy"></div>
-                <div class="battle-carousel-slide"><img src="assets/battles/art603/image2.webp" alt="Captain Thomas Rattray" loading="lazy"></div>
-                <div class="battle-carousel-slide"><img src="assets/battles/art603/image3.webp" alt="Quarter Guard of RATTRAY'S SIKHS, 1890" loading="lazy"></div>
-                <div class="battle-carousel-slide"><img src="assets/battles/art603/image4.webp" alt="Soldiers of the XLV RATTRAY'S SIKHS" loading="lazy"></div>
-                <div class="battle-carousel-slide"><img src="assets/battles/art603/image5.webp" alt="Soldiers of XLV RATTRAY'S SIKHS" loading="lazy"></div>
-                <div class="battle-carousel-slide"><img src="assets/battles/art603/image6.webp" alt="Men of RATTRAY'S SIKH in field, with a soldier practicing gymnastics in the background, 1910" loading="lazy"></div>
-                <div class="battle-carousel-slide"><img src="assets/battles/art603/image7.webp" alt="Officers and men of the XLV RATTRAY'S SIKHS, 1897" loading="lazy"></div>
+        <!-- Continuous Image Scroller -->
+        <div class="scroller-container">
+            <div class="scroller-track" style="animation-duration: 56s;">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image1.webp" alt="Belt Buckle of RATTRAY'S SIKHS" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image2.webp" alt="Captain Thomas Rattray" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image3.webp" alt="Quarter Guard of RATTRAY'S SIKHS, 1890" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image4.webp" alt="Soldiers of the XLV RATTRAY'S SIKHS" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image5.webp" alt="Soldiers of XLV RATTRAY'S SIKHS" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image6.webp" alt="Men of RATTRAY'S SIKH in field, with a soldier practicing gymnastics in the background, 1910" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image7.webp" alt="Officers and men of the XLV RATTRAY'S SIKHS, 1897" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image1.webp" alt="Belt Buckle of RATTRAY'S SIKHS" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image2.webp" alt="Captain Thomas Rattray" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image3.webp" alt="Quarter Guard of RATTRAY'S SIKHS, 1890" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image4.webp" alt="Soldiers of the XLV RATTRAY'S SIKHS" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image5.webp" alt="Soldiers of XLV RATTRAY'S SIKHS" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image6.webp" alt="Men of RATTRAY'S SIKH in field, with a soldier practicing gymnastics in the background, 1910" loading="lazy">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/battles/art603/image7.webp" alt="Officers and men of the XLV RATTRAY'S SIKHS, 1897" loading="lazy">
             </div>
-
-            <div class="battle-carousel-caption">
-                <div class="battle-carousel-title">Belt Buckle of RATTRAY'S SIKHS</div>
-                <div class="battle-carousel-counter" id="slideCounter">1 / 7</div>
-            </div>
-
-            <!-- dot indicators -->
-            <div class="battle-carousel-dots" id="carouselDots"></div>
-
-            <!-- arrows -->
-            <button class="battle-carousel-arrow prev" onclick="prevSlide()">&#8592;</button>
-            <button class="battle-carousel-arrow next" onclick="nextSlide()">&#8594;</button>
         </div>
+        
 
         <div class="audio-section">
             <audio id="artAudio" autoplay src="assets/audio/audio_603.mp3"></audio>
@@ -262,76 +138,7 @@
             }
         }
 
-        // ── Battle Carousel ──────────────────────────────────────────
-        (function () {
-            const track = document.getElementById('carouselTrack');
-            const dotsContainer = document.getElementById('carouselDots');
-            const counter = document.getElementById('slideCounter');
-            const titleEl = document.querySelector('.battle-carousel-title');
-            if (!track) return;
-
-            const descriptions = [
-                "Belt Buckle of RATTRAY'S SIKHS",
-                "Captain Thomas Rattray",
-                "Quarter Guard of RATTRAY'S SIKHS, 1890",
-                "Soldiers of the XLV RATTRAY'S SIKHS",
-                "Soldiers of XLV RATTRAY'S SIKHS",
-                "Men of RATTRAY'S SIKH in field, with a soldier practicing gymnastics in the background, 1910",
-                "Officers and men of the XLV RATTRAY'S SIKHS, 1897"
-            ];
-
-            const total = track.children.length;
-            let current = 0;
-            let timer;
-
-            // Generate dots dynamically
-            dotsContainer.innerHTML = '';
-            for (let i = 0; i < total; i++) {
-                const span = document.createElement('span');
-                if (i === 0) span.className = 'active';
-                span.addEventListener('click', () => goTo(i));
-                dotsContainer.appendChild(span);
-            }
-            const dots = dotsContainer.querySelectorAll('span');
-
-            function goTo(n) {
-                current = ((n % total) + total) % total;
-                track.style.transform = 'translateX(-' + (current * 100) + '%)';
-                dots.forEach((d, i) => d.classList.toggle('active', i === current));
-                counter.textContent = (current + 1) + ' / ' + total;
-
-                if (titleEl && descriptions[current]) {
-                    titleEl.textContent = descriptions[current];
-                }
-                resetTimer();
-            }
-
-            window.goTo = goTo;
-            window.nextSlide = function () { goTo(current + 1); };
-            window.prevSlide = function () { goTo(current - 1); };
-
-            function resetTimer() {
-                clearInterval(timer);
-                timer = setInterval(function () { goTo(current + 1); }, 3000);
-            }
-
-            // pause on hover
-            const el = document.getElementById('battleCarousel');
-            if (el) {
-                el.addEventListener('mouseenter', () => clearInterval(timer));
-                el.addEventListener('mouseleave', resetTimer);
-            }
-
-            // touch swipe
-            let touchStartX = 0;
-            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', e => {
-                const diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
-            });
-
-            resetTimer();
-        })();
+        
 
         function toggleAudio() {
             const audio = document.getElementById('artAudio');

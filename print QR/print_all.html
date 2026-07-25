@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print All QR Cards - VIRASAT</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1e293b;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .no-print-btn {
+            background: #f59e0b;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .no-print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+        }
+        
+        .card {
+            border: 4px solid #000;
+            background: white;
+            color: black;
+            width: 4.5in;
+            height: 6.5in;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5in;
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+        }
+        
+        .card-title-top {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #000;
+            border-bottom: 2px solid #000;
+            width: 100%;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .card-qr-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card-qr {
+            width: 2.8in;
+            height: 2.8in;
+        }
+        
+        .card-title-bottom {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+            margin-top: 10px;
+            word-wrap: break-word;
+            width: 100%;
+        }
+        
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .no-print-btn {
+                display: none !important;
+            }
+            .card {
+                page-break-after: always;
+                page-break-inside: avoid;
+                box-shadow: none !important;
+                margin: 0 auto !important;
+            }}
+        }
+    </style>
+</head>
+<body>
+    <button class="no-print-btn" onclick="window.print()">Print All Cards</button>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_home.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">VIRASAT EXHIBITION HOME</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_coas_citations.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">COAS CITATIONS GALLERY</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_kirti_chakra.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">KIRTI CHAKRA GALLERY</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_mahavir_chakra.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">MAHAVIR CHAKRA GALLERY</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_weapons_ammunition.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">WEAPONS & AMMUNITION</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art1.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Gurunanak Dev Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art2.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Angad Dev Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art3.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Amar Das Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art4.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Ram Das Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art5.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Arjan Dev Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art6.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Hargobind Sahib Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art7.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Har Rai Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art8.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Har Krishan Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art9.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Tegh Bahadur Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art10.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Guru Gobind Singh Ji</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art11.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Banda Singh Bahadur</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art12.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">The Khalsa Army</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art13.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Maharaja Ranjit Singh - Lion of Punjab</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art14.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Hari Singh Nalwa</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art15.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Akali Phoola Singh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art16.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">The Anglo-Sikh Wars</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art17.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">First Anglo-Sikh War (1845–46)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art18.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Second Anglo-Sikh War (1848–49)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art19.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Sham Singh Attariwala</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art20.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Muskets & Jezails of the Anglo-Sikh Wars (1845–1849)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art21.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Major General BW Key, CB, DSO, MC, ADC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art22.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Major General VR Khanolkar</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art23.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General Harbakhsh Singh, PV, PB, VrC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art24.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Major General Satinder Singh, PVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art25.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Major General RT Morlin, AVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art26.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier RG Mathur, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art27.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Major General LB Sondhi</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art28.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General PS Vadehra, PVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art29.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Major General S Chengapa, AVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art30.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General NPS Bal, AVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art31.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General MS Bhullar, PVSM, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art32.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General SS Chahal, PVSM, AVSM, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art33.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General Devraj Singh, PVSM, AVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art34.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General RS Sujlana, PVSM, AVSM, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art35.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General Sumer Singh, AVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art36.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General GS Shergill, VSM**</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art37.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General SK Jha, PVSM, AVSM, YSM, SM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art38.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant General PGK Menon, PVSM, UYSM, AVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art39.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Major General Ajay Kumar Singh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art40.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant Colonel MM Badshah</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art41.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant Colonel JC Kapoor</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art42.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant Colonel HS Gill</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art43.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant Colonel Budh Singh, MC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art44.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lieutenant Colonel Girdhari Singh, VrC, MC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art45.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel Shamsher Singh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art46.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel BS Bajwa, MC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art47.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel Gurbaksh Singh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art48.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel RC Puri</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art49.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel BB Upreti, AVSM, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art50.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel KC Kalley, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art51.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier SC Puri</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art52.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier MMS Vasir, AVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art53.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier CS Nugyal, PVSM, UYSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art54.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier MML Ahuja, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art55.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier Trilochan Singh, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art56.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier Keshav Singh, AVSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art57.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel SS Chahal</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art58.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier Kanwaljit Singh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art59.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel Tarlochan Singh Kalra</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art60.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colonel HS Toor</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art61.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier Rajinder Sharma</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art62.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier APS Pakianathan, VSM**</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art63.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier RK Gupta, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art64.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier IS Gakhal</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art65.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier Rakesh Sharma</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art66.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier HN Mhaisalkar</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art67.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier Pushkar Hiteshi</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art68.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier KBK Keshab</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art69.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier Rakesh Raina, VSM</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art70.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier M Sri Kumar, SC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art71.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Brigadier Shailesh Sati</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art72.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">The Sikh Character</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art73.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Building a Tradition of Valour</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art74.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Sikh Soldier in the Twenty-First Century</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art79.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Art Piece 79</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art80.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Art Piece 80</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art81.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Foundation of the Faith</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art82.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Creation of the Order of the Khalsa</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art83.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Organisation and Character of the Khalsa</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art84.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Organisation and Prowess of the Khalsa Army</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art91.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Rise of the Sikh Kingdom</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art92.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">The Sikh Military Machine</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art93.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Fauj-i-Ain and European Reorganisation</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art94.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Anglo-Sikh Wars</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art95.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">End of an Era</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art101.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Raising of the Sikh Battalions</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art102.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">True to Salt-1857</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art103.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Beyond the Indian Borders and Fearless on the Frontiers</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art104.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Saga of Saragarhi and Northern China</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art111.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">The Great War-Europe</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art112.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">France and Flanders, 1914-15</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art113.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Gallipoli, 1915</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art114.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Mesopotamia and Palestine</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art121.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">The New Regimental System</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art122.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Raising of the Training Battalion</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art123.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Modernisation and Regimental Identity</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art124.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Honours and Indianisation</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art131.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">North Africa and the Middle East</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art132.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Malaya and Burma</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art133.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Italy and Victory</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art141.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Partition and Reconstitution</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art142.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Operations in Jammu and Kashmir, 1947-48</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art143.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Junagarh and Operation POLO</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art144.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Re-Raising of 5 Sikh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art151.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Operation VIJAY-Liberation of Goa, 1961</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art152.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">The Indo-Sino War, 1962</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art153.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">The Battle of Walong</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art161.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Reorganisation and Re-equipment</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art162.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Raising of New Battalions</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art163.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Positioning for the Coming Conflict</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art171.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Operation GIBRALTAR</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art172.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Fighting in Jammu and Kashmir</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art173.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Barki, Khem Karan and OP Hill</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art174.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Expansion after the War</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art175.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Road to War</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art176.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Eastern Front-4 Sikh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art177.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Western Front</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art178.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">After the War</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art182.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">HISTORY OF SIKH REGIMENTAL BAND</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art183.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">New Operational Challenges</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art184.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Operation MEGHDOOT-Siachen</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art185.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Operation PAWAN-Sri Lanka</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art186.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Counter-Insurgency and Gallantry</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art187.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Operation VIJAY-Kargil</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art188.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">LIEUTENANT GENERAL HARBAKHSH SINGH PADMA VIBHUSHAN, PADMA BHUSHAN, VrC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art189.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">General RA Savory, KCIE, CB, DSO, MC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art190.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">From Korea to Gaza</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art191.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lebanon and the Blue Line</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art192.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Congo-Peacekeeping under Fire</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art195.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">CAPTAIN E JOTHAM, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art196.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">CAPTAIN STEWART CC DOUNT, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art197.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">SEPOY ISHAR SINGH, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art198.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">LIEUTENANT CG BAKER, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art199.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">BRIGADIER JG SMYTH, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art200.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">HAVILDAR PRAKASH SINGH, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art201.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">NAIK NAND SINGH, VC, MVC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art202.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">SEPOY CHHATA SINGH, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art203.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">SERGEANT MAJOR PETER GILL, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art204.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">NAIK GIAN SINGH, VC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art205.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">LANCE NAIK KARAM SINGH, PVC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art206.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">SUBEDAR JOGINDER SINGH, PVC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art207.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">HAVILDAR BACHITTAR SINGH, AC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art208.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">HAVILDAR JOGINDER SINGH, AC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art209.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">SUBEDAR SURINDER SINGH, AC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art210.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Jhelum and Nowshera</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art211.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Partition, Ambala and Meerut</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art212.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Ramgarh-The Permanent Home</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art213.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Symbols of Regimental Honour</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art214.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colours of the Original Battalions</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art215.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">From King's Colours to the Republic</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art216.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">From War Drums to Military Bands</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art217.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Early Distinction and Overseas Performances</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art218.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Edinburgh and Later Achievements</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art219.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Reuniting the Regimental Family</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art220.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Colours, Veterans and the Move to Ramgarh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art221.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">New Milestones</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art222.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">A Tradition of Excellence</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art223.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Athletics and Traditional Sports</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art224.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Hockey-The Regimental Game</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art225.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Boxing, Wrestling and Wider Achievement</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art401.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Neuve Chapelle & La Bassee (1914)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art402.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Gallipoli (1915)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art403.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Hai (1917)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art404.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Keren (1941)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art405.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Burma Campaign (1941-45)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art406.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Shalateng (1947)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art407.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Capture of Richhmar Gali (1948)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art408.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Defence of Tawang (1962)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art409.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Walong (1962)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art410.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Barki (1965)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art411.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Raja Picquet (1965)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art412.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of OP Hill (1965)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art413.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Defence of Chhamb (1971)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art414.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Defence of Poonch (1971)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art415.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Purbut Ali (1971)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art416.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Siramani (1971)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art417.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Kargil Operations (1999)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art421.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Battle of Ypres (1915)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art501.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">History of Sikh Regimental Band</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art502.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Sporting Prowess of the Sikhs</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art503.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Machine Gun Companies and Battalion</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art504.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Bonding at Sea and Air</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art505.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">9th Battalion The Sikh Regiment</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art507.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">HH Maharaja Yadavindra Singh</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art508.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Lt Gen Harbakhsh Singh, VrC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art509.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">General RA Savory, KCIE, CB, DSO, MC</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art601.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">XIV Ferozepore Sikhs</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art602.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">XV Ludhiana Sikhs</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art603.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">XLV Rattray's Sikhs</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art604.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">XXXV Sikhs</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art605.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">Re-organisation of the Indian Army (1922)</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-title-top">VIRASAT</div>
+        <div class="card-qr-container">
+            <img class="card-qr" src="qrcodes/qr_art606.png" alt="QR Code">
+        </div>
+        <div class="card-title-bottom">XXXVI Sikhs</div>
+    </div>
+    
+</body>
+</html>

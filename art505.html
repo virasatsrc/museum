@@ -6,84 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9th Battalion The Sikh Regiment - Museum Gallery</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* ── Carousel ── */
-        .carousel-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto 24px;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.55);
-            background: #111;
-        }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
-            will-change: transform;
-        }
-        .carousel-slide {
-            min-width: 100%;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #111;
-        }
-        .carousel-slide img {
-            width: 100%;
-            height: auto;
-            max-height: 620px;
-            object-fit: contain;
-            display: block;
-            filter: sepia(12%) contrast(1.05);
-        }
-        .carousel-slide .slide-caption {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.80));
-            color: #f5e6c8;
-            font-size: 0.82rem;
-            letter-spacing: 0.03em;
-            padding: 32px 18px 10px;
-            font-style: italic;
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%; transform: translateY(-50%);
-            background: rgba(0,0,0,0.50);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: #fff;
-            width: 42px; height: 42px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem;
-            transition: background 0.2s;
-            z-index: 10;
-        }
-        .carousel-btn:hover { background: rgba(0,0,0,0.80); }
-        .carousel-btn.prev { left: 12px; }
-        .carousel-btn.next { right: 12px; }
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 7px;
-            padding: 10px 0 4px;
-        }
-        .carousel-dots span {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.3);
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-        }
-        .carousel-dots span.active {
-            background: #f59e0b;
-            transform: scale(1.35);
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -104,51 +27,29 @@
 
         <h1>9th Battalion The Sikh Regiment</h1>
 
-        <!-- Auto-scrolling Photo Carousel -->
-        <div class="carousel-wrapper" id="carousel505">
-            <div class="carousel-track" id="carouselTrack505">
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s1.webp" alt="Sikh soldiers group photograph">
-                    <div class="slide-caption">Officers and men of the Sikh Regiment — battalion group photograph</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s2.webp" alt="Battalion parade">
-                    <div class="slide-caption">The Battalion on parade — full battalion strength assembled with vehicles</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s3.webp" alt="Sikh Regiment officers in dress uniform">
-                    <div class="slide-caption">Sikh Regiment officers in full dress uniform with decorations</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s4.webp" alt="Grenade training">
-                    <div class="slide-caption">Grenade throwing training — Sikh soldier in full battle kit</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s5.webp" alt="Signallers with equipment">
-                    <div class="slide-caption">Signallers with communications equipment — field training</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s6.webp" alt="Officer inspection">
-                    <div class="slide-caption">General Officer inspecting troops on parade</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s7.webp" alt="Anti-tank rifle training">
-                    <div class="slide-caption">Anti-tank rifle training — Sikh soldiers in prone firing position</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s8.webp" alt="General introducing officers">
-                    <div class="slide-caption">Major General being introduced to the Regiment's officers</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/art/art_505_s9.webp" alt="VB gun training">
-                    <div class="slide-caption">Bren gun section in fire position during training exercise</div>
-                </div>
+        <!-- Continuous Image Scroller -->
+        <div class="scroller-container">
+            <div class="scroller-track" style="animation-duration: 72s;">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s1.webp" alt="Sikh soldiers group photograph">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s2.webp" alt="Battalion parade">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s3.webp" alt="Sikh Regiment officers in dress uniform">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s4.webp" alt="Grenade training">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s5.webp" alt="Signallers with equipment">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s6.webp" alt="Officer inspection">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s7.webp" alt="Anti-tank rifle training">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s8.webp" alt="General introducing officers">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s9.webp" alt="VB gun training">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s1.webp" alt="Sikh soldiers group photograph">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s2.webp" alt="Battalion parade">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s3.webp" alt="Sikh Regiment officers in dress uniform">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s4.webp" alt="Grenade training">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s5.webp" alt="Signallers with equipment">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s6.webp" alt="Officer inspection">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s7.webp" alt="Anti-tank rifle training">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s8.webp" alt="General introducing officers">
+                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s9.webp" alt="VB gun training">
             </div>
-            <button class="carousel-btn prev" id="prevBtn505" aria-label="Previous">&#8249;</button>
-            <button class="carousel-btn next" id="nextBtn505" aria-label="Next">&#8250;</button>
         </div>
-        <div class="carousel-dots" id="carouselDots505"></div>
-
         <div class="audio-section">
             <audio id="artAudio" autoplay src="assets/audio/audio_505.mp3"></audio>
             <button class="play-btn" onclick="toggleAudio()">
@@ -203,52 +104,7 @@
     </div>
 
     <script>
-        // ── Carousel Logic ──
-        (function() {
-            const track = document.getElementById('carouselTrack505');
-            const slides = track.querySelectorAll('.carousel-slide');
-            const dotsContainer = document.getElementById('carouselDots505');
-            const total = slides.length;
-            let current = 0;
-            let timer;
-
-            // Build dots
-            slides.forEach((_,i) => {
-                const d = document.createElement('span');
-                if(i===0) d.classList.add('active');
-                d.addEventListener('click', () => goTo(i));
-                dotsContainer.appendChild(d);
-            });
-            const dots = dotsContainer.querySelectorAll('span');
-
-            function goTo(n) {
-                current = (n + total) % total;
-                track.style.transform = `translateX(-${current * 100}%)`;
-                dots.forEach((d,i) => d.classList.toggle('active', i===current));
-            }
-
-            function next() { goTo(current + 1); }
-            function prev() { goTo(current - 1); }
-
-            document.getElementById('nextBtn505').addEventListener('click', () => { clearInterval(timer); next(); startTimer(); });
-            document.getElementById('prevBtn505').addEventListener('click', () => { clearInterval(timer); prev(); startTimer(); });
-
-            function startTimer() { timer = setInterval(next, 4000); }
-
-            const wrapper = document.getElementById('carousel505');
-            wrapper.addEventListener('mouseenter', () => clearInterval(timer));
-            wrapper.addEventListener('mouseleave', startTimer);
-
-            // Touch/swipe support
-            let startX = 0;
-            wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
-            wrapper.addEventListener('touchend', e => {
-                const dx = e.changedTouches[0].clientX - startX;
-                if(Math.abs(dx) > 40) { clearInterval(timer); dx < 0 ? next() : prev(); startTimer(); }
-            }, {passive:true});
-
-            startTimer();
-        })();
+        
 
         document.addEventListener("DOMContentLoaded", function () {
             const audio = document.getElementById('artAudio');
@@ -290,6 +146,17 @@
                 audio.pause();
             }
         }
+    
+        function openFullscreen(img) {
+            if (!document.fullscreenElement) {
+                if (img.requestFullscreen) img.requestFullscreen();
+                else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            }
+        }
+        
     </script>
 </body>
 
