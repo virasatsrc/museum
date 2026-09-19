@@ -1,0 +1,39 @@
+# Netlify configuration for Virasat Museum
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/art:num"
+  to = "/art:num.html"
+  status = 200
+
+[[redirects]]
+  from = "/coas_citations"
+  to = "/coas_citations.html"
+  status = 200
+
+[[redirects]]
+  from = "/kirti_chakra"
+  to = "/kirti_chakra.html"
+  status = 200
+
+[[redirects]]
+  from = "/mahavir_chakra"
+  to = "/mahavir_chakra.html"
+  status = 200
+
+[[redirects]]
+  from = "/weapons_ammunition"
+  to = "/weapons_ammunition.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

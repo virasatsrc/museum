@@ -138,10 +138,26 @@ def generate_card(title, qr_path, out_path):
     top_spaced = "  ".join(list(top_text))
     bbox_top = draw.textbbox((0, 0), top_spaced, font=font_top)
     w_top = bbox_top[2] - bbox_top[0]
-    draw.text(((W - w_top) / 2, 115), top_spaced, fill='black', font=font_top)
+    draw.text(((W - w_top) / 2, 95), top_spaced, fill='black', font=font_top)
     
-    # Horizontal line under VIRASAT: at y=250
-    draw.line([(140, 250), (W - 140, 250)], fill='black', width=4)
+    # Horizontal line under VIRASAT: at y=210
+    draw.line([(140, 210), (W - 140, 210)], fill='black', width=4)
+    
+    # Multilingual Language Patch Badge on Top (y=230 to y=310)
+    try:
+        font_lang = ImageFont.truetype('C:/Windows/Fonts/Nirmala.ttc', 36)
+    except:
+        font_lang = ImageFont.load_default()
+    
+    patch_text = "ENGLISH   •   हिन्दी   •   ਪੰਜਾਬੀ"
+    bbox_patch = draw.textbbox((0, 0), patch_text, font=font_lang)
+    w_patch = bbox_patch[2] - bbox_patch[0]
+    h_patch = bbox_patch[3] - bbox_patch[1]
+    
+    # Draw pill outline for language patch
+    patch_box = [(W - w_patch) / 2 - 32, 232, (W + w_patch) / 2 + 32, 232 + h_patch + 24]
+    draw.rounded_rectangle(patch_box, radius=22, outline='#1e293b', width=3)
+    draw.text(((W - w_patch) / 2, 240), patch_text, fill='black', font=font_lang)
     
     # Center QR Code: ~800x800 centered between y=320 and y=1300
     if os.path.exists(qr_path):
@@ -217,6 +233,7 @@ all_cards_html = []
 for item in all_items:
     all_cards_html.append(f'''    <div class="card">
         <div class="card-title-top">VIRASAT</div>
+        <div class="card-lang-patch">ENGLISH &bull; हिन्दी &bull; ਪੰਜਾਬੀ</div>
         <div class="card-qr-container">
             <img class="card-qr" src="qrcodes/{item['print_qr']}" alt="QR Code">
         </div>
@@ -272,21 +289,34 @@ new_print_all = f'''<!DOCTYPE html>
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0.3in 0.4in 0.25in 0.4in;
+            padding: 0.25in 0.4in 0.25in 0.4in;
             box-sizing: border-box;
             text-align: center;
             box-shadow: 0 8px 30px rgba(0,0,0,0.5);
         }}
         
         .card-title-top {{
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 700;
             letter-spacing: 0.1em;
             color: #000;
             border-bottom: 2px solid #000;
             width: 100%;
-            padding-bottom: 8px;
-            margin-bottom: 10px;
+            padding-bottom: 6px;
+            margin-bottom: 6px;
+        }}
+        
+        .card-lang-patch {{
+            font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+            border: 1.5px solid #000;
+            border-radius: 20px;
+            padding: 3px 14px;
+            margin: 0px auto 6px auto;
+            letter-spacing: 0.5px;
+            background: #f8fafc;
+            display: inline-block;
         }}
         
         .card-qr-container {{
@@ -294,7 +324,7 @@ new_print_all = f'''<!DOCTYPE html>
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 15px 0;
+            margin: 10px 0;
         }}
         
         .card-qr {{
