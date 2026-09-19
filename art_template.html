@@ -8,6 +8,17 @@
 </head>
 <body>
     <div class="gallery-container">
+        <!-- Language Switcher Bar -->
+        <div class="lang-switch-bar">
+            <a class="lang-portal-link" href="index.html">
+                🏛️ Language Portal
+            </a>
+            <div class="lang-btn-group">
+                <a class="lang-nav-btn active" href="{{ art_id }}.html" onclick="setMuseumLang('en')">🇬🇧 English</a>
+                <a class="lang-nav-btn" href="{{ art_id }}_hi.html" onclick="setMuseumLang('hi')">🇮🇳 हिन्दी</a>
+                <a class="lang-nav-btn" href="{{ art_id }}_pa.html" onclick="setMuseumLang('pa')">ੴ ਪੰਜਾਬੀ</a>
+            </div>
+        </div>
         
         <!-- Home Button -->
         <div style="margin-bottom: 20px;">
@@ -119,5 +130,6 @@
             }
         }
     </script>
+    <script src="js/qr_lang.js"></script>
 </body>
 </html>
