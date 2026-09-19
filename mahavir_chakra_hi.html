@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>महावीर चक्र - विरासत संग्रहालय</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+        /* Slider Specific Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 950px;
+            margin: 30px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .slides-wrapper {
+            position: relative;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide-images-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 60px 100px 60px; /* Space for arrow controls on sides, caption on bottom */
+            background-color: #050b14;
+        }
+
+        .awardee-img, .medal-img {
+            max-width: 42%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .awardee-img:hover, .medal-img:hover {
+            transform: scale(1.03);
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 32px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Fullscreen slide double-click style */
+        .awardee-img:fullscreen, .medal-img:fullscreen {
+            object-fit: contain;
+            background-color: #000;
+            border: none;
+            transform: none;
+        }
+
+        .caption-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+            padding: 40px 20px 25px 20px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .caption-text {
+            color: var(--text-main);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Controls */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .slider-arrow:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            border-color: var(--accent-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-prev {
+            left: 20px;
+        }
+
+        .arrow-next {
+            right: 20px;
+        }
+
+        /* Dots Indicator */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .dot.active {
+            background: var(--accent-color);
+            transform: scale(1.2);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .slide-counter {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .slides-wrapper {
+                height: 450px;
+            }
+            .slide-images-container {
+                gap: 15px;
+                padding: 30px 40px 80px 40px;
+            }
+            .caption-text {
+                font-size: 1.05rem;
+            }
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ भाषा चयन
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="mahavir_chakra.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇬🇧 English</a>
+<a class="nav-link" href="mahavir_chakra_hi.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="mahavir_chakra_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
+
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+<a class="nav-link" href="index_hi.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> मुख्य पृष्ठ</a>
+<span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">प्रसिद्धि का हॉल</span>
+</div>
+<h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">महावीर चक्र</h1>
+<p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">दुश्मन के सामने वीरता के विशिष्ट कार्यों के लिए पहचाने जाने वाले सिख रेजिमेंट के महावीर चक्र (एमवीसी) पुरस्कार विजेताओं के बारे में जानें। फ़ुलस्क्रीन में देखने के लिए किसी भी फ़ोटो पर डबल-क्लिक करें।</p>
+<!-- Slider Section -->
+<div class="slider-container">
+<!-- Arrows -->
+<button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<button class="slider-arrow arrow-next" onclick="changeSlide(1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+<!-- Slides Wrapper -->
+<div class="slides-wrapper">
+<!-- Slide 231 -->
+<div class="slide active">
+<div class="slide-images-container">
+<img alt="Sepoy Kewal Singh" class="awardee-img" src="assets/art/mvc_awardee_231.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">सिपाही केवल सिंह (भारत-चीन युद्ध, 1962)</div>
+</div>
+</div>
+<!-- Slide 232 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel Diwan Ranjit Rai" class="awardee-img" src="assets/art/mvc_awardee_232.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">लेफ्टिनेंट कर्नल दीवान रणजीत राय (भारत-पाकिस्तान युद्ध, 1947-48)</div>
+</div>
+</div>
+<!-- Slide 233 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Subedar Bishan Singh, MC, OBI" class="awardee-img" src="assets/art/mvc_awardee_233.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">सूबेदार बिशन सिंह, एमसी, ओबीआई (भारत-पाकिस्तान युद्ध, 1947-48)</div>
+</div>
+</div>
+<!-- Slide 234 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lance Naik Shangara Singh" class="awardee-img" src="assets/art/mvc_awardee_234.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">लांस नायक शंगारा सिंह (भारत-पाकिस्तान युद्ध, 1971)</div>
+</div>
+</div>
+<!-- Slide 235 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel KL Rattan" class="awardee-img" src="assets/art/mvc_awardee_235.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">लेफ्टिनेंट कर्नल केएल रतन (भारत-पाकिस्तान युद्ध, 1971)</div>
+</div>
+</div>
+<!-- Slide 236 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel NN Khanna" class="awardee-img" src="assets/art/mvc_awardee_236.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">लेफ्टिनेंट कर्नल एनएन खन्ना (भारत-चीन युद्ध, 1962)</div>
+</div>
+</div>
+<!-- Slide 237 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Subedar Ajit Singh" class="awardee-img" src="assets/art/mvc_awardee_237.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">सूबेदार अजीत सिंह (भारत-पाकिस्तान युद्ध, 1965)</div>
+</div>
+</div>
+<!-- Slide 238 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Major Jaivir Singh" class="awardee-img" src="assets/art/mvc_awardee_238.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">मेजर जयवीर सिंह (भारत-पाकिस्तान युद्ध, 1971)</div>
+</div>
+</div>
+<!-- Slide 239 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel PK Khanna" class="awardee-img" src="assets/art/mvc_awardee_239.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">लेफ्टिनेंट कर्नल पीके खन्ना (भारत-पाकिस्तान युद्ध, 1971)</div>
+</div>
+</div>
+<!-- Slide 240 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Naik Chand Singh" class="awardee-img" src="assets/art/mvc_awardee_240.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">नायक चंद सिंह (भारत-पाकिस्तान युद्ध, 1947-48)</div>
+</div>
+</div>
+<!-- Slide 241 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Captain Mahabir Prasad" class="awardee-img" src="assets/art/mvc_awardee_241.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">कैप्टन महाबीर प्रसाद (भारत-चीन युद्ध, 1962)</div>
+</div>
+</div>
+<!-- Slide 242 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Jemadar Nand Singh, VC" class="awardee-img" src="assets/art/mvc_awardee_242.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">जमादार नंद सिंह, वीसी (भारत-पाकिस्तान युद्ध, 1947-48)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide Counter -->
+<div class="slide-counter" id="slideCounter">Slide 1 of 12</div>
+<!-- Dots Indicator -->
+<div class="slider-dots" id="dotsContainer"></div>
+</div>
+<script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideCounter = document.getElementById('slideCounter');
+        const dotsContainer = document.getElementById('dotsContainer');
+        let slideInterval;
+
+        // Initialize dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetAutoplay();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    dots[index].classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                    dots[index].classList.remove('active');
+                }
+            });
+            slideCounter.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            updateSlide();
+            resetAutoplay();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // Double-click image to toggle fullscreen mode
+        document.querySelectorAll('.slide img').forEach(img => {
+            img.addEventListener('dblclick', function () {
+                if (!document.fullscreenElement) {
+                    if (this.requestFullscreen) {
+                        this.requestFullscreen();
+                    } else if (this.webkitRequestFullscreen) { // Safari
+                        this.webkitRequestFullscreen();
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { // Safari
+                        document.webkitExitFullscreen();
+                    }
+                }
+            });
+        });
+
+        // Pause autoplay during fullscreen
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+        function handleFullscreenChange() {
+            if (document.fullscreenElement || document.webkitFullscreenElement) {
+                clearInterval(slideInterval);
+            } else {
+                resetAutoplay();
+            }
+        }
+
+        // Autoplay feature
+        function startAutoplay() {
+            slideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 6000); // changes slide every 6 seconds
+        }
+
+        function resetAutoplay() {
+            clearInterval(slideInterval);
+            startAutoplay();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
+        // Initialize autoplay on load
+        startAutoplay();
+    </script>
+</body>
+</html>

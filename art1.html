@@ -1,87 +1,90 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gurunanak Dev Ji - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gurunanak Dev Ji - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="gallery-container">
-        
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-        </div>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="art1.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="art1_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="art1_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
 
-        <h1>Gurunanak Dev Ji</h1>
-        
-        <div class="photo-wrapper">
-            <img class="photo-background" src="assets/art/art_1.webp" alt="" onerror="this.style.display='none'">
-            <img class="photo-main" src="assets/art/art_1.webp" alt="Art Piece 1" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'">
-        </div>
-
-        <div class="audio-section">
-            <audio id="artAudio" autoplay src="assets/audio/audio_1.mp3"></audio>
-            <button class="play-btn" onclick="toggleAudio()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+</div>
+<h1>Gurunanak Dev Ji</h1>
+<div class="photo-wrapper">
+<img alt="" class="photo-background" onerror="this.style.display='none'" src="assets/art/art_1.webp"/>
+<img alt="Art Piece 1" class="photo-main" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'" src="assets/art/art_1.webp"/>
+</div>
+<div class="audio-section">
+<audio autoplay="" id="artAudio" src="assets/audio/audio_1.mp3"></audio>
+<button class="play-btn" onclick="toggleAudio()">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
                 Listen to Narration
             </button>
+</div>
+<div class="description-box">
+<strong>Title:</strong> Guru Nanak Dev Ji<br/>
+<strong>Category:</strong> Religious Corner<br/>
+<strong>Artist:</strong> Historical Figure<br/>
+<strong>Year:</strong> 1469 – 1539
         </div>
-
-        <div class="description-box">
-            <strong>Title:</strong> Guru Nanak Dev Ji<br>
-            <strong>Category:</strong> Religious Corner<br>
-            <strong>Artist:</strong> Historical Figure<br>
-            <strong>Year:</strong> 1469 – 1539
-        </div>
-
-        <div class="description-box">
-            <strong>GURU NANAK DEV JI</strong><br><br>
-            The founder of Sikh faith was born on 15 April 1469 at Talwandi village near Lahore (now in Pakistan) to Kalyan Chand and Mata Tripta. Right from his birth, Guru Nanak had a religious bent of mind - his later travels to major religious centers worldwide helped crystallise his own ideas and give sharper definition to the contours of a new religion - Sikhism. Impressed by the basic compassion of Hinduism and the essential brotherhood of Islam, Guru Nanak professed equality of all humans in the sight of God. He instituted the Gurmukhi Script ('from the Guru's Mouth') to communicate with his followers. Guru Nanak's 974 hymns form the significant part of Guru Granth Sahib, which was compiled 65 years after his death. He did not appoint a successor from his two sons but chose Bhai Lehna (later, Guru Angad Dev Ji), who was his devout follower, to take his teachings forward. Guru Nanak died at Kartarpur on 07 September 1539.<br><br>
-            <em>'God has His seat everywhere. His treasure houses are in all places'</em><br>
-            <strong>Guru Granth Sahib</strong><br>
+<div class="description-box">
+<strong>GURU NANAK DEV JI</strong><br/><br/>
+            The founder of Sikh faith was born on 15 April 1469 at Talwandi village near Lahore (now in Pakistan) to Kalyan Chand and Mata Tripta. Right from his birth, Guru Nanak had a religious bent of mind - his later travels to major religious centers worldwide helped crystallise his own ideas and give sharper definition to the contours of a new religion - Sikhism. Impressed by the basic compassion of Hinduism and the essential brotherhood of Islam, Guru Nanak professed equality of all humans in the sight of God. He instituted the Gurmukhi Script ('from the Guru's Mouth') to communicate with his followers. Guru Nanak's 974 hymns form the significant part of Guru Granth Sahib, which was compiled 65 years after his death. He did not appoint a successor from his two sons but chose Bhai Lehna (later, Guru Angad Dev Ji), who was his devout follower, to take his teachings forward. Guru Nanak died at Kartarpur on 07 September 1539.<br/><br/>
+<em>'God has His seat everywhere. His treasure houses are in all places'</em><br/>
+<strong>Guru Granth Sahib</strong><br/>
             Japji. p.5
         </div>
-
-        <div class="navigation">
-            <a href="#" class="nav-link disabled">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
+<div class="navigation">
+<a class="nav-link disabled" href="#">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
                 Previous Piece
             </a>
-            <span style="color: #94a3b8;">Piece 1 / 20</span>
-            <a href="art2.html" class="nav-link ">
+<span style="color: #94a3b8;">Piece 1 / 20</span>
+<a class="nav-link" href="art2.html">
                 Next Piece
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_art_1.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this art record in Chrome on your phone.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
+<!-- QR Code Section -->
+<div class="qr-container">
+<div class="qr-wrapper">
+<img alt="Scan for mobile" src="assets/qrcodes/qr_art_1.png"/>
+<div class="qr-info">
+<h3>Open on Mobile</h3>
+<p>Scan to view this art record in Chrome on your phone.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
         document.addEventListener("DOMContentLoaded", function() {
             const audio = document.getElementById('artAudio');
             const btn = document.querySelector('.play-btn');

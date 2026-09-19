@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COAS Citations - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COAS Citations - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
         /* Slider Specific Styles */
         .slider-container {
             position: relative;
@@ -172,222 +173,219 @@
     </style>
 </head>
 <body>
-    <div class="gallery-container">
-        
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-            <span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">SIKH REGIMENT HONOURS</span>
-        </div>
-
-        <h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">COAS CITATIONS</h1>
-        <p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="coas_citations.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="coas_citations_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="coas_citations_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+<span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">SIKH REGIMENT HONOURS</span>
+</div>
+<h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">COAS CITATIONS</h1>
+<p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">
             Explore the Chief of the Army Staff (COAS) Unit Citations awarded to the battalions of the Sikh Regiment for their exceptional valour, dedication, and service.
         </p>
-
-        <!-- Slider Section -->
-        <div class="slider-container">
-            <!-- Arrows -->
-            <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button class="slider-arrow arrow-next" onclick="changeSlide(1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-
-            <!-- Slides Wrapper -->
-            <div class="slides-wrapper">
-                
-                <!-- Slide 210 -->
-                <div class="slide active">
-                    <img src="assets/art/coas_210.webp" alt="COAS unit citation to 6 SIKH (1993)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 6 SIKH (1993)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 211 -->
-                <div class="slide">
-                    <img src="assets/art/coas_211.webp" alt="COAS unit citation to 2 SIKH (1994)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 2 SIKH (1994)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 212 -->
-                <div class="slide">
-                    <img src="assets/art/coas_212.webp" alt="COAS unit citation to 6 RR (1994)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 6 RR (1994)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 213 -->
-                <div class="slide">
-                    <img src="assets/art/coas_213.webp" alt="COAS unit citation to 18 SIKH (1997)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 18 SIKH (1997)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 214 -->
-                <div class="slide">
-                    <img src="assets/art/coas_214.webp" alt="Bravest of the Brave to 1 SIKH (1997)">
-                    <div class="caption-bar">
-                        <div class="caption-text">Bravest of the Brave to 1 SIKH (1997)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 215 -->
-                <div class="slide">
-                    <img src="assets/art/coas_215.webp" alt="Bravest of the Brave to 2 SIKH (1997)">
-                    <div class="caption-bar">
-                        <div class="caption-text">Bravest of the Brave to 2 SIKH (1997)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 216 -->
-                <div class="slide">
-                    <img src="assets/art/coas_216.webp" alt="COAS unit citation to 8 SIKH (2000)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 8 SIKH (2000)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 217 -->
-                <div class="slide">
-                    <img src="assets/art/coas_217.webp" alt="COAS unit citation to 22 SIKH (2001)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 22 SIKH (2001)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 218 -->
-                <div class="slide">
-                    <img src="assets/art/coas_218.webp" alt="COAS unit citation to 2 SIKH (2002)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 2 SIKH (2002)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 219 -->
-                <div class="slide">
-                    <img src="assets/art/coas_219.webp" alt="COAS unit citation to 16 SIKH (2002)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 16 SIKH (2002)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 220 -->
-                <div class="slide">
-                    <img src="assets/art/coas_220.webp" alt="COAS unit citation to 18 SIKH (2002)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 18 SIKH (2002)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 221 -->
-                <div class="slide">
-                    <img src="assets/art/coas_221.webp" alt="COAS unit citation to 20 SIKH (2002)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 20 SIKH (2002)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 222 -->
-                <div class="slide">
-                    <img src="assets/art/coas_222.webp" alt="COAS unit citation to 3 SIKH (2003)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 3 SIKH (2003)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 223 -->
-                <div class="slide">
-                    <img src="assets/art/coas_223.webp" alt="COAS unit citation to 7 SIKH (2003)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 7 SIKH (2003)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 224 -->
-                <div class="slide">
-                    <img src="assets/art/coas_224.webp" alt="COAS unit citation to 16 RR (2003)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 16 RR (2003)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 225 -->
-                <div class="slide">
-                    <img src="assets/art/coas_225.webp" alt="COAS unit citation to 3 SIKH (2011)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 3 SIKH (2011)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 226 -->
-                <div class="slide">
-                    <img src="assets/art/coas_226.webp" alt="COAS unit citation to 13 SIKH (2013)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 13 SIKH (2013)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 227 -->
-                <div class="slide">
-                    <img src="assets/art/coas_227.webp" alt="COAS unit citation to 5 SIKH">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 5 SIKH</div>
-                    </div>
-                </div>
-
-                <!-- Slide 228 -->
-                <div class="slide">
-                    <img src="assets/art/coas_228.webp" alt="COAS unit citation to 18 SIKH (2014)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 18 SIKH (2014)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 229 -->
-                <div class="slide">
-                    <img src="assets/art/coas_229.webp" alt="COAS unit citation to 6 RR (2015)">
-                    <div class="caption-bar">
-                        <div class="caption-text">COAS unit citation to 6 RR (2015)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 230 -->
-                <div class="slide">
-                    <img src="assets/art/coas_230.webp" alt="GOC-in-C (CC) unit appreciation to SRC (2015)">
-                    <div class="caption-bar">
-                        <div class="caption-text">GOC-in-C (CC) unit appreciation to SRC (2015)</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Slide Counter -->
-        <div class="slide-counter" id="slideCounter">Slide 1 of 21</div>
-
-        <!-- Dots Indicator -->
-        <div class="slider-dots" id="dotsContainer"></div>
-
-    </div>
-
-    <script>
+<!-- Slider Section -->
+<div class="slider-container">
+<!-- Arrows -->
+<button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<button class="slider-arrow arrow-next" onclick="changeSlide(1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+<!-- Slides Wrapper -->
+<div class="slides-wrapper">
+<!-- Slide 210 -->
+<div class="slide active">
+<img alt="COAS unit citation to 6 SIKH (1993)" src="assets/art/coas_210.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 6 SIKH (1993)</div>
+</div>
+</div>
+<!-- Slide 211 -->
+<div class="slide">
+<img alt="COAS unit citation to 2 SIKH (1994)" src="assets/art/coas_211.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 2 SIKH (1994)</div>
+</div>
+</div>
+<!-- Slide 212 -->
+<div class="slide">
+<img alt="COAS unit citation to 6 RR (1994)" src="assets/art/coas_212.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 6 RR (1994)</div>
+</div>
+</div>
+<!-- Slide 213 -->
+<div class="slide">
+<img alt="COAS unit citation to 18 SIKH (1997)" src="assets/art/coas_213.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 18 SIKH (1997)</div>
+</div>
+</div>
+<!-- Slide 214 -->
+<div class="slide">
+<img alt="Bravest of the Brave to 1 SIKH (1997)" src="assets/art/coas_214.webp"/>
+<div class="caption-bar">
+<div class="caption-text">Bravest of the Brave to 1 SIKH (1997)</div>
+</div>
+</div>
+<!-- Slide 215 -->
+<div class="slide">
+<img alt="Bravest of the Brave to 2 SIKH (1997)" src="assets/art/coas_215.webp"/>
+<div class="caption-bar">
+<div class="caption-text">Bravest of the Brave to 2 SIKH (1997)</div>
+</div>
+</div>
+<!-- Slide 216 -->
+<div class="slide">
+<img alt="COAS unit citation to 8 SIKH (2000)" src="assets/art/coas_216.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 8 SIKH (2000)</div>
+</div>
+</div>
+<!-- Slide 217 -->
+<div class="slide">
+<img alt="COAS unit citation to 22 SIKH (2001)" src="assets/art/coas_217.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 22 SIKH (2001)</div>
+</div>
+</div>
+<!-- Slide 218 -->
+<div class="slide">
+<img alt="COAS unit citation to 2 SIKH (2002)" src="assets/art/coas_218.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 2 SIKH (2002)</div>
+</div>
+</div>
+<!-- Slide 219 -->
+<div class="slide">
+<img alt="COAS unit citation to 16 SIKH (2002)" src="assets/art/coas_219.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 16 SIKH (2002)</div>
+</div>
+</div>
+<!-- Slide 220 -->
+<div class="slide">
+<img alt="COAS unit citation to 18 SIKH (2002)" src="assets/art/coas_220.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 18 SIKH (2002)</div>
+</div>
+</div>
+<!-- Slide 221 -->
+<div class="slide">
+<img alt="COAS unit citation to 20 SIKH (2002)" src="assets/art/coas_221.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 20 SIKH (2002)</div>
+</div>
+</div>
+<!-- Slide 222 -->
+<div class="slide">
+<img alt="COAS unit citation to 3 SIKH (2003)" src="assets/art/coas_222.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 3 SIKH (2003)</div>
+</div>
+</div>
+<!-- Slide 223 -->
+<div class="slide">
+<img alt="COAS unit citation to 7 SIKH (2003)" src="assets/art/coas_223.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 7 SIKH (2003)</div>
+</div>
+</div>
+<!-- Slide 224 -->
+<div class="slide">
+<img alt="COAS unit citation to 16 RR (2003)" src="assets/art/coas_224.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 16 RR (2003)</div>
+</div>
+</div>
+<!-- Slide 225 -->
+<div class="slide">
+<img alt="COAS unit citation to 3 SIKH (2011)" src="assets/art/coas_225.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 3 SIKH (2011)</div>
+</div>
+</div>
+<!-- Slide 226 -->
+<div class="slide">
+<img alt="COAS unit citation to 13 SIKH (2013)" src="assets/art/coas_226.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 13 SIKH (2013)</div>
+</div>
+</div>
+<!-- Slide 227 -->
+<div class="slide">
+<img alt="COAS unit citation to 5 SIKH" src="assets/art/coas_227.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 5 SIKH</div>
+</div>
+</div>
+<!-- Slide 228 -->
+<div class="slide">
+<img alt="COAS unit citation to 18 SIKH (2014)" src="assets/art/coas_228.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 18 SIKH (2014)</div>
+</div>
+</div>
+<!-- Slide 229 -->
+<div class="slide">
+<img alt="COAS unit citation to 6 RR (2015)" src="assets/art/coas_229.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS unit citation to 6 RR (2015)</div>
+</div>
+</div>
+<!-- Slide 230 -->
+<div class="slide">
+<img alt="GOC-in-C (CC) unit appreciation to SRC (2015)" src="assets/art/coas_230.webp"/>
+<div class="caption-bar">
+<div class="caption-text">GOC-in-C (CC) unit appreciation to SRC (2015)</div>
+</div>
+</div>
+<div class="slide">
+<img alt="COAS CITATION AWARDED TO 19 SIKH" src="assets/art/coas_231.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS CITATION AWARDED TO 19 SIKH</div>
+</div>
+</div><div class="slide">
+<img alt="COAS CITATION AWARDED TO 20 SIKH" src="assets/art/coas_232.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS CITATION AWARDED TO 20 SIKH</div>
+</div>
+</div><div class="slide">
+<img alt="COAS CITATION AWARDED TO 25 SIKH" src="assets/art/coas_233.webp"/>
+<div class="caption-bar">
+<div class="caption-text">COAS CITATION AWARDED TO 25 SIKH</div>
+</div>
+</div></div>
+</div>
+<!-- Slide Counter -->
+<div class="slide-counter" id="slideCounter">Slide 1 of 24</div>
+<!-- Dots Indicator -->
+<div class="slider-dots" id="dotsContainer"></div>
+</div>
+<script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const slideCounter = document.getElementById('slideCounter');

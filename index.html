@@ -1,1385 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum Gallery - Home</title>
+    <title>VIRASAT - The Sikh Regimental Heritage Museum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Mukta:wght@400;600;700;800&family=Gurmukhi+MN&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <style>
-        .ramgarh-scroller-slide {
-            display: inline-block;
-            vertical-align: top;
-            margin: 0 15px;
-            width: 300px;
-            white-space: normal;
-            text-align: center;
+        :root {
+            --gold-gradient: linear-gradient(135deg, #fce043 0%, #fb7185 50%, #f59e0b 100%);
+            --gold-solid: #f59e0b;
+            --gold-bright: #fbbf24;
+            --primary-bg: #070c14;
+            --card-glass: rgba(15, 23, 42, 0.78);
+            --card-border: rgba(245, 158, 11, 0.25);
+            --card-hover-border: rgba(251, 191, 36, 0.8);
         }
 
-        .ramgarh-scroller-slide img {
-            height: 320px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--primary-bg);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hero Background with Museum Photo */
+        .landing-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            border: 2px solid var(--glass-border);
-            transition: all 0.3s ease;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at center, rgba(7, 12, 20, 0.6) 0%, rgba(7, 12, 20, 0.92) 80%),
+                url('assets/virasat/DSC_0438.webp');
+            background-size: cover;
+            background-position: center 35%;
+            filter: brightness(0.9);
+            z-index: -2;
+            transform: scale(1.03);
+            animation: zoomSlow 30s ease-in-out infinite alternate;
+        }
+
+        @keyframes zoomSlow {
+            0% { transform: scale(1.0); }
+            100% { transform: scale(1.06); }
+        }
+
+        .ambient-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vh;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .landing-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* Museum Header */
+        .insignia-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            padding: 8px 24px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .insignia-text {
+            color: var(--gold-bright);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            font-weight: 900;
+            letter-spacing: 4px;
+            background: linear-gradient(180deg, #ffffff 20%, #fde68a 60%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            margin-bottom: 12px;
+            line-height: 1.15;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            color: #cbd5e1;
+            font-weight: 400;
+            max-width: 780px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .museum-photo-preview {
+            width: 100%;
+            max-width: 880px;
+            aspect-ratio: 3 / 2;
+            max-height: 520px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(245, 158, 11, 0.4);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 158, 11, 0.15);
+            margin-bottom: 45px;
+            position: relative;
+            animation: fadeInUp 1.1s ease-out;
+            background: rgba(0, 0, 0, 0.65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            background: #000;
-            display: block;
+        }
+
+        .museum-photo-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s ease;
+        }
+
+        .museum-photo-preview:hover img {
+            transform: scale(1.02);
+        }
+
+        .photo-overlay-tag {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--gold-bright);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Language Cards Section */
+        .language-prompt {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            margin-bottom: 24px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 100%;
+            max-width: 1050px;
+            margin-bottom: 45px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .lang-card {
+            background: var(--card-glass);
+            border: 2px solid var(--card-border);
+            border-radius: 20px;
+            padding: 36px 24px;
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .lang-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.25), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .lang-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 20px 45px rgba(245, 158, 11, 0.25), 0 0 30px rgba(245, 158, 11, 0.2);
+        }
+
+        .lang-card:hover::before {
+            opacity: 1;
+        }
+
+        .lang-card:active {
+            transform: translateY(-2px) scale(0.99);
+        }
+
+        .lang-badge {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+            transition: transform 0.3s ease;
+        }
+
+        .lang-card:hover .lang-badge {
+            transform: scale(1.15) rotate(3deg);
+        }
+
+        .lang-name {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+
+        .lang-native {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold-bright);
             margin-bottom: 12px;
         }
 
-        .ramgarh-scroller-slide img:hover {
-            transform: scale(1.02);
-            border-color: var(--accent-color);
+        .lang-desc {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.45;
+            text-align: center;
         }
 
-        .ramgarh-caption {
-            color: #f59e0b;
+        .enter-btn {
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #050b14;
+            font-weight: 800;
+            font-size: 0.92rem;
+            padding: 10px 24px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .lang-card:hover .enter-btn {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.6);
+        }
+
+        /* Footer Highlights */
+        .museum-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(245, 158, 11, 0.2);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .feature-icon {
+            color: var(--gold-bright);
+            font-size: 1.2rem;
+        }
+
+        .footer-credits {
+            margin-top: 30px;
+            color: #64748b;
             font-size: 0.85rem;
-            font-weight: 700;
-            line-height: 1.4;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .language-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+            }
+
+            .museum-photo-preview {
+                aspect-ratio: 3 / 2;
+                max-height: 340px;
+                margin-bottom: 30px;
+            }
         }
     </style>
 </head>
-
 <body>
-    <div class="gallery-container">
 
-        <!-- Navigation Bar Injected by Python -->
-        <div class="top-nav">
-            <div class="nav-dropdown">
-                <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-1')">Religious Corner ▼</button>
-                <div id="dropdown-1" class="dropdown-content">
-                    <a href="art1.html">Gurunanak Dev Ji</a>
-                    <a href="art2.html">Guru Angad Dev Ji</a>
-                    <a href="art3.html">Guru Amar Das Ji</a>
-                    <a href="art4.html">Guru Ram Das Ji</a>
-                    <a href="art5.html">Guru Arjan Dev Ji</a>
-                    <a href="art6.html">Guru Hargobind Sahib Ji</a>
-                    <a href="art7.html">Guru Har Rai Ji</a>
-                    <a href="art8.html">Guru Har Krishan Ji</a>
-                    <a href="art9.html">Guru Tegh Bahadur Ji</a>
-                    <a href="art10.html">Guru Gobind Singh Ji</a>
-                    <a href="art11.html">Banda Singh Bahadur</a>
-                    <a href="art12.html">The Khalsa Army</a>
-                    <a href="art13.html">Maharaja Ranjit Singh</a>
-                    <a href="art14.html">Hari Singh Nalwa</a>
-                    <a href="art15.html">Akali Phoola Singh</a>
-                    <a href="art16.html">The Anglo-Sikh Wars</a>
-                    <a href="art17.html">First Anglo-Sikh War</a>
-                    <a href="art18.html">Second Anglo-Sikh War</a>
-                    <a href="art19.html">Sham Singh Attariwala</a>
-                    <a href="art20.html">Muskets &amp; Jezails</a>
-                </div>
-            </div>
+    <div class="landing-backdrop"></div>
+    <div class="ambient-glow"></div>
 
-            <div class="nav-dropdown">
-                <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-3')">COR Gallery ▼</button>
-                <div id="dropdown-3" class="dropdown-content">
-                    <a href="art21.html">Maj Gen BW Key</a>
-                    <a href="art22.html">Maj Gen VR Khanolkar</a>
-                    <a href="art23.html">Lt Gen Harbakhsh Singh</a>
-                    <a href="art24.html">Maj Gen Satinder Singh</a>
-                    <a href="art25.html">Maj Gen RT Morlin</a>
-                    <a href="art26.html">Brig RG Mathur</a>
-                    <a href="art27.html">Maj Gen LB Sondhi</a>
-                    <a href="art28.html">Lt Gen PS Vadehra</a>
-                    <a href="art29.html">Maj Gen S Chengapa</a>
-                    <a href="art30.html">Lt Gen NPS Bal</a>
-                    <a href="art31.html">Lt Gen MS Bhullar</a>
-                    <a href="art32.html">Lt Gen SS Chahal</a>
-                    <a href="art33.html">Lt Gen Devraj Singh</a>
-                    <a href="art34.html">Lt Gen RS Sujlana</a>
-                    <a href="art35.html">Lt Gen Sumer Singh</a>
-                    <a href="art36.html">Lt Gen GS Shergill</a>
-                    <a href="art37.html">Lt Gen SK Jha</a>
-                    <a href="art38.html">Lt Gen PGK Menon</a>
-                    <a href="art39.html">Maj Gen Ajay Kumar Singh</a>
-                </div>
-            </div>
-            <div class="nav-dropdown">
-                <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-4')">Comdts' Gallery ▼</button>
-                <div id="dropdown-4" class="dropdown-content">
-                    <a href="art40.html">Lieutenant Colonel MM Badshah</a>
-                    <a href="art41.html">Lieutenant Colonel JC Kapoor</a>
-                    <a href="art42.html">Lieutenant Colonel HS Gill</a>
-                    <a href="art43.html">Lieutenant Colonel Budh Singh, MC</a>
-                    <a href="art44.html">Lieutenant Colonel Girdhari Singh, VrC, MC</a>
-                    <a href="art45.html">Colonel Shamsher Singh</a>
-                    <a href="art46.html">Colonel BS Bajwa, MC</a>
-                    <a href="art47.html">Colonel Gurbaksh Singh</a>
-                    <a href="art48.html">Colonel RC Puri</a>
-                    <a href="art49.html">Colonel BB Upreti, AVSM, VSM</a>
-                    <a href="art50.html">Colonel KC Kalley, VSM</a>
-                    <a href="art51.html">Brigadier SC Puri</a>
-                    <a href="art52.html">Brigadier MMS Vasir, AVSM</a>
-                    <a href="art53.html">Brigadier CS Nugyal, PVSM, UYSM</a>
-                    <a href="art54.html">Brigadier MML Ahuja, VSM</a>
-                    <a href="art55.html">Brigadier Trilochan Singh, VSM</a>
-                    <a href="art56.html">Brigadier Keshav Singh, AVSM</a>
-                    <a href="art57.html">Colonel SS Chahal</a>
-                    <a href="art58.html">Brigadier Kanwaljit Singh</a>
-                    <a href="art59.html">Colonel Tarlochan Singh Kalra</a>
-                    <a href="art60.html">Colonel HS Toor</a>
-                    <a href="art61.html">Brigadier Rajinder Sharma</a>
-                    <a href="art62.html">Brigadier APS Pakianathan, VSM**</a>
-                    <a href="art63.html">Brigadier RK Gupta, VSM</a>
-                    <a href="art64.html">Brigadier IS Gakhal</a>
-                    <a href="art65.html">Brigadier Rakesh Sharma</a>
-                    <a href="art66.html">Brigadier HN Mhaisalkar</a>
-                    <a href="art67.html">Brigadier Pushkar Hiteshi</a>
-                    <a href="art68.html">Brigadier KBK Keshab</a>
-                    <a href="art69.html">Brigadier Rakesh Raina, VSM</a>
-                    <a href="art70.html">Brigadier M Sri Kumar, SC</a>
-                    <a href="art71.html">Brigadier Shailesh Sati</a>
-                </div>
-            </div>
-            <div class="nav-dropdown">
-                <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-5')">Battle Gallery ▼</button>
-                <div id="dropdown-5" class="dropdown-content">
-                    <a href="art401.html">Neuve Chapelle &amp; La Bassee (1914)</a>
-                    <a href="art421.html">Battle of Ypres (1915)</a>
-                    <a href="art402.html">Battle of Gallipoli (1915)</a>
-                    <a href="art403.html">Battle of Hai (1917)</a>
-                    <a href="art404.html">Battle of Keren (1941)</a>
-                    <a href="art405.html">Burma Campaign (1941&ndash;45)</a>
-                    <a href="art406.html">Battle of Shalateng (1947)</a>
-                    <a href="art407.html">Capture of Richhmar Gali (1948)</a>
-                    <a href="art408.html">Defence of Tawang (1962)</a>
-                    <a href="art409.html">Battle of Walong (1962)</a>
-                    <a href="art410.html">Battle of Barki (1965)</a>
-                    <a href="art411.html">Battle of Raja Picquet (1965)</a>
-                    <a href="art412.html">Battle of OP Hill (1965)</a>
-                    <a href="art413.html">Defence of Chhamb (1971)</a>
-                    <a href="art414.html">Defence of Poonch (1971)</a>
-                    <a href="art415.html">Battle of Purbut Ali (1971)</a>
-                    <a href="art416.html">Battle of Siramani (1971)</a>
-                    <a href="art417.html">Kargil Operations (1999)</a>
+    <div class="landing-container">
+        
+        <!-- Insignia & Badge -->
+        <div class="insignia-box">
+            <span class="insignia-text">⚔️ The Sikh Regimental Centre ⚔️</span>
+        </div>
 
-                </div>
-            </div>
-            <div class="nav-dropdown">
-                <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-6')">Beyond Battle Fd▼</button>
-                <div id="dropdown-6" class="dropdown-content">
-                    <div class="nested-dropdown">
-                        <button class="nested-btn" onclick="toggleNestedDropdown(event, 'nested-181')">
-                            Regimental Icons
-                            <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="3" style="transition: transform 0.2s ease;">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                        <div id="nested-181" class="nested-dropdown-content">
-                            <a href="art507.html">HH Maharaja Yadavindra Singh</a>
-                            <a href="art508.html">Lt Gen Harbakhsh Singh, VrC</a>
-                            <a href="art509.html">General RA Savory, KCIE, CB, DSO, MC</a>
-                        </div>
-                    </div>
-                    <a href="art501.html">History of Sikh Regimental Band</a>
-                    <a href="art502.html">Sporting Prowess of the Sikhs</a>
-                    <a href="art503.html">Machine Gun Companies and Battalion</a>
-                    <a href="art504.html">Bonding at Sea and Air</a>
-                    <a href="art505.html">9th Battalion The Sikh Regiment</a>
+        <!-- Main Title -->
+        <h1 class="main-title">VIRASAT</h1>
+        <div class="subtitle">
+            <strong>Heritage Museum</strong> &bull; An Epitome of Valour, Sacrifice &amp; Glory<br>
+            <span style="font-size: 0.95em; color: #94a3b8;">विरासत - सिख रेजिमेंटल धरोहर संग्रहालय &bull; ਵਿਰਾਸਤ - ਸਿੱਖ ਰੈਜੀਮੈਂਟਲ ਵਿਰਾਸਤ ਅਜਾਇਬ ਘਰ</span>
+        </div>
 
+        <!-- Museum Photo Showcase -->
+        <div class="museum-photo-preview" onclick="if(this.querySelector('img').requestFullscreen){this.querySelector('img').requestFullscreen()}" title="Click to view full screen">
+            <img src="assets/virasat/DSC_0438.webp" alt="Virasat Museum" onerror="this.src='assets/virasat/virasat (20).webp'">
+            <div class="photo-overlay-tag">🏛️ Virasat Heritage Museum, Ramgarh Cantt</div>
+        </div>
+
+        <!-- Language Selector Prompt -->
+        <div class="language-prompt">
+            🌐 Select Your Language / भाषा चुनें / ਭਾਸ਼ਾ ਚੁਣੋ
+        </div>
+
+        <!-- 3 Interactive Language Cards -->
+        <div class="language-grid">
+            
+            <!-- 1. ENGLISH -->
+            <a href="index_en.html" class="lang-card" id="btn-lang-en">
+                <div class="lang-badge">🇬🇧</div>
+                <div class="lang-name">ENGLISH</div>
+                <div class="lang-native">English Gallery</div>
+                <div class="lang-desc">
+                    Experience the complete museum gallery with original English narrations &amp; archives.
                 </div>
+                <div class="enter-btn">
+                    Enter Gallery &rarr;
+                </div>
+            </a>
+
+            <!-- 2. HINDI -->
+            <a href="index_hi.html" class="lang-card" id="btn-lang-hi">
+                <div class="lang-badge">🇮🇳</div>
+                <div class="lang-name">हिन्दी</div>
+                <div class="lang-native">हिंदी गैलरी</div>
+                <div class="lang-desc">
+                    संपूर्ण संग्रहालय, सभी कलाकृतियां और सभी ऑडियो वर्णन शुद्ध हिंदी में सुनें और देखें।
+                </div>
+                <div class="enter-btn">
+                    गैलरी में प्रवेश करें &rarr;
+                </div>
+            </a>
+
+            <!-- 3. PUNJABI -->
+            <a href="index_pa.html" class="lang-card" id="btn-lang-pa">
+                <div class="lang-badge">ੴ</div>
+                <div class="lang-name">ਪੰਜਾਬੀ</div>
+                <div class="lang-native">ਪੰਜਾਬੀ ਗੈਲਰੀ</div>
+                <div class="lang-desc">
+                    ਪੂਰਾ ਅਜਾਇਬ ਘਰ, ਸਾਰੀਆਂ ਕਲਾਕ੍ਰਿਤੀਆਂ ਅਤੇ ਸਾਰੇ ਆਡੀਓ ਵੇਰਵੇ ਪੰਜਾਬੀ ਵਿੱਚ ਦੇਖੋ ਅਤੇ ਸੁਣੋ।
+                </div>
+                <div class="enter-btn">
+                    ਗੈਲਰੀ ਵਿੱਚ ਦਾਖਲ ਹੋਵੋ &rarr;
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Museum Highlights Footer -->
+        <div class="museum-features">
+            <div class="feature-item">
+                <span class="feature-icon">🎖️</span> 190+ Historic Exhibits
             </div>
-            <div class="nav-dropdown">
-                <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-7')">Hall of Fame ▼</button>
-                <div id="dropdown-7" class="dropdown-content">
-                    <div class="nested-dropdown">
-                        <button class="nested-btn" onclick="toggleNestedDropdown(event, 'nested-vc')">
-                            Victoria Cross
-                            <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="3" style="transition: transform 0.2s ease;">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                        <div id="nested-vc" class="nested-dropdown-content">
-                            <a href="art195.html">Captain E Jotham, VC</a>
-                            <a href="art196.html">Captain Stewart CC Dount, VC</a>
-                            <a href="art197.html">Sepoy Ishar Singh, VC</a>
-                            <a href="art198.html">Lieutenant CG Baker, VC</a>
-                            <a href="art199.html">Brigadier JG Smyth, VC</a>
-                            <a href="art200.html">Havildar Prakash Singh, VC</a>
-                            <a href="art201.html">Naik Nand Singh, VC, MVC</a>
-                            <a href="art202.html">Sepoy Chhata Singh, VC</a>
-                            <a href="art203.html">Sergeant Major Peter Gill, VC</a>
-                            <a href="art204.html">Naik Gian Singh, VC</a>
-                        </div>
-                    </div>
-                    <div class="nested-dropdown">
-                        <button class="nested-btn" onclick="toggleNestedDropdown(event, 'nested-pvc')">
-                            Paramvir Chakra
-                            <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="3" style="transition: transform 0.2s ease;">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                        <div id="nested-pvc" class="nested-dropdown-content">
-                            <a href="art205.html">Lance Naik Karam Singh, PVC</a>
-                            <a href="art206.html">Subedar Joginder Singh, PVC</a>
-                        </div>
-                    </div>
-                    <a href="mahavir_chakra.html">Mahavir Chakra</a>
-                    <div class="nested-dropdown">
-                        <button class="nested-btn" onclick="toggleNestedDropdown(event, 'nested-ac')">
-                            Ashok Chakra
-                            <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="3" style="transition: transform 0.2s ease;">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                        <div id="nested-ac" class="nested-dropdown-content">
-                            <a href="art207.html">Havildar Bachittar Singh, AC</a>
-                            <a href="art208.html">Havildar Joginder Singh, AC</a>
-                            <a href="art209.html">Subedar Surinder Singh, AC</a>
-                        </div>
-                    </div>
-                    <a href="kirti_chakra.html">Kirti Chakra</a>
-                    <a href="coas_citations.html">COAS Citations</a>
-                    <a href="weapons_ammunition.html">Weapons & Ammunition</a>
-                </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔊</span> Multilingual Audio Guides
             </div>
-            <div class="nav-dropdown">
-                <button class="nav-btn" onclick="toggleDropdown(event, 'dropdown-8')">Successors ▼</button>
-                <div id="dropdown-8" class="dropdown-content">
-                    <a href="art601.html">XIV Firozpure Sikhs</a>
-                    <a href="art602.html">XV Ludhiana Sikhs</a>
-                    <a href="art603.html">XLV Rattray's Sikhs</a>
-                    <a href="art604.html">XXXV Sikhs</a>
-                    <a href="art605.html">Re-organisation of the Indian Army (1922)</a>
-                    <a href="art606.html">XXXVI Sikhs</a>
-                    <a href="art607.html">XLVII Sikhs</a>
-                </div>
+            <div class="feature-item">
+                <span class="feature-icon">📱</span> Mobile QR Interactive Tour
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⚔️</span> Saragarhi &amp; Battle Honours
             </div>
         </div>
 
-
-        <h1>WELCOME TO VIRASAT</h1>
-
-        <!-- Dynamic Image Scroller -->
-        <div class="scroller-container">
-            <div class="scroller-track">
-                <img src="assets/pic1web/1 (3).webp" alt="1 (3).webp">
-                <img src="assets/pic1web/1a4264a1-5df7-4205-a18e-79a852d437dd.webp"
-                    alt="1a4264a1-5df7-4205-a18e-79a852d437dd.webp">
-                <img src="assets/pic1web/2 (3).webp" alt="2 (3).webp">
-                <img src="assets/pic1web/3 (3).webp" alt="3 (3).webp">
-                <img src="assets/pic1web/4 (2).webp" alt="4 (2).webp">
-                <img src="assets/pic1web/4 (4).webp" alt="4 (4).webp">
-                <img src="assets/pic1web/5 (2).webp" alt="5 (2).webp">
-                <img src="assets/pic1web/6 (2).webp" alt="6 (2).webp">
-                <img src="assets/pic1web/6 (3).webp" alt="6 (3).webp">
-                <img src="assets/pic1web/7 (3).webp" alt="7 (3).webp">
-                <img src="assets/pic1web/7 mile run (tuesday Dec 22 1931.webp"
-                    alt="7 mile run (tuesday Dec 22 1931.webp">
-                <img src="assets/pic1web/8 (3).webp" alt="8 (3).webp">
-                <img src="assets/pic1web/10 (2).webp" alt="10 (2).webp">
-                <img src="assets/pic1web/10 (3).webp" alt="10 (3).webp">
-                <img src="assets/pic1web/11 (3).webp" alt="11 (3).webp">
-                <img src="assets/pic1web/12 (2).webp" alt="12 (2).webp">
-                <img src="assets/pic1web/12 (3).webp" alt="12 (3).webp">
-                <img src="assets/pic1web/14 (3).webp" alt="14 (3).webp">
-                <img src="assets/pic1web/16 (3).webp" alt="16 (3).webp">
-                <img src="assets/pic1web/16x34.webp" alt="16x34.webp">
-                <img src="assets/pic1web/17 (3).webp" alt="17 (3).webp">
-                <img src="assets/pic1web/19 (3).webp" alt="19 (3).webp">
-                <img src="assets/pic1web/20 (3).webp" alt="20 (3).webp">
-                <img src="assets/pic1web/26 (3).webp" alt="26 (3).webp">
-                <img src="assets/pic1web/27 (3).webp" alt="27 (3).webp">
-                <img src="assets/pic1web/28 (3).webp" alt="28 (3).webp">
-                <img src="assets/pic1web/29 (3).webp" alt="29 (3).webp">
-                <img src="assets/pic1web/30 (2).webp" alt="30 (2).webp">
-                <img src="assets/pic1web/30 (4).webp" alt="30 (4).webp">
-                <img src="assets/pic1web/32 (3).webp" alt="32 (3).webp">
-                <img src="assets/pic1web/37 (3).webp" alt="37 (3).webp">
-                <img src="assets/pic1web/38 (3).webp" alt="38 (3).webp">
-                <img src="assets/pic1web/39 (2).webp" alt="39 (2).webp">
-                <img src="assets/pic1web/40 (2).webp" alt="40 (2).webp">
-                <img src="assets/pic1web/40 (3).webp" alt="40 (3).webp">
-                <img src="assets/pic1web/41 (3).webp" alt="41 (3).webp">
-                <img src="assets/pic1web/42 (3).webp" alt="42 (3).webp">
-                <img src="assets/pic1web/43 (3).webp" alt="43 (3).webp">
-                <img src="assets/pic1web/44 (3).webp" alt="44 (3).webp">
-                <img src="assets/pic1web/45 (3).webp" alt="45 (3).webp">
-                <img src="assets/pic1web/46 (2).webp" alt="46 (2).webp">
-                <img src="assets/pic1web/46 (3).webp" alt="46 (3).webp">
-                <img src="assets/pic1web/47 (3).webp" alt="47 (3).webp">
-                <img src="assets/pic1web/48 (3).webp" alt="48 (3).webp">
-                <img src="assets/pic1web/50 (3).webp" alt="50 (3).webp">
-                <img src="assets/pic1web/51 (2).webp" alt="51 (2).webp">
-                <img src="assets/pic1web/52 (2).webp" alt="52 (2).webp">
-                <img src="assets/pic1web/53 (2).webp" alt="53 (2).webp">
-                <img src="assets/pic1web/56 (3).webp" alt="56 (3).webp">
-                <img src="assets/pic1web/58 (3).webp" alt="58 (3).webp">
-                <img src="assets/pic1web/59 (3).webp" alt="59 (3).webp">
-                <img src="assets/pic1web/60 (3).webp" alt="60 (3).webp">
-                <img src="assets/pic1web/76 (2).webp" alt="76 (2).webp">
-                <img src="assets/pic1web/82 (2).webp" alt="82 (2).webp">
-                <img src="assets/pic1web/866bdf27-775d-4e2a-b579-0be7405a490c.webp"
-                    alt="866bdf27-775d-4e2a-b579-0be7405a490c.webp">
-                <img src="assets/pic1web/Anti tank Rifle.webp" alt="Anti tank Rifle.webp">
-                <img src="assets/pic1web/CAPTURE OF TIGER HILL BY 8 SIKH - KARGIL OPS.webp"
-                    alt="CAPTURE OF TIGER HILL BY 8 SIKH - KARGIL OPS.webp">
-                <img src="assets/pic1web/Grenade Training(1).webp" alt="Grenade Training(1).webp">
-                <img src="assets/pic1web/Grenade Training.webp" alt="Grenade Training.webp">
-                <img src="assets/pic1web/Jem Nawab Khan Being presented with Military Cross.webp"
-                    alt="Jem Nawab Khan Being presented with Military Cross.webp">
-                <img src="assets/pic1web/Killarney (Caragh Lake).webp" alt="Killarney (Caragh Lake).webp">
-                <img src="assets/pic1web/MAj Gen Key being introduced the officers.webp"
-                    alt="MAj Gen Key being introduced the officers.webp">
-                <img src="assets/pic1web/Maj Gen Taking to C Company.webp" alt="Maj Gen Taking to C Company.webp">
-                <img src="assets/pic1web/MEN2 OF XXXVI SIKHS RE-OCCUPY THE BURNT OUT REMAINS OF THE SARAGARHI BLOCK HOUSE.webp"
-                    alt="MEN2 OF XXXVI SIKHS RE-OCCUPY THE BURNT OUT REMAINS OF THE SARAGARHI BLOCK HOUSE.webp">
-                <img src="assets/pic1web/Nk Puran Singh Recieving The Military Medal.webp"
-                    alt="Nk Puran Singh Recieving The Military Medal.webp">
-                <img src="assets/pic1web/Signallers(1).webp" alt="Signallers(1).webp">
-                <img src="assets/pic1web/Signallers.webp" alt="Signallers.webp">
-                <img src="assets/pic1web/the batallion.webp" alt="the batallion.webp">
-                <img src="assets/pic1web/THE TRICOLOUR WAS HOSTED BY 4 SIKH AT THE BARKI POLICE STATION AFTER ITS CAPTURE, 11 SEP 1965, INDO-PAK WAR.webp"
-                    alt="THE TRICOLOUR WAS HOSTED BY 4 SIKH AT THE BARKI POLICE STATION AFTER ITS CAPTURE, 11 SEP 1965, INDO-PAK WAR.webp">
-                <img src="assets/pic1web/TROOPS OF 1 SIKH MOVE TO SRINAGAR.webp"
-                    alt="TROOPS OF 1 SIKH MOVE TO SRINAGAR.webp">
-                <img src="assets/pic1web/V B Gun Training(3).webp" alt="V B Gun Training(3).webp">
-                <!-- Duplicate images for seamless looping -->
-                <img src="assets/pic1web/1 (3).webp" alt="1 (3).webp">
-                <img src="assets/pic1web/1a4264a1-5df7-4205-a18e-79a852d437dd.webp"
-                    alt="1a4264a1-5df7-4205-a18e-79a852d437dd.webp">
-                <img src="assets/pic1web/2 (3).webp" alt="2 (3).webp">
-                <img src="assets/pic1web/3 (3).webp" alt="3 (3).webp">
-                <img src="assets/pic1web/4 (2).webp" alt="4 (2).webp">
-                <img src="assets/pic1web/4 (4).webp" alt="4 (4).webp">
-                <img src="assets/pic1web/5 (2).webp" alt="5 (2).webp">
-                <img src="assets/pic1web/6 (2).webp" alt="6 (2).webp">
-                <img src="assets/pic1web/6 (3).webp" alt="6 (3).webp">
-                <img src="assets/pic1web/7 (3).webp" alt="7 (3).webp">
-                <img src="assets/pic1web/7 mile run tuesday Dec 22 1931.webp" alt="7 mile run tuesday Dec 22 1931.webp">
-                <img src="assets/pic1web/8 (3).webp" alt="8 (3).webp">
-                <img src="assets/pic1web/10 (2).webp" alt="10 (2).webp">
-                <img src="assets/pic1web/10 (3).webp" alt="10 (3).webp">
-                <img src="assets/pic1web/11 (3).webp" alt="11 (3).webp">
-                <img src="assets/pic1web/12 (2).webp" alt="12 (2).webp">
-                <img src="assets/pic1web/12 (3).webp" alt="12 (3).webp">
-                <img src="assets/pic1web/14 (3).webp" alt="14 (3).webp">
-                <img src="assets/pic1web/16 (3).webp" alt="16 (3).webp">
-                <img src="assets/pic1web/16x34.webp" alt="16x34.webp">
-                <img src="assets/pic1web/17 (3).webp" alt="17 (3).webp">
-                <img src="assets/pic1web/19 (3).webp" alt="19 (3).webp">
-                <img src="assets/pic1web/20 (3).webp" alt="20 (3).webp">
-                <img src="assets/pic1web/26 (3).webp" alt="26 (3).webp">
-                <img src="assets/pic1web/27 (3).webp" alt="27 (3).webp">
-                <img src="assets/pic1web/28 (3).webp" alt="28 (3).webp">
-                <img src="assets/pic1web/29 (3).webp" alt="29 (3).webp">
-                <img src="assets/pic1web/30 (2).webp" alt="30 (2).webp">
-                <img src="assets/pic1web/30 (4).webp" alt="30 (4).webp">
-                <img src="assets/pic1web/32 (3).webp" alt="32 (3).webp">
-                <img src="assets/pic1web/37 (3).webp" alt="37 (3).webp">
-                <img src="assets/pic1web/38 (3).webp" alt="38 (3).webp">
-                <img src="assets/pic1web/39 (2).webp" alt="39 (2).webp">
-                <img src="assets/pic1web/40 (2).webp" alt="40 (2).webp">
-                <img src="assets/pic1web/40 (3).webp" alt="40 (3).webp">
-                <img src="assets/pic1web/41 (3).webp" alt="41 (3).webp">
-                <img src="assets/pic1web/42 (3).webp" alt="42 (3).webp">
-                <img src="assets/pic1web/43 (3).webp" alt="43 (3).webp">
-                <img src="assets/pic1web/44 (3).webp" alt="44 (3).webp">
-                <img src="assets/pic1web/45 (3).webp" alt="45 (3).webp">
-                <img src="assets/pic1web/46 (2).webp" alt="46 (2).webp">
-                <img src="assets/pic1web/46 (3).webp" alt="46 (3).webp">
-                <img src="assets/pic1web/47 (3).webp" alt="47 (3).webp">
-                <img src="assets/pic1web/48 (3).webp" alt="48 (3).webp">
-                <img src="assets/pic1web/50 (3).webp" alt="50 (3).webp">
-                <img src="assets/pic1web/51 (2).webp" alt="51 (2).webp">
-                <img src="assets/pic1web/52 (2).webp" alt="52 (2).webp">
-                <img src="assets/pic1web/53 (2).webp" alt="53 (2).webp">
-                <img src="assets/pic1web/56 (3).webp" alt="56 (3).webp">
-                <img src="assets/pic1web/58 (3).webp" alt="58 (3).webp">
-                <img src="assets/pic1web/59 (3).webp" alt="59 (3).webp">
-                <img src="assets/pic1web/60 (3).webp" alt="60 (3).webp">
-                <img src="assets/pic1web/76 (2).webp" alt="76 (2).webp">
-                <img src="assets/pic1web/82 (2).webp" alt="82 (2).webp">
-                <img src="assets/pic1web/866bdf27-775d-4e2a-b579-0be7405a490c.webp"
-                    alt="866bdf27-775d-4e2a-b579-0be7405a490c.webp">
-                <img src="assets/pic1web/Anti tank Rifle.webp" alt="Anti tank Rifle.webp">
-                <img src="assets/pic1web/CAPTURE OF TIGER HILL BY 8 SIKH - KARGIL OPS.webp"
-                    alt="CAPTURE OF TIGER HILL BY 8 SIKH - KARGIL OPS.webp">
-                <img src="assets/pic1web/Grenade Training(1).webp" alt="Grenade Training(1).webp">
-                <img src="assets/pic1web/Grenade Training.webp" alt="Grenade Training.webp">
-                <img src="assets/pic1web/Jem Nawab Khan Being presented with Military Cross.webp"
-                    alt="Jem Nawab Khan Being presented with Military Cross.webp">
-                <img src="assets/pic1web/Killarney (Caragh Lake).webp" alt="Killarney (Caragh Lake).webp">
-                <img src="assets/pic1web/MAj Gen Key being introduced the officers.webp"
-                    alt="MAj Gen Key being introduced the officers.webp">
-                <img src="assets/pic1web/Maj Gen Taking to C Company.webp" alt="Maj Gen Taking to C Company.webp">
-                <img src="assets/pic1web/MEN2 OF XXXVI SIKHS RE-OCCUPY THE BURNT OUT REMAINS OF THE SARAGARHI BLOCK HOUSE.webp"
-                    alt="MEN2 OF XXXVI SIKHS RE-OCCUPY THE BURNT OUT REMAINS OF THE SARAGARHI BLOCK HOUSE.webp">
-                <img src="assets/pic1web/Nk Puran Singh Recieving The Military Medal.webp"
-                    alt="Nk Puran Singh Recieving The Military Medal.webp">
-                <img src="assets/pic1web/Signallers(1).webp" alt="Signallers(1).webp">
-                <img src="assets/pic1web/Signallers.webp" alt="Signallers.webp">
-                <img src="assets/pic1web/the batallion.webp" alt="the batallion.webp">
-                <img src="assets/pic1web/THE TRICOLOUR WAS HOSTED BY 4 SIKH AT THE BARKI POLICE STATION AFTER ITS CAPTURE, 11 SEP 1965, INDO-PAK WAR.webp"
-                    alt="THE TRICOLOUR WAS HOSTED BY 4 SIKH AT THE BARKI POLICE STATION AFTER ITS CAPTURE, 11 SEP 1965, INDO-PAK WAR.webp">
-                <img src="assets/pic1web/TROOPS OF 1 SIKH MOVE TO SRINAGAR.webp"
-                    alt="TROOPS OF 1 SIKH MOVE TO SRINAGAR.webp">
-                <img src="assets/pic1web/V B Gun Training(3).webp" alt="V B Gun Training(3).webp">
-            </div>
-        </div>
-
-
-
-        <div class="description-box">
-            Welcome to the digital museum gallery. Use the navigation above to explore our collections or scan the QR
-            codes on individual pages to view them on your mobile device.
-        </div>
-
-        <!-- Side-by-Side Content -->
-        <div style="display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; align-items: stretch;">
-            <!-- Additional Text Box -->
-            <div class="description-box"
-                style="flex: 1; min-width: 300px; margin-bottom: 0; height: 420px; overflow-y: auto; display: flex; flex-direction: column; justify-content: flex-start;">
-                <strong>VIRASAT : Historical Legacy of Sikh Regimental Centre</strong><br><br>
-                The Sikh Regimental Centre traces its origins to Sep 1921, when XXXV Sikh stationed at Jhelum (now in
-                Pakistan) was converted into a Training Centre. Col JC Freeland, CB, CBE was the first Commandant. The
-                first Colours were presented by HRH The Prince of Wales in Feb 1922 at Lahore.<br><br>
-                Due to inadequate training/admin infrastructure, the Centre moved to Nowshera, NWFP where it remained
-                till Sep 1947. Upon Partition, SRC moved to Ambala and Col MM Badshah became the first Indian Officer as
-                Commandant.<br><br>
-                During the Indo-Pak War 1947-48, the Centre urgently trained recruits for 1 Sikh, 2 Sikh &amp; 7 Sikh,
-                while raising new battalions. It also served as refuge for Sikh troops and families rendered homeless.
-                Between 11-15 Mar 1952, SRC moved to Meerut. Post 1962 War, large expansions took place with new Sikh
-                battalions raised.<br><br>
-                After 24 years at Meerut, SRC made its fourth move to Ramgarh Cantt in Apr 1976 under Col BB Upreti,
-                AVSM, VSM. Located on the banks of the Damodar in 795 acres, the cantonment traces back to Mar 1941 when
-                Italian POWs were interned here. The 22nd &amp; 38th Div of Chinese Expeditionary Force (KMT) were
-                reformed here between 1942-45 for the Burma Campaign.<br><br>
-                During the move to Ramgarh, the War Memorial with 30 marble pillars &amp; 'Nanak Shahi' bricks was
-                dismantled piece by piece and re-assembled at Ramgarh on 16 Mar 1977. Foundation stone was laid by Col
-                of Regt Maj Gen RT Morlin, AVSM. The first Platoon (19th Pl) was attested on 24th May 1976 with marked
-                fanfare. Since then, SRC has produced soldiers who have met every challenge with distinction. For its
-                exceptional work and performance, SRC was awarded the 'GOC-in-C, CC Unit Appreciation' on 15 Jan
-                2015.<br><br>
-                VIRASAT stands as a tribute to the Sikh Regiment's ethos &mdash; <em>"Nischay Kar Apni Jeet Karon"</em>.
-                The museum houses Colours, war trophies, uniforms, weapons, photographs, and personal memorabilia that
-                chronicle over a century of sacrifice, from the World Wars to modern conflicts. It serves as an
-                inspiration for recruits and a pilgrimage for veterans, embodying the Regiment's repository of history,
-                valour, and heritage.
-            </div>
-
-            <!-- Featured Photo Window (turned into a scroller) -->
-            <div class="photo-wrapper"
-                style="flex: 1; min-width: 300px; margin-bottom: 0; height: 420px; padding: 10px; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center;">
-                <div class="featured-scroller-container">
-                    <div class="featured-scroller-track">
-                        <img src="assets/virasat/DSC_0438.webp" alt="DSC_0438.webp">
-                        <img src="assets/virasat/virasat (2).webp" alt="virasat (2).webp">
-                        <img src="assets/virasat/virasat (20).webp" alt="virasat (20).webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.15 AM.webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.15 AM.webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.17 AM.webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.17 AM.webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.18 AM.webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.18 AM.webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.19 AM (1).webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.19 AM (1).webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.19 AM.webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.19 AM.webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.20 AM (1).webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.20 AM (1).webp">
-                        <!-- Duplicate images for seamless looping -->
-                        <img src="assets/virasat/DSC_0438.webp" alt="DSC_0438.webp">
-                        <img src="assets/virasat/virasat (2).webp" alt="virasat (2).webp">
-                        <img src="assets/virasat/virasat (20).webp" alt="virasat (20).webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.15 AM.webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.15 AM.webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.17 AM.webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.17 AM.webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.18 AM.webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.18 AM.webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.19 AM (1).webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.19 AM (1).webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.19 AM.webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.19 AM.webp">
-                        <img src="assets/virasat/WhatsApp Image 2025-07-29 at 10.35.20 AM (1).webp"
-                            alt="WhatsApp Image 2025-07-29 at 10.35.20 AM (1).webp">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2>HISTORY OF RAMGARH</h2>
-
-        <!-- Ramgarh Image Scroller (Stroller) -->
-        <div class="photo-wrapper"
-            style="margin-bottom: 20px; height: 460px; padding: 15px 10px; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border);">
-            <div class="featured-scroller-container">
-                <div class="featured-scroller-track">
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_3.webp" alt="Logo of Ramgarh Training Centre">
-                        <div class="ramgarh-caption">Logo of Ramgarh Training Centre</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_4.webp"
-                            alt="Various locations of the Sikh Regimental Centre since 1887">
-                        <div class="ramgarh-caption">Various locations of the Sikh Regimental Centre since 1887</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_5.webp"
-                            alt="The First Train arrived at Ramgarh (Barkakana Railway Station) on 19 April 1976">
-                        <div class="ramgarh-caption">The First Train arrived at Ramgarh (Barkakana Railway Station) on
-                            19 April 1976</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_6.webp" alt="Chinese Troops of Ramgarh Training Center">
-                        <div class="ramgarh-caption">Chinese Troops of Ramgarh Training Center</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_7.webp"
-                            alt="Abdul Kalam Azad, Jawahar Lal Nehru and Sarojni Naidu at the 53rd INC Session in 1940">
-                        <div class="ramgarh-caption">Abdul Kalam Azad, Jawahar Lal Nehru and Sarojni Naidu at the 53rd
-                            INC Session in 1940</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_8.webp"
-                            alt="An American Instructor (rear center) training Chinese troops to use a Machine Gun">
-                        <div class="ramgarh-caption">An American Instructor (rear center) training Chinese troops to use
-                            a Machine Gun</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_9.webp" alt="Netaji Bose of Ramgarh in 1940">
-                        <div class="ramgarh-caption">Netaji Bose of Ramgarh in 1940</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_10.webp" alt="Chinese troops training at Ramgarh">
-                        <div class="ramgarh-caption">Chinese troops training at Ramgarh</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_11.webp"
-                            alt="Netaji Subhas Chandra Bose hoisting the National tricolour at Ramgarh, 1940">
-                        <div class="ramgarh-caption">Netaji Subhas Chandra Bose hoisting the National tricolour at
-                            Ramgarh, 1940</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_12.webp"
-                            alt="Mahatma Gandhi at the All-India Khadi and Village Industries Exhibition">
-                        <div class="ramgarh-caption">Mahatma Gandhi at the All-India Khadi and Village Industries
-                            Exhibition</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_13.webp"
-                            alt="Mahatma Gandhi on Dais During the 53rd INC Session">
-                        <div class="ramgarh-caption">Mahatma Gandhi on Dais During the 53rd INC Session</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_14.webp" alt="Old Gazette record of Italian PsOW at Ramgarh">
-                        <div class="ramgarh-caption">Old Gazette record of Italian PsOW at Ramgarh</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_15.webp" alt="Ramgarh Army Training Diploma">
-                        <div class="ramgarh-caption">Ramgarh Army Training Diploma</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_16.webp" alt="Significance of Ramgarh in Indo_Burma Theatre">
-                        <div class="ramgarh-caption">Significance of Ramgarh in Indo_Burma Theatre</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_17.webp" alt="Layout of Ramgarh Training Centre">
-                        <div class="ramgarh-caption">Layout of Ramgarh Training Centre</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_18.webp" alt="Ramgarh Training Pin">
-                        <div class="ramgarh-caption">Ramgarh Training Pin</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_3.webp" alt="Logo of Ramgarh Training Centre">
-                        <div class="ramgarh-caption">Logo of Ramgarh Training Centre</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_4.webp"
-                            alt="Various locations of the Sikh Regimental Centre since 1887">
-                        <div class="ramgarh-caption">Various locations of the Sikh Regimental Centre since 1887</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_5.webp"
-                            alt="The First Train arrived at Ramgarh (Barkakana Railway Station) on 19 April 1976">
-                        <div class="ramgarh-caption">The First Train arrived at Ramgarh (Barkakana Railway Station) on
-                            19 April 1976</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_6.webp" alt="Chinese Troops of Ramgarh Training Center">
-                        <div class="ramgarh-caption">Chinese Troops of Ramgarh Training Center</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_7.webp"
-                            alt="Abdul Kalam Azad, Jawahar Lal Nehru and Sarojni Naidu at the 53rd INC Session in 1940">
-                        <div class="ramgarh-caption">Abdul Kalam Azad, Jawahar Lal Nehru and Sarojni Naidu at the 53rd
-                            INC Session in 1940</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_8.webp"
-                            alt="An American Instructor (rear center) training Chinese troops to use a Machine Gun">
-                        <div class="ramgarh-caption">An American Instructor (rear center) training Chinese troops to use
-                            a Machine Gun</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_9.webp" alt="Netaji Bose of Ramgarh in 1940">
-                        <div class="ramgarh-caption">Netaji Bose of Ramgarh in 1940</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_10.webp" alt="Chinese troops training at Ramgarh">
-                        <div class="ramgarh-caption">Chinese troops training at Ramgarh</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_11.webp"
-                            alt="Netaji Subhas Chandra Bose hoisting the National tricolour at Ramgarh, 1940">
-                        <div class="ramgarh-caption">Netaji Subhas Chandra Bose hoisting the National tricolour at
-                            Ramgarh, 1940</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_12.webp"
-                            alt="Mahatma Gandhi at the All-India Khadi and Village Industries Exhibition">
-                        <div class="ramgarh-caption">Mahatma Gandhi at the All-India Khadi and Village Industries
-                            Exhibition</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_13.webp"
-                            alt="Mahatma Gandhi on Dais During the 53rd INC Session">
-                        <div class="ramgarh-caption">Mahatma Gandhi on Dais During the 53rd INC Session</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_14.webp" alt="Old Gazette record of Italian PsOW at Ramgarh">
-                        <div class="ramgarh-caption">Old Gazette record of Italian PsOW at Ramgarh</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_15.webp" alt="Ramgarh Army Training Diploma">
-                        <div class="ramgarh-caption">Ramgarh Army Training Diploma</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_16.webp" alt="Significance of Ramgarh in Indo_Burma Theatre">
-                        <div class="ramgarh-caption">Significance of Ramgarh in Indo_Burma Theatre</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_17.webp" alt="Layout of Ramgarh Training Centre">
-                        <div class="ramgarh-caption">Layout of Ramgarh Training Centre</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/ramgarh/slide_18.webp" alt="Ramgarh Training Pin">
-                        <div class="ramgarh-caption">Ramgarh Training Pin</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Description Box below Stroller -->
-        <div class="description-box" style="margin-bottom: 40px;">
-            <strong>History of Ramgarh</strong><br><br>
-            The history of Ramgarh can be traced back to the Lower Paleolithic age, with the discovery of tools found
-            along the Damodar River. The area falls within the Chotanagpur Plateau which during the Mahajanapada period
-            was under the jurisdiction of King Jarasandh. During the Mauryan Empire, King Ashoka took control of the
-            entire Chotanagpur region and the region subsequently was strongly influenced by the Buddhist and Jain
-            cultures. On his Deccan conquest, King Samudragupta of the Gupta empire, passed through this area.<br><br>
-            During the mid-fourteenth century, the 'Ramgarh Raj' was established in 1368 whose founder king was Raja
-            Bagdeo Singh, with his capital located in Sira. The capital kept shifting to Urda, Badam, Ramgarh and Padma
-            throughout the period and was finally moved back to Ramgarh in 1670.<br><br>
-            The East India Company was given rights to administer Ramgarh area by King Shah Alam II in 1771 and Captain
-            Comac was appointed the Military Collector of Ramgarh, whose headquarter was in Chatra. The Military
-            district of Ramgarh contained Nagpur, Palamu, Hazaribagh, Chatra, Giridih and Kodarma. The East India
-            Company troops stationed here were used to suppress the Kol Revolt in 1831-32. After the Revolt was
-            suppressed, many Police Stations were established in the area by the British and Ramgarh was one of
-            them.<br><br>
-            In March 1940, the 53rd Session of Indian National Congress (INC) was held at Jhanda Chowk, Ramgarh under
-            the presidency of Maulana Abul Qalam Azad - this site is currently located within the Sikh Regimental Centre
-            opposite the Main Office Complex. Mahatma Gandhi, Jawaharlal Nehru, Sardar Patel, Dr. Rajendra Prasad,
-            Sarojini Naidu, Khan Abdul Ghaffar Khan, Acharya JB Kripalani, Industrialist Jamnalal Bajaj and other
-            leaders of the Indian freedom movement attended the session. Mahatma Gandhi also opened a Khadi and Village
-            Industries Exhibition at Ramgarh.<br><br>
-            Ramgarh Cantonment was formally established in March 1941, when Italian PsOW were interned here. As the war
-            against Japan came closer to the frontiers of Eastern India, the Italian PsOW were re-located to Yol Camp
-            and Chinese troops, who had retreated from Burma, were stationed at Ramgarh Cantonment. Between 1942-1945,
-            thousands of Chinese (Kuomintang) were trained and equipped here by American trainers, for military
-            operations against Japan.<br><br>
-            The Sikh Regimental Centre was shifted in four Military Special Trains from Meerut to Ramgarh Cantonment in
-            April 1976, where it was allotted 795 Acres of land. The move took place under Colonel BB Upreti, AVSM, VSM,
-            who commanded the Centre till April 1978. Colonel KC Kalley, VSM, the Deputy Commandant relieved him and
-            worked on the Centre's consolidation until July 1981. Since then, Ramgarh Cantonment has the unique
-            distinction of housing two Infantry Regimental Centers within the confines of the same campus.
-        </div>
-
-        <h2>HISTORY OF SIKH REGIMENT</h2>
-
-        <!-- Sikh Regiment Image Scroller (Stroller) -->
-        <div class="photo-wrapper"
-            style="margin-bottom: 20px; height: 460px; padding: 15px 10px; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border);">
-            <div class="featured-scroller-container">
-                <div class="featured-scroller-track" style="animation-duration: 200s;">
-                    <!-- Original set -->
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_21.webp" alt="General Orders of Raising">
-                        <div class="ramgarh-caption">General Orders of Raising</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_22.webp"
-                            alt="Men of the Regiment of Loodianah (later XV Ludhiana Sikhs) during the 2nd Opium War in China, 1860">
-                        <div class="ramgarh-caption">Men of the Regiment of Loodianah (later XV Ludhiana Sikhs) during
-                            the 2nd Opium War in China, 1860</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_23.webp"
-                            alt="1 SIKH troops being airlifted for Kashmir Operations on 27 October 1947 – Infantry Day is celebrated to commemorate this historic event">
-                        <div class="ramgarh-caption">1 SIKH troops being airlifted for Kashmir Operations on 27 October
-                            1947 – Infantry Day is celebrated to commemorate this historic event</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_24.webp"
-                            alt="1 SIKH troops fighting at Shalateng, 1947-48 Indo-Pakistan War">
-                        <div class="ramgarh-caption">1 SIKH troops fighting at Shalateng, 1947-48 Indo-Pakistan War
-                        </div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_25.webp"
-                            alt="Officers of 4 Sikh after Capture of Barki, 1965 Indo-Pak War">
-                        <div class="ramgarh-caption">Officers of 4 Sikh after Capture of Barki, 1965 Indo-Pak War</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_26.webp"
-                            alt="XLV Sikhs escorting Afghan Prisoners during 2nd Anglo-Afghan War, 1878">
-                        <div class="ramgarh-caption">XLV Sikhs escorting Afghan Prisoners during 2nd Anglo-Afghan War,
-                            1878</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_27.webp"
-                            alt="An under production LTTE Aircraft captured by 16 Sikh as part of IPKF in Sri Lanka, 1987">
-                        <div class="ramgarh-caption">An under production LTTE Aircraft captured by 16 Sikh as part of
-                            IPKF in Sri Lanka, 1987</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_28.webp" alt="8 SIKH troops in Kargil Operations 1999">
-                        <div class="ramgarh-caption">8 SIKH troops in Kargil Operations 1999</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_29.webp"
-                            alt="Sikh Regiment in UN Peace Keeping Operations">
-                        <div class="ramgarh-caption">Sikh Regiment in UN Peace Keeping Operations</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_30.webp" alt="Captured PLA Weapons and Equipment on LAC">
-                        <div class="ramgarh-caption">Captured PLA Weapons and Equipment on LAC</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_31.webp" alt="Sikh Soldiers on Ceremonial Duty">
-                        <div class="ramgarh-caption">Sikh Soldiers on Ceremonial Duty</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_32.webp" alt="Colour Party of XV Ludhiana Sikhs, 1936">
-                        <div class="ramgarh-caption">Colour Party of XV Ludhiana Sikhs, 1936</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_33.webp"
-                            alt="4 Sikh at Siramani, erstwhile East Pakistan, 1971 Indo-Pakistan War">
-                        <div class="ramgarh-caption">4 Sikh at Siramani, erstwhile East Pakistan, 1971 Indo-Pakistan War
-                        </div>
-                    </div>
-
-                    <!-- Duplicated set for infinite loop -->
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_21.webp" alt="General Orders of Raising">
-                        <div class="ramgarh-caption">General Orders of Raising</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_22.webp"
-                            alt="Men of the Regiment of Loodianah (later XV Ludhiana Sikhs) during the 2nd Opium War in China, 1860">
-                        <div class="ramgarh-caption">Men of the Regiment of Loodianah (later XV Ludhiana Sikhs) during
-                            the 2nd Opium War in China, 1860</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_23.webp"
-                            alt="1 SIKH troops being airlifted for Kashmir Operations on 27 October 1947 – Infantry Day is celebrated to commemorate this historic event">
-                        <div class="ramgarh-caption">1 SIKH troops being airlifted for Kashmir Operations on 27 October
-                            1947 – Infantry Day is celebrated to commemorate this historic event</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_24.webp"
-                            alt="1 SIKH troops fighting at Shalateng, 1947-48 Indo-Pakistan War">
-                        <div class="ramgarh-caption">1 SIKH troops fighting at Shalateng, 1947-48 Indo-Pakistan War
-                        </div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_25.webp"
-                            alt="Officers of 4 Sikh after Capture of Barki, 1965 Indo-Pak War">
-                        <div class="ramgarh-caption">Officers of 4 Sikh after Capture of Barki, 1965 Indo-Pak War</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_26.webp"
-                            alt="XLV Sikhs escorting Afghan Prisoners during 2nd Anglo-Afghan War, 1878">
-                        <div class="ramgarh-caption">XLV Sikhs escorting Afghan Prisoners during 2nd Anglo-Afghan War,
-                            1878</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_27.webp"
-                            alt="An under production LTTE Aircraft captured by 16 Sikh as part of IPKF in Sri Lanka, 1987">
-                        <div class="ramgarh-caption">An under production LTTE Aircraft captured by 16 Sikh as part of
-                            IPKF in Sri Lanka, 1987</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_28.webp" alt="8 SIKH troops in Kargil Operations 1999">
-                        <div class="ramgarh-caption">8 SIKH troops in Kargil Operations 1999</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_29.webp"
-                            alt="Sikh Regiment in UN Peace Keeping Operations">
-                        <div class="ramgarh-caption">Sikh Regiment in UN Peace Keeping Operations</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_30.webp" alt="Captured PLA Weapons and Equipment on LAC">
-                        <div class="ramgarh-caption">Captured PLA Weapons and Equipment on LAC</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_31.webp" alt="Sikh Soldiers on Ceremonial Duty">
-                        <div class="ramgarh-caption">Sikh Soldiers on Ceremonial Duty</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_32.webp" alt="Colour Party of XV Ludhiana Sikhs, 1936">
-                        <div class="ramgarh-caption">Colour Party of XV Ludhiana Sikhs, 1936</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/sikh_regiment/slide_33.webp"
-                            alt="4 Sikh at Siramani, erstwhile East Pakistan, 1971 Indo-Pakistan War">
-                        <div class="ramgarh-caption">4 Sikh at Siramani, erstwhile East Pakistan, 1971 Indo-Pakistan War
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Description Box for History of Sikh Regiment -->
-        <div class="description-box" style="margin-bottom: 40px;">
-            <strong>HISTORY OF SIKH REGIMENT</strong><br><br>
-            The Sikh Regiment was raised in 1846 at the end of the First Anglo-Sikh War while its roots are traced
-            directly to the Khalsa Army of Maharaja Ranjit Singh. The initial two battalions designated as "XIV
-            Ferozepore Sikhs" and "XV Ludhiana Sikhs" were raised on 01 August 1846, which was followed by the raising
-            of "XLV Rattray's" in 1856, "XXXVI Sikhs" in 1887 and "XLVII" Sikhs in 1901. A sixth battalion, "XXXV Sikhs"
-            is today the Sikh Regimental Centre (SRC). Presently, the regiment has grown to 21 regular Infantry
-            Battalions, three Rashtriya Rifles Battalions, one SFC Unit and three Territorial Army Battalions. In
-            addition, 4 Mechanised Infantry Battalion (erstwhile XIV Ferozepore Sikhs/1 Sikh), INS Kirpan (a
-            Khukri-class corvette, de-commissioned in 2023) and Number 12 Squadron (Transport), IAF are affiliated to
-            the Sikh Regiment.<br><br>
-            Prior to independence in 1947, the Sikh Regiment participated in numerous wars all around the globe such as
-            the Second Opium War in China, the Second Anglo-Afghan War, many campaigns on the North-West Frontier, the
-            Western Front, Gallipoli and Mesopotamia campaigns of the First World War, the Third Anglo-Afghan War and
-            the North African, Italian and Burma campaigns of the Second World War, earning many gallantry awards and
-            battle honours in the process.<br><br>
-            Post-Independence, in the Indo-Pakistan War of 1947-1948, 1 Sikh was the first unit to be airlifted to
-            Srinagar on 27 October 1947 to defend the Kashmir Valley from tribal invaders – this landmark event is
-            commemorated as "Infantry Day". Battalions of the Sikh Regiment valiantly fought in the Sino-Indian War of
-            1962, the Indo-Pakistan War of 1965, the Indo-Pakistan War of 1971 and the Kargil War in 1999, earning many
-            laurels and accolades. The Regiment has earned 106 Battle Honours and 18 Theatre Honours and is among the
-            most decorated Infantry Regiments of the Indian Army.<br><br>
-            The Regiment draws its soldiers mostly from the states of Punjab, Haryana and Jammu & Kashmir - the troops
-            are mainly "Jat Sikhs" who are known for their hardihood of character, a spirit of adaptation and fun-loving
-            nature, which is the quintessential essence of a "Saint Soldier", as preached by the 10th Sikh Guru, Sri
-            Guru Gobind Singh.
-        </div>
-
-        <h2>HAVALDAR ISHAR SINGH, IOM, IDSM</h2>
-
-        <div class="ishar-singh-box"
-            style="display: flex; gap: 30px; margin-bottom: 40px; background: rgba(0,0,0,0.4); padding: 30px; border-radius: 16px; border: 1px solid var(--glass-border); align-items: center; justify-content: center; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 280px; max-width: 380px; text-align: center;">
-                <img src="assets/ishar_singh/slide_35_pic.webp" alt="Havildar Ishar Singh"
-                    style="width: 100%; height: auto; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); cursor: pointer;"
-                    onclick="if(this.requestFullscreen){this.requestFullscreen()}">
-            </div>
-            <div
-                style="flex: 2; min-width: 320px; max-width: 700px; text-align: left; display: flex; flex-direction: column; justify-content: center;">
-                <p style="margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; color: #cbd5e1;">Havildar Ishar
-                    Singh was born on 12 September 1858 at Village Jhorran (near Jagraon) in Ludhiana, Punjab, to an
-                    agrarian family of Sardar Dulla Singh. Since childhood, he aspired to become a soldier and initially
-                    served the Punjab Frontier Force for 11 years. In 1887, he was enrolled into the 36th Sikhs.</p>
-                <p style="margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; color: #cbd5e1;">Right from the
-                    beginning, Ishar had a penchant for active field duties rather than administrative chores in camps.
-                    Due to his martial qualities, he developed a formidable military reputation and commanded complete
-                    loyalty of his troops.</p>
-                <p style="margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; color: #cbd5e1;">During the epic
-                    Battle of Saragarhi, he gave a heroic account of his leadership skills while fighting an adversary
-                    much superior in numbers. Despite all odds, he declined many enemy offers to surrender, assembled
-                    his soldiers and inspired them to keep fighting. When nearly half his men were either dead or
-                    wounded in the first six hours of fighting, he ordered the rest to leave their loop-holed
-                    battlements and engage the enemy in hand-to-hand fighting.</p>
-                <p style="margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; color: #cbd5e1;">The final moments
-                    of his life and leadership are described by military historian Major General James Lunt in
-                    <em>Saragarhi: Sikhs and Pathans, 1897</em> (published in <em>History Today</em>, Volume 27, Issue
-                    04, April 1977):
-                </p>
-                <blockquote
-                    style="border-left: 4px solid var(--accent-color); padding-left: 15px; margin: 15px 0; font-style: italic; color: #e2e8f0; line-height: 1.6; font-size: 1.05rem;">
-                    “Now Ishar Singh knew that the game was up. Returning to the roof, he flashed his last message to
-                    Fort Lockhart—the enemy was in the fort, the Sikhs were overrun but would not surrender. Then,
-                    placing the heliograph carefully in the case, he went down for the last time to join his men in
-                    their final stand. Somewhere in the midst of this holocaust of blood, smoke and flames, Havildar
-                    Ishar Singh fell to a Pathan’s knife.”
-                </blockquote>
-            </div>
-        </div>
-
-        <h2>BATTLE OF SARAGARHI</h2>
-
-        <!-- Battle of Saragarhi Image Scroller (Stroller) -->
-        <div class="photo-wrapper"
-            style="margin-bottom: 20px; height: 460px; padding: 15px 10px; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border);">
-            <div class="featured-scroller-container">
-                <div class="featured-scroller-track" style="animation-duration: 150s;">
-                    <!-- Original set -->
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_38.webp" alt="Gurdwara Saragarhi Sahib: Firozpur Cantonment">
-                        <div class="ramgarh-caption">Gurdwara Saragarhi Sahib: Firozpur Cantonment</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_39.webp"
-                            alt="The burnt out remains of Saragarhi. Fort Lockhart is on the skyline">
-                        <div class="ramgarh-caption">The burnt out remains of Saragarhi. Fort Lockhart is on the skyline
-                        </div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_40.webp" alt="Saragarhi Obelisk outside Fort Lockhart">
-                        <div class="ramgarh-caption">Saragarhi Obelisk outside Fort Lockhart</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_41.webp" alt="Saragarhi Saga">
-                        <div class="ramgarh-caption">Saragarhi Saga</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_42.webp" alt="Google Image of Samana Ridge">
-                        <div class="ramgarh-caption">Google Image of Samana Ridge</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_43.webp" alt="Ruins of Saragarhi">
-                        <div class="ramgarh-caption">Ruins of Saragarhi</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_44.webp" alt="Plaque on Saragarhi Obelisk near Fort Lockhart">
-                        <div class="ramgarh-caption">Plaque on Saragarhi Obelisk near Fort Lockhart</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_45.webp"
-                            alt="Saragarhi Outpost – Plinth of main block and signaling tower is what remains now">
-                        <div class="ramgarh-caption">Saragarhi Outpost – Plinth of main block and signaling tower is
-                            what remains now</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_46.webp" alt="Heliograph used for communication">
-                        <div class="ramgarh-caption">Heliograph used for communication</div>
-                    </div>
-
-                    <!-- Duplicated set for infinite loop -->
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_38.webp" alt="Gurdwara Saragarhi Sahib: Firozpur Cantonment">
-                        <div class="ramgarh-caption">Gurdwara Saragarhi Sahib: Firozpur Cantonment</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_39.webp"
-                            alt="The burnt out remains of Saragarhi. Fort Lockhart is on the skyline">
-                        <div class="ramgarh-caption">The burnt out remains of Saragarhi. Fort Lockhart is on the skyline
-                        </div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_40.webp" alt="Saragarhi Obelisk outside Fort Lockhart">
-                        <div class="ramgarh-caption">Saragarhi Obelisk outside Fort Lockhart</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_41.webp" alt="Saragarhi Saga">
-                        <div class="ramgarh-caption">Saragarhi Saga</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_42.webp" alt="Gurdwara Saragarhi Sahib: Firozpur Cantonment">
-                        <div class="ramgarh-caption">Gurdwara Saragarhi Sahib: Firozpur Cantonment</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_43.webp" alt="Ruins of Saragarhi">
-                        <div class="ramgarh-caption">Ruins of Saragarhi</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_44.webp" alt="Plaque on Saragarhi Obelisk near Fort Lockhart">
-                        <div class="ramgarh-caption">Plaque on Saragarhi Obelisk near Fort Lockhart</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_45.webp"
-                            alt="Saragarhi Outpost – Plinth of main block and signaling tower is what remains now">
-                        <div class="ramgarh-caption">Saragarhi Outpost – Plinth of main block and signaling tower is
-                            what remains now</div>
-                    </div>
-                    <div class="ramgarh-scroller-slide">
-                        <img src="assets/saragarhi/slide_46.webp" alt="Heliograph used for communication">
-                        <div class="ramgarh-caption">Heliograph used for communication</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Description Box for Battle of Saragarhi -->
-        <div class="description-box" style="margin-bottom: 40px;">
-            <strong>BATTLE OF SARAGARHI</strong><br><br>
-            The Battle of Saragarhi fought by 36th Sikhs (now, 4 SIKH) is one of the greatest saga of collective bravery
-            and courage in the history of warfare. In the year 1897, the tribal gatherings (“Jirgahs”) of NWFP (now,
-            Khyber-Pakhtunkhwa) decided to rise against the British Indian Army garrisoned in various locations of
-            Khyber Region.<br><br>
-            The Samana Ridge, a key feature dominating Southern Khyber, was being defended by 36th Sikhs under their
-            Commanding Officer, Lieutenant Colonel John Haughton. This five mile long ridge was dotted with Fort
-            Lockhart on the eastern end and Fort Gulistan on the west. At its center where the ridge reached its highest
-            point, was a rocky outcrop, which intercepted the line of sight between the two forts. The Saragarhi Post
-            was raised at this spot as a “signaling station” between the two forts. All three locations had
-            “heliographs” as the only means of communication. The battalion was almost equally split between the two
-            forts and Saragarhi was lightly manned with 21 Sikh soldiers and one NCE (Non-Combatant Enrolled).<br><br>
-            The defenders of Saragarhi were mostly young soldiers (less than five years service) from the Signal
-            Platoon, under the command of Havildar Ishar Singh. On the morning of 12 September 1897, a lashkar of about
-            12,000 Afridi and Orakzai tribesmen invested Fort Gulistan and cut-off Saragarhi from Fort Lockhart.
-            Thousands of tribesmen then attacked the Saragarhi Post and this message was promptly communicated to Fort
-            Lockhart via Heliograph by a young Signalman, Gurmukh Singh. On being ordered to “hold their position”, the
-            men under Havildar Ishar Singh engaged the enemy from loopholes on the Saragarhi rooftop and later
-            hand-to-hand battle in the post quarters. These warriors were armed with Martini Henry (.303) – this single
-            shot breech loaded rifle with a count of 400 rounds per weapon was no match to the assaulting thousands, but
-            the men displayed better fire discipline and tactics. When nearly half the outpost were either dead or
-            wounded during the first six hours of fighting, Havildar Ishar Singh ordered his men to leave the loop-holed
-            battlements and get down to the main quartering block for hand-to-hand battle.<br><br>
-            Their last message on the heliograph was : “We have been overrun, but will not surrender. Request permission
-            to close down communication.” The permission was granted, the remaining men kept fighting for another few
-            hours before making the supreme sacrifice. Their heroic last stand accounted for almost 450 men of the enemy
-            either dead or wounded.<br><br>
-            To recognize their brave act, all 21 soldiers were posthumously awarded the “Indian Order of Merit (IOM)”,
-            which was the highest and the only gallantry medal then available to native Indian soldiers. Saragarhi is
-            also recognised among the top eight stories of collective bravery by UNESCO. Recent research has revealed
-            that in addition Karam Daad, another local NCE also died fighting with the 21 valiant Sikh soldiers. Some of
-            the tribal attackers (who knew the two local NCEs) asked them to escape but both preferred to die fighting
-            alongside their Sikh breathen.
-        </div>
-
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2
-                style="font-style: italic; color: var(--accent-color); font-size: 2.2rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 5px;">
-                Coffee Table Book</h2>
-            <h3 style="color: var(--text-main); font-size: 1.8rem; font-weight: 700; margin-bottom: 5px;">A Legacy of
-                Valour</h3>
-            <p style="color: #94a3b8; font-size: 1.1rem; font-weight: 400; font-style: italic;">An Illustrated History
-                of The Sikh Regiment (1846 to 2010)</p>
-        </div>
-
-        <!-- Photo Button Navigation Grid -->
-        <div class="photo-nav-grid">
-            <div class="photo-nav-item">
-                <img src="assets/art/art_72.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-2')" alt="Chapter 1">
-                <div class="photo-nav-number">1</div>
-                <div id="photo-dropdown-2" class="dropdown-content photo-nav-dropdown">
-                    <a href="art72.html">The Sikh Character</a>
-                    <a href="art73.html">Building a Tradition of Valour</a>
-                    <a href="art74.html">Sikh Soldier in the 21st Century</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_81.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-3')" alt="Chapter 2">
-                <div class="photo-nav-number">2</div>
-                <div id="photo-dropdown-3" class="dropdown-content photo-nav-dropdown">
-                    <a href="art81.html">Foundation of the Faith</a>
-                    <a href="art82.html">Creation of the Order of the Khalsa</a>
-                    <a href="art83.html">Organisation and Character of the Khalsa</a>
-                    <a href="art84.html">Organisation and Prowess of the Khalsa Army</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_91.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-4')" alt="Chapter 3">
-                <div class="photo-nav-number">3</div>
-                <div id="photo-dropdown-4" class="dropdown-content photo-nav-dropdown">
-                    <a href="art91.html">Rise of the Sikh Kingdom</a>
-                    <a href="art92.html">The Sikh Military Machine</a>
-                    <a href="art93.html">Fauj-i-Ain and European Reorganisation</a>
-                    <a href="art94.html">Anglo-Sikh Wars</a>
-                    <a href="art95.html">End of an Era</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_101.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-5')" alt="Chapter 4">
-                <div class="photo-nav-number">4</div>
-                <div id="photo-dropdown-5" class="dropdown-content photo-nav-dropdown">
-                    <a href="art101.html">Raising of the Sikh Battalions</a>
-                    <a href="art102.html">True to Salt-1857</a>
-                    <a href="art103.html">Beyond the Indian Borders and Fearless on the Frontiers</a>
-                    <a href="art104.html">Saga of Saragarhi and Northern China</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_111.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-6')" alt="Chapter 5">
-                <div class="photo-nav-number">5</div>
-                <div id="photo-dropdown-6" class="dropdown-content photo-nav-dropdown">
-                    <a href="art111.html">The Great War-Europe</a>
-                    <a href="art112.html">France and Flanders, 1914-15</a>
-                    <a href="art113.html">Gallipoli, 1915</a>
-                    <a href="art114.html">Mesopotamia and Palestine</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_121.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-7')" alt="Chapter 6">
-                <div class="photo-nav-number">6</div>
-                <div id="photo-dropdown-7" class="dropdown-content photo-nav-dropdown">
-                    <a href="art121.html">The New Regimental System</a>
-                    <a href="art122.html">Raising of the Training Battalion</a>
-                    <a href="art123.html">Modernisation and Regimental Identity</a>
-                    <a href="art124.html">Honours and Indianisation</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_131.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-8')" alt="Chapter 7">
-                <div class="photo-nav-number">7</div>
-                <div id="photo-dropdown-8" class="dropdown-content photo-nav-dropdown">
-                    <a href="art131.html">North Africa and the Middle East</a>
-                    <a href="art132.html">Malaya and Burma</a>
-                    <a href="art133.html">Italy and Victory</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_141.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-9')" alt="Chapter 8">
-                <div class="photo-nav-number">8</div>
-                <div id="photo-dropdown-9" class="dropdown-content photo-nav-dropdown">
-                    <a href="art141.html">Partition and Reconstitution</a>
-                    <a href="art142.html">Operations in Jammu and Kashmir, 1947-48</a>
-                    <a href="art143.html">Junagarh and Operation POLO</a>
-                    <a href="art144.html">Re-Raising of 5 Sikh</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_151.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-10')" alt="Chapter 9">
-                <div class="photo-nav-number">9</div>
-                <div id="photo-dropdown-10" class="dropdown-content photo-nav-dropdown">
-                    <a href="art151.html">Operation VIJAY-Liberation of Goa, 1961</a>
-                    <a href="art152.html">The Indo-Sino War, 1962</a>
-                    <a href="art153.html">The Battle of Walong</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_161.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-11')" alt="Chapter 10">
-                <div class="photo-nav-number">10</div>
-                <div id="photo-dropdown-11" class="dropdown-content photo-nav-dropdown">
-                    <a href="art161.html">Reorganisation and Re-equipment</a>
-                    <a href="art162.html">Raising of New Battalions</a>
-                    <a href="art163.html">Positioning for the Coming Conflict</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_171.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-12')" alt="Chapter 11">
-                <div class="photo-nav-number">11</div>
-                <div id="photo-dropdown-12" class="dropdown-content photo-nav-dropdown">
-                    <a href="art171.html">Operation GIBRALTAR</a>
-                    <a href="art172.html">Fighting in Jammu and Kashmir</a>
-                    <a href="art173.html">Barki, Khem Karan and OP Hill</a>
-                    <a href="art174.html">Expansion after the War</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_175.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-13')" alt="Chapter 12">
-                <div class="photo-nav-number">12</div>
-                <div id="photo-dropdown-13" class="dropdown-content photo-nav-dropdown">
-                    <a href="art175.html">Road to War</a>
-                    <a href="art176.html">Eastern Front-4 Sikh</a>
-                    <a href="art177.html">Western Front</a>
-                    <a href="art178.html">After the War</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_183.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-14')" alt="Chapter 13">
-                <div class="photo-nav-number">13</div>
-                <div id="photo-dropdown-14" class="dropdown-content photo-nav-dropdown">
-                    <a href="art183.html">New Operational Challenges</a>
-                    <a href="art184.html">Operation MEGHDOOT-Siachen</a>
-                    <a href="art185.html">Operation PAWAN-Sri Lanka</a>
-                    <a href="art186.html">Counter-Insurgency and Gallantry</a>
-                    <a href="art187.html">Operation VIJAY-Kargil</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_190.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-15')" alt="Chapter 14">
-                <div class="photo-nav-number">14</div>
-                <div id="photo-dropdown-15" class="dropdown-content photo-nav-dropdown">
-                    <a href="art190.html">From Korea to Gaza</a>
-                    <a href="art191.html">Lebanon and the Blue Line</a>
-                    <a href="art192.html">Congo-Peacekeeping under Fire</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_210.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-16')" alt="Chapter 15">
-                <div class="photo-nav-number">15</div>
-                <div id="photo-dropdown-16" class="dropdown-content photo-nav-dropdown">
-                    <a href="art210.html">Jhelum and Nowshera</a>
-                    <a href="art211.html">Partition, Ambala and Meerut</a>
-                    <a href="art212.html">Ramgarh-The Permanent Home</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_213.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-17')" alt="Chapter 16">
-                <div class="photo-nav-number">16</div>
-                <div id="photo-dropdown-17" class="dropdown-content photo-nav-dropdown">
-                    <a href="art213.html">Symbols of Regimental Honour</a>
-                    <a href="art214.html">Colours of the Original Battalions</a>
-                    <a href="art215.html">From King's Colours to the Republic</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_216.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-18')" alt="Chapter 17">
-                <div class="photo-nav-number">17</div>
-                <div id="photo-dropdown-18" class="dropdown-content photo-nav-dropdown">
-                    <a href="art216.html">From War Drums to Military Bands</a>
-                    <a href="art217.html">Early Distinction and Overseas Performances</a>
-                    <a href="art218.html">Edinburgh and Later Achievements</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_219.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-19')" alt="Chapter 18">
-                <div class="photo-nav-number">18</div>
-                <div id="photo-dropdown-19" class="dropdown-content photo-nav-dropdown">
-                    <a href="art219.html">Reuniting the Regimental Family</a>
-                    <a href="art220.html">Colours, Veterans and the Move to Ramgarh</a>
-                    <a href="art221.html">New Milestones</a>
-                </div>
-            </div>
-            <div class="photo-nav-item">
-                <img src="assets/art/art_222.webp" class="photo-nav-btn"
-                    onclick="toggleDropdown(event, 'photo-dropdown-20')" alt="Chapter 19">
-                <div class="photo-nav-number">19</div>
-                <div id="photo-dropdown-20" class="dropdown-content photo-nav-dropdown">
-                    <a href="art222.html">A Tradition of Excellence</a>
-                    <a href="art223.html">Athletics and Traditional Sports</a>
-                    <a href="art224.html">Hockey-The Regimental Game</a>
-                    <a href="art225.html">Boxing, Wrestling and Wider Achievement</a>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_home.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this gallery in Chrome on your phone.</p>
-                </div>
-            </div>
+        <div class="footer-credits">
+            &copy; 2026 Virasat Museum &bull; The Sikh Regiment &bull; Ramgarh Cantt, Jharkhand
         </div>
 
     </div>
 
-    <script>
-        function toggleDropdown(event, id) {
-            event.stopPropagation();
-
-            // Close all other dropdowns
-            const dropdowns = document.getElementsByClassName("dropdown-content");
-            for (let i = 0; i < dropdowns.length; i++) {
-                if (dropdowns[i].id !== id) {
-                    dropdowns[i].classList.remove('show');
-                }
-            }
-
-            // Close all nested dropdowns when switching main dropdowns
-            const nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
-            for (let i = 0; i < nestedDropdowns.length; i++) {
-                nestedDropdowns[i].classList.remove('show');
-                const parentBtn = nestedDropdowns[i].previousElementSibling;
-                if (parentBtn) {
-                    parentBtn.classList.remove('open');
-                }
-            }
-
-            // Toggle the targeted dropdown
-            document.getElementById(id).classList.toggle("show");
-        }
-
-        function toggleNestedDropdown(event, id) {
-            event.stopPropagation();
-            const content = document.getElementById(id);
-            const btn = event.currentTarget;
-            const isShowing = content.classList.contains('show');
-
-            // Close other nested dropdowns
-            const nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
-            for (let i = 0; i < nestedDropdowns.length; i++) {
-                nestedDropdowns[i].classList.remove('show');
-                const parentBtn = nestedDropdowns[i].previousElementSibling;
-                if (parentBtn) {
-                    parentBtn.classList.remove('open');
-                }
-            }
-
-            if (!isShowing) {
-                content.classList.add('show');
-                btn.classList.add('open');
-            } else {
-                content.classList.remove('show');
-                btn.classList.remove('open');
-            }
-        }
-
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.nav-btn') && !event.target.matches('.photo-nav-btn') && !event.target.matches('.nested-btn') && !event.target.closest('.nested-btn')) {
-                const dropdowns = document.getElementsByClassName("dropdown-content");
-                for (let i = 0; i < dropdowns.length; i++) {
-                    let openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-
-                // Close all nested dropdowns
-                const nestedDropdowns = document.getElementsByClassName("nested-dropdown-content");
-                for (let i = 0; i < nestedDropdowns.length; i++) {
-                    nestedDropdowns[i].classList.remove('show');
-                    const parentBtn = nestedDropdowns[i].previousElementSibling;
-                    if (parentBtn) {
-                        parentBtn.classList.remove('open');
-                    }
-                }
-            }
-        }
-
-        // Double-click scroller images to toggle fullscreen mode
-        document.addEventListener('dblclick', function (event) {
-            if (event.target && (event.target.matches('.scroller-track img') || event.target.matches('.featured-scroller-track img') || event.target.closest('.ramgarh-scroller-slide img'))) {
-                if (!document.fullscreenElement) {
-                    if (event.target.requestFullscreen) {
-                        event.target.requestFullscreen();
-                    } else if (event.target.webkitRequestFullscreen) { // Safari
-                        event.target.webkitRequestFullscreen();
-                    }
-                } else {
-                    if (document.exitFullscreen) {
-                        document.exitFullscreen();
-                    } else if (document.webkitExitFullscreen) { // Safari
-                        document.webkitExitFullscreen();
-                    }
-                }
-            }
-        });
-    </script>
 </body>
-
 </html>

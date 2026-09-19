@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ਕੀਰਤੀ ਚੱਕਰ - ਵਿਰਾਸਤ ਅਜਾਇਬ ਘਰ</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+        /* Slider Specific Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 950px;
+            margin: 30px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .slides-wrapper {
+            position: relative;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide-images-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 60px 100px 60px; /* Space for arrow controls on sides, caption on bottom */
+            background-color: #050b14;
+        }
+
+        .awardee-img, .medal-img {
+            max-width: 42%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .awardee-img:hover, .medal-img:hover {
+            transform: scale(1.03);
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 32px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Fullscreen slide double-click style */
+        .awardee-img:fullscreen, .medal-img:fullscreen {
+            object-fit: contain;
+            background-color: #000;
+            border: none;
+            transform: none;
+        }
+
+        .caption-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+            padding: 40px 20px 25px 20px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .caption-text {
+            color: var(--text-main);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Controls */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .slider-arrow:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            border-color: var(--accent-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-prev {
+            left: 20px;
+        }
+
+        .arrow-next {
+            right: 20px;
+        }
+
+        /* Dots Indicator */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .dot.active {
+            background: var(--accent-color);
+            transform: scale(1.2);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .slide-counter {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .slides-wrapper {
+                height: 450px;
+            }
+            .slide-images-container {
+                gap: 15px;
+                padding: 30px 40px 80px 40px;
+            }
+            .caption-text {
+                font-size: 1.05rem;
+            }
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ ਭਾਸ਼ਾ ਚੋਣ
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="kirti_chakra.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇬🇧 English</a>
+<a class="nav-link" href="kirti_chakra_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="kirti_chakra_pa.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
+
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+<a class="nav-link" href="index_pa.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> ਮੁੱਖ ਪੰਨਾ</a>
+<span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">ਹਾਲ ਔਫ ਫੇਮ</span>
+</div>
+<h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">ਕੀਰਤੀ ਚੱਕਰ</h1>
+<p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">ਸਿੱਖ ਰੈਜੀਮੈਂਟ ਦੇ ਕੀਰਤੀ ਚੱਕਰ ਅਵਾਰਡਾਂ ਦੀ ਪੜਚੋਲ ਕਰੋ, ਜੋ ਦੁਸ਼ਮਣ ਦੇ ਚਿਹਰੇ ਤੋਂ ਇਲਾਵਾ ਸ਼ਾਨਦਾਰ ਬਹਾਦਰੀ ਲਈ ਮਾਨਤਾ ਪ੍ਰਾਪਤ ਹਨ। ਪੂਰੀ ਸਕਰੀਨ ਵਿੱਚ ਦੇਖਣ ਲਈ ਕਿਸੇ ਵੀ ਫੋਟੋ 'ਤੇ ਦੋ ਵਾਰ ਕਲਿੱਕ ਕਰੋ।</p>
+<!-- Slider Section -->
+<div class="slider-container">
+<!-- Arrows -->
+<button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<button class="slider-arrow arrow-next" onclick="changeSlide(1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+<!-- Slides Wrapper -->
+<div class="slides-wrapper">
+<!-- Slide 243 -->
+<div class="slide active">
+<div class="slide-images-container">
+<img alt="Havildar Manjit Singh" class="awardee-img" src="assets/art/kc_awardee_243.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਹੌਲਦਾਰ ਮਨਜੀਤ ਸਿੰਘ (ਓ. ਰਕਸ਼ਕ, 2006)</div>
+</div>
+</div>
+<!-- Slide 244 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lance Naik Jagjit Singh" class="awardee-img" src="assets/art/kc_awardee_244.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਲਾਂਸ ਨਾਇਕ ਜਗਜੀਤ ਸਿੰਘ (ਓਪ ਰਕਸ਼ਕ, 1992)</div>
+</div>
+</div>
+<!-- Slide 245 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel SK Razdan" class="awardee-img" src="assets/art/kc_awardee_245.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਲੈਫਟੀਨੈਂਟ ਕਰਨਲ ਐਸ ਕੇ ਰਜ਼ਦਾਨ (ਓਪ ਰਾਈਨੋ, 1994)</div>
+</div>
+</div>
+<!-- Slide 246 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lance Havildar Lashkar Singh" class="awardee-img" src="assets/art/kc_awardee_246.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਲਾਂਸ ਹੌਲਦਾਰ ਲਸ਼ਕਰ ਸਿੰਘ (ਓਪ ਰਕਸ਼ਕ, 2001)</div>
+</div>
+</div>
+<!-- Slide 247 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Sepoy Sewa Singh" class="awardee-img" src="assets/art/kc_awardee_247.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਸਿਪਾਹੀ ਸੇਵਾ ਸਿੰਘ (ਹੈਦਰਾਬਾਦ ਪੁਲਿਸ ਐਕਸ਼ਨ, 1948)</div>
+</div>
+</div>
+<!-- Slide 248 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Jemadar Kulwant Singh" class="awardee-img" src="assets/art/kc_awardee_248.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਜਮਾਂਦਾਰ ਕੁਲਵੰਤ ਸਿੰਘ (ਹੈਦਰਾਬਾਦ ਪੁਲਿਸ ਐਕਸ਼ਨ, 1956)</div>
+</div>
+</div>
+<!-- Slide 249 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Major Raman Dada" class="awardee-img" src="assets/art/kc_awardee_249.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਮੇਜਰ ਰਮਨ ਦਾਦਾ (ਓਪ ਰਾਈਨੋ, 1999)</div>
+</div>
+</div>
+<!-- Slide 250 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Major SC Rana" class="awardee-img" src="assets/art/kc_awardee_250.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਮੇਜਰ ਐਸ.ਸੀ ਰਾਣਾ (ਓਪ ਰਕਸ਼ਕ, 2001)</div>
+</div>
+</div>
+<!-- Slide 251 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Naik Hardyal Singh" class="awardee-img" src="assets/art/kc_awardee_251.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਨਾਇਕ ਹਰਦਿਆਲ ਸਿੰਘ (ਹੈਦਰਾਬਾਦ ਪੁਲਿਸ ਐਕਸ਼ਨ, 1948)</div>
+</div>
+</div>
+<!-- Slide 252 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Kirti Chakra Recipient" class="awardee-img" src="assets/art/kc_awardee_252.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਕੀਰਤੀ ਚੱਕਰ ਪ੍ਰਾਪਤ ਕਰਨ ਵਾਲਾ</div>
+</div>
+</div>
+<!-- Slide 253 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Kanavdeep Singh" class="awardee-img" src="assets/art/kc_awardee_253.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">ਲੈਫਟੀਨੈਂਟ ਕਨਵਦੀਪ ਸਿੰਘ (ਓਪ ਰਕਸ਼ਕ, 2003)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide Counter -->
+<div class="slide-counter" id="slideCounter">Slide 1 of 11</div>
+<!-- Dots Indicator -->
+<div class="slider-dots" id="dotsContainer"></div>
+</div>
+<script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideCounter = document.getElementById('slideCounter');
+        const dotsContainer = document.getElementById('dotsContainer');
+        let slideInterval;
+
+        // Initialize dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetAutoplay();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    dots[index].classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                    dots[index].classList.remove('active');
+                }
+            });
+            slideCounter.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            updateSlide();
+            resetAutoplay();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // Double-click image to toggle fullscreen mode
+        document.querySelectorAll('.slide img').forEach(img => {
+            img.addEventListener('dblclick', function () {
+                if (!document.fullscreenElement) {
+                    if (this.requestFullscreen) {
+                        this.requestFullscreen();
+                    } else if (this.webkitRequestFullscreen) { // Safari
+                        this.webkitRequestFullscreen();
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { // Safari
+                        document.webkitExitFullscreen();
+                    }
+                }
+            });
+        });
+
+        // Pause autoplay during fullscreen
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+        function handleFullscreenChange() {
+            if (document.fullscreenElement || document.webkitFullscreenElement) {
+                clearInterval(slideInterval);
+            } else {
+                resetAutoplay();
+            }
+        }
+
+        // Autoplay feature
+        function startAutoplay() {
+            slideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 6000); // changes slide every 6 seconds
+        }
+
+        // Reset autoplay timer
+        function resetAutoplay() {
+            clearInterval(slideInterval);
+            startAutoplay();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
+        // Initialize autoplay on load
+        startAutoplay();
+    </script>
+</body>
+</html>

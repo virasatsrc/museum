@@ -1,124 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colonel Gurbaksh Singh - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Colonel Gurbaksh Singh - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
 <body class="portrait-page">
-    <div class="gallery-container">
-        
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-        </div>
+<div class="gallery-container">
+<!-- Language Switcher Bar -->
+<div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="art47.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="art47_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="art47_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
 
-        <h1>Colonel Gurbaksh Singh</h1>
-        
-        <div class="photo-wrapper">
-            <img class="photo-background" src="assets/art/art_47.webp" alt="" onerror="this.style.display='none'">
-            <img class="photo-main" src="assets/art/art_47.webp" alt="Colonel Gurbaksh Singh" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'">
-        </div>
+<!-- Home Button -->
+<div style="margin-bottom: 20px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+</div>
 
-        <div class="audio-section">
-            <audio id="artAudio" autoplay src="assets/audio/audio_47.mp3"></audio>
-            <button class="play-btn" onclick="toggleAudio()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
-                Listen to Narration
-            </button>
-        </div>
+<h1>Colonel Gurbaksh Singh</h1>
+<div class="photo-wrapper">
+<img alt="" class="photo-background" onerror="this.style.display='none'" src="assets/art/art_47.webp"/>
+<img alt="Colonel Gurbaksh Singh" class="photo-main" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'" src="assets/art/art_47.webp"/>
+</div>
 
-        <div class="description-box">
-            <strong>Title:</strong> Colonel Gurbaksh Singh<br>
-            <strong>Category:</strong> Comdts' Gallery<br>
-            <strong>Artist:</strong> Historical Figure<br>
-            <strong>Year:</strong> June 1966 - July 1970
-        </div>
+<div class="audio-section">
+<audio autoplay="" id="artAudio" src="assets/audio/audio_47.mp3"></audio>
+<button class="play-btn" onclick="toggleAudio()">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+    Listen to Narration
+</button>
+</div>
 
-        <div class="description-box">
-            <strong>COLONEL GURBAKSH SINGH (June 1966 - July 1970)</strong><br><br>
-            Colonel Gurbaksh Singh was commissioned in September 1942 into 3 SIKH, and served in Eritrea and Japan. After Independence, when the SIKH Regimental Centre moved to Ambala, he assumed the appointment of its Deputy Commandant. He later commanded 2 SIKH from 1952 to 1957, 4 SIKH from 1960 to 1962, and then raised 6 SIKH in 1962. He also commanded 14 Infantry Battalion (TA) from 1963 to 1965, before taking over the command of SRC in June 1966. He was a member of UN Mission in China, and AMS to Lieutenant General Harbakhsh Singh during 1965 Operations. As Centre Commandant, he laid stress upon sports and firing standards SIKH Regiment won the National Rifle Association (NRA) trophy in 1968, Jawaharlal Nehru Hockey Championship and were Runners Up in Durand Cup, under his stewardship. During his tenure, 4th Post War Reunion was held and Colours were presented to the Regiment in 1968.
-        </div>
+<div class="description-box">
+<strong>Title:</strong> Colonel Gurbaksh Singh<br/>
+<strong>Category:</strong> Comdts' Gallery<br/>
+<strong>Artist:</strong> Historical Figure<br/>
+<strong>Year:</strong> June 1966 - July 1970
+</div>
 
-        <div class="navigation">
-            <a href="art46.html" class="nav-link ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Previous Piece
-            </a>
-            <span style="color: #94a3b8;">Piece 8 / 32</span>
-            <a href="art48.html" class="nav-link ">
-                Next Piece
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
+<div class="description-box">
+<strong>COLONEL GURBAKSH SINGH (June 1966 - July 1970)</strong><br/><br/>
+Colonel Gurbaksh Singh was commissioned in September 1942 into 3 SIKH and served in Eritrea and Japan. He commanded 7 SIKH in Ladakh during the 1962 conflict and led the Sikh Regimental Centre as Commandant from June 1966 to July 1970. He brought immense dynamism to recruit training, weapon handling, and physical fitness, establishing institutions that modernized the Centre's administrative and operational capabilities.
+</div>
 
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_art_47.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this art record in Chrome on your phone.</p>
-                </div>
-            </div>
-        </div>
+<div class="navigation">
+<a class="nav-link " href="art46.html">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
+    Previous Piece
+</a>
+<span style="color: #94a3b8;">Piece 8 / 32</span>
+<a class="nav-link " href="art48.html">
+    Next Piece
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
 
-    </div>
+<!-- QR Code Section -->
+<div class="qr-container">
+<div class="qr-wrapper">
+<img alt="Scan for mobile" src="assets/qrcodes/qr_art_47.png"/>
+<div class="qr-info">
+<h3>Open on Mobile</h3>
+<p>Scan to view this art record in Chrome on your phone.</p>
+</div>
+</div>
+</div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const audio = document.getElementById('artAudio');
-            const btn = document.querySelector('.play-btn');
+</div>
 
-            audio.addEventListener('play', function() {
-                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
-            });
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const audio = document.getElementById('artAudio');
+        const btn = document.querySelector('.play-btn');
 
-            audio.addEventListener('pause', function() {
-                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
-            });
-
-            audio.addEventListener('ended', function() {
-                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
-            });
-            
-            // Attempt autoplay
-            let playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    console.log("Autoplay prevented by browser:", error);
-                    const startAudioOnInteract = () => {
-                        audio.play();
-                        document.body.removeEventListener('click', startAudioOnInteract);
-                        document.body.removeEventListener('touchstart', startAudioOnInteract);
-                    };
-                    document.body.addEventListener('click', startAudioOnInteract);
-                    document.body.addEventListener('touchstart', startAudioOnInteract);
-                });
-            }
+        audio.addEventListener('play', function() {
+            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
         });
 
-        function toggleAudio() {
-            const audio = document.getElementById('artAudio');
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
+        audio.addEventListener('pause', function() {
+            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+        });
+
+        audio.addEventListener('ended', function() {
+            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+        });
+        
+        // Attempt autoplay
+        let playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Autoplay prevented by browser:", error);
+                const startAudioOnInteract = () => {
+                    audio.play();
+                    document.body.removeEventListener('click', startAudioOnInteract);
+                    document.body.removeEventListener('touchstart', startAudioOnInteract);
+                };
+                document.body.addEventListener('click', startAudioOnInteract);
+                document.body.addEventListener('touchstart', startAudioOnInteract);
+            });
         }
-    </script>
+    });
+
+    function toggleAudio() {
+        const audio = document.getElementById('artAudio');
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
+</script>
 </body>
 </html>

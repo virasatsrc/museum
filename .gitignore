@@ -1,2 +1,7 @@
 assets/art/backup/
 scratch/
+__pycache__/
+*.pyc
+test_*.mp3
+test_cache.py
+translations_cache.json

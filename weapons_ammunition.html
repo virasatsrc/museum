@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weapons & Ammunition - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weapons &amp; Ammunition - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
         /* Slider Specific Styles */
         .slider-container {
             position: relative;
@@ -203,52 +204,56 @@
     </style>
 </head>
 <body>
-    <div class="gallery-container">
-        
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-            <span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">WALL ATRIUM</span>
-        </div>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="weapons_ammunition.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="weapons_ammunition_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="weapons_ammunition_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
 
-        <h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">WEAPONS & AMMUNITION</h1>
-        <p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+<span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">WALL ATRIUM</span>
+</div>
+<h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">WEAPONS &amp; AMMUNITION</h1>
+<p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.5;">
             Explore the historical weapons, light artillery, and ammunition from the Sikh Regiment Museum's collections. Double-click the photo to view in fullscreen.
         </p>
-
-        <!-- Slider Section -->
-        <div class="slider-container">
-            <!-- Arrows -->
-            <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button class="slider-arrow arrow-next" onclick="changeSlide(1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-
-            <!-- Slides Wrapper (Dynamically Populated) -->
-            <div class="slides-wrapper" id="slidesWrapper"></div>
-        </div>
-
-        <!-- Slide Counter -->
-        <div class="slide-counter" id="slideCounter">Loading exhibit...</div>
-
-        <!-- Dots Indicator -->
-        <div class="slider-dots" id="dotsContainer"></div>
-
-    </div>
-
-    <script>
+<!-- Slider Section -->
+<div class="slider-container">
+<!-- Arrows -->
+<button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<button class="slider-arrow arrow-next" onclick="changeSlide(1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+<!-- Slides Wrapper (Dynamically Populated) -->
+<div class="slides-wrapper" id="slidesWrapper"></div>
+</div>
+<!-- Slide Counter -->
+<div class="slide-counter" id="slideCounter">Loading exhibit...</div>
+<!-- Dots Indicator -->
+<div class="slider-dots" id="dotsContainer"></div>
+</div>
+<script>
         // Generate the 78 weapons slides data
         const weapons = [];
         for (let i = 0; i < 78; i++) {

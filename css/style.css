@@ -178,6 +178,7 @@ h1 {
 .scroller-track img {
     height: 250px;
     width: auto;
+    object-fit: contain;
     margin: 0 15px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);

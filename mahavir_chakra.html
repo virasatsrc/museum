@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahavir Chakra - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mahavir Chakra - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
         /* Slider Specific Styles */
         .slider-container {
             position: relative;
@@ -198,186 +199,177 @@
     </style>
 </head>
 <body>
-    <div class="gallery-container">
-        
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-            <span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">HALL OF FAME</span>
-        </div>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="mahavir_chakra.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="mahavir_chakra_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="mahavir_chakra_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
 
-        <h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">MAHAVIR CHAKRA</h1>
-        <p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+<span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">HALL OF FAME</span>
+</div>
+<h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">MAHAVIR CHAKRA</h1>
+<p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">
             Explore the Maha Vir Chakra (MVC) awardees of the Sikh Regiment, recognized for their conspicuous acts of gallantry in the face of the enemy. Double-click either photo to view in fullscreen.
         </p>
-
-        <!-- Slider Section -->
-        <div class="slider-container">
-            <!-- Arrows -->
-            <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button class="slider-arrow arrow-next" onclick="changeSlide(1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-
-            <!-- Slides Wrapper -->
-            <div class="slides-wrapper">
-                
-                <!-- Slide 231 -->
-                <div class="slide active">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_231.webp" class="awardee-img" alt="Sepoy Kewal Singh">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Sepoy Kewal Singh (Indo-China War, 1962)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 232 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_232.webp" class="awardee-img" alt="Lieutenant Colonel Diwan Ranjit Rai">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lieutenant Colonel Diwan Ranjit Rai (Indo-Pakistan War, 1947-48)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 233 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_233.webp" class="awardee-img" alt="Subedar Bishan Singh, MC, OBI">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Subedar Bishan Singh, MC, OBI (Indo-Pakistan War, 1947-48)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 234 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_234.webp" class="awardee-img" alt="Lance Naik Shangara Singh">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lance Naik Shangara Singh (Indo-Pakistan War, 1971)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 235 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_235.webp" class="awardee-img" alt="Lieutenant Colonel KL Rattan">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lieutenant Colonel KL Rattan (Indo-Pakistan War, 1971)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 236 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_236.webp" class="awardee-img" alt="Lieutenant Colonel NN Khanna">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lieutenant Colonel NN Khanna (Indo-China War, 1962)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 237 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_237.webp" class="awardee-img" alt="Subedar Ajit Singh">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Subedar Ajit Singh (Indo-Pakistan War, 1965)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 238 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_238.webp" class="awardee-img" alt="Major Jaivir Singh">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Major Jaivir Singh (Indo-Pakistan War, 1971)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 239 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_239.webp" class="awardee-img" alt="Lieutenant Colonel PK Khanna">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lieutenant Colonel PK Khanna (Indo-Pakistan War, 1971)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 240 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_240.webp" class="awardee-img" alt="Naik Chand Singh">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Naik Chand Singh (Indo-Pakistan War, 1947-48)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 241 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_241.webp" class="awardee-img" alt="Captain Mahabir Prasad">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Captain Mahabir Prasad (Indo-China War, 1962)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 242 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/mvc_awardee_242.webp" class="awardee-img" alt="Jemadar Nand Singh, VC">
-                        <img src="assets/art/mahavir_chakra_medal.webp" class="medal-img" alt="Mahavir Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Jemadar Nand Singh, VC (Indo-Pakistan War, 1947-48)</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Slide Counter -->
-        <div class="slide-counter" id="slideCounter">Slide 1 of 12</div>
-
-        <!-- Dots Indicator -->
-        <div class="slider-dots" id="dotsContainer"></div>
-
-    </div>
-
-    <script>
+<!-- Slider Section -->
+<div class="slider-container">
+<!-- Arrows -->
+<button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<button class="slider-arrow arrow-next" onclick="changeSlide(1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+<!-- Slides Wrapper -->
+<div class="slides-wrapper">
+<!-- Slide 231 -->
+<div class="slide active">
+<div class="slide-images-container">
+<img alt="Sepoy Kewal Singh" class="awardee-img" src="assets/art/mvc_awardee_231.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Sepoy Kewal Singh (Indo-China War, 1962)</div>
+</div>
+</div>
+<!-- Slide 232 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel Diwan Ranjit Rai" class="awardee-img" src="assets/art/mvc_awardee_232.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lieutenant Colonel Diwan Ranjit Rai (Indo-Pakistan War, 1947-48)</div>
+</div>
+</div>
+<!-- Slide 233 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Subedar Bishan Singh, MC, OBI" class="awardee-img" src="assets/art/mvc_awardee_233.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Subedar Bishan Singh, MC, OBI (Indo-Pakistan War, 1947-48)</div>
+</div>
+</div>
+<!-- Slide 234 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lance Naik Shangara Singh" class="awardee-img" src="assets/art/mvc_awardee_234.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lance Naik Shangara Singh (Indo-Pakistan War, 1971)</div>
+</div>
+</div>
+<!-- Slide 235 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel KL Rattan" class="awardee-img" src="assets/art/mvc_awardee_235.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lieutenant Colonel KL Rattan (Indo-Pakistan War, 1971)</div>
+</div>
+</div>
+<!-- Slide 236 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel NN Khanna" class="awardee-img" src="assets/art/mvc_awardee_236.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lieutenant Colonel NN Khanna (Indo-China War, 1962)</div>
+</div>
+</div>
+<!-- Slide 237 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Subedar Ajit Singh" class="awardee-img" src="assets/art/mvc_awardee_237.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Subedar Ajit Singh (Indo-Pakistan War, 1965)</div>
+</div>
+</div>
+<!-- Slide 238 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Major Jaivir Singh" class="awardee-img" src="assets/art/mvc_awardee_238.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Major Jaivir Singh (Indo-Pakistan War, 1971)</div>
+</div>
+</div>
+<!-- Slide 239 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel PK Khanna" class="awardee-img" src="assets/art/mvc_awardee_239.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lieutenant Colonel PK Khanna (Indo-Pakistan War, 1971)</div>
+</div>
+</div>
+<!-- Slide 240 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Naik Chand Singh" class="awardee-img" src="assets/art/mvc_awardee_240.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Naik Chand Singh (Indo-Pakistan War, 1947-48)</div>
+</div>
+</div>
+<!-- Slide 241 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Captain Mahabir Prasad" class="awardee-img" src="assets/art/mvc_awardee_241.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Captain Mahabir Prasad (Indo-China War, 1962)</div>
+</div>
+</div>
+<!-- Slide 242 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Jemadar Nand Singh, VC" class="awardee-img" src="assets/art/mvc_awardee_242.webp"/>
+<img alt="Mahavir Chakra Medal" class="medal-img" src="assets/art/mahavir_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Jemadar Nand Singh, VC (Indo-Pakistan War, 1947-48)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide Counter -->
+<div class="slide-counter" id="slideCounter">Slide 1 of 12</div>
+<!-- Dots Indicator -->
+<div class="slider-dots" id="dotsContainer"></div>
+</div>
+<script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const slideCounter = document.getElementById('slideCounter');

@@ -1,96 +1,77 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonding at Sea and Air - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bonding at Sea and Air - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
-
 <body>
-    <div class="gallery-container">
-
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-link"
-                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-        </div>
-
-        <h1>Bonding at Sea and Air</h1>
-
-        <!-- Continuous Image Scroller -->
-        <div class="scroller-container">
-            <div class="scroller-track" style="animation-duration: 80s;">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_164.webp" alt="12 Squadron RIAF in action"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_165.webp"
-                        alt="Soldiers of the SIKH Regiment on INS Kirpan" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_166.webp"
-                        alt="The 12 Squadron Contingent in 2009" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_167.webp"
-                        alt="Captain Reginald Savory with Sikh Troops in Iraq, 1923" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_168.webp"
-                        alt="3 SIKH airlift to NWFP in 1936" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_169.webp"
-                        alt="Affiliation Ceremony in 2009" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_170.webp" alt="INS Kirpan sailing at Sea"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_171.webp"
-                        alt="Jemadar Sarmund Singh silver statue" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_172.webp" alt="Gong of HMS Sikh"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_173.webp" alt="HMS Sikh badge"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_164.webp" alt="12 Squadron RIAF in action"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_165.webp"
-                        alt="Soldiers of the SIKH Regiment on INS Kirpan" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_166.webp"
-                        alt="The 12 Squadron Contingent in 2009" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_167.webp"
-                        alt="Captain Reginald Savory with Sikh Troops in Iraq, 1923" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_168.webp"
-                        alt="3 SIKH airlift to NWFP in 1936" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_169.webp"
-                        alt="Affiliation Ceremony in 2009" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_170.webp" alt="INS Kirpan sailing at Sea"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_171.webp"
-                        alt="Jemadar Sarmund Singh silver statue" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_172.webp" alt="Gong of HMS Sikh"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_173.webp" alt="HMS Sikh badge"
-                        loading="lazy">
-            </div>
-        </div>
-        <div class="audio-section">
-            <audio id="artAudio" autoplay src="assets/audio/audio_504.mp3"></audio>
-            <button class="play-btn" onclick="toggleAudio()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="art504.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="art504_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="art504_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+</div>
+<h1>Bonding at Sea and Air</h1>
+<!-- Continuous Image Scroller -->
+<div class="scroller-container">
+<div class="scroller-track" style="animation-duration: 80s;">
+<img alt="12 Squadron RIAF in action" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_164.webp" style="cursor: pointer;"/>
+<img alt="Soldiers of the SIKH Regiment on INS Kirpan" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_165.webp" style="cursor: pointer;"/>
+<img alt="The 12 Squadron Contingent in 2009" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_166.webp" style="cursor: pointer;"/>
+<img alt="Captain Reginald Savory with Sikh Troops in Iraq, 1923" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_167.webp" style="cursor: pointer;"/>
+<img alt="3 SIKH airlift to NWFP in 1936" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_168.webp" style="cursor: pointer;"/>
+<img alt="Affiliation Ceremony in 2009" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_169.webp" style="cursor: pointer;"/>
+<img alt="INS Kirpan sailing at Sea" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_170.webp" style="cursor: pointer;"/>
+<img alt="Jemadar Sarmund Singh silver statue" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_171.webp" style="cursor: pointer;"/>
+<img alt="Gong of HMS Sikh" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_172.webp" style="cursor: pointer;"/>
+<img alt="HMS Sikh badge" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_173.webp" style="cursor: pointer;"/>
+<img alt="12 Squadron RIAF in action" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_164.webp" style="cursor: pointer;"/>
+<img alt="Soldiers of the SIKH Regiment on INS Kirpan" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_165.webp" style="cursor: pointer;"/>
+<img alt="The 12 Squadron Contingent in 2009" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_166.webp" style="cursor: pointer;"/>
+<img alt="Captain Reginald Savory with Sikh Troops in Iraq, 1923" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_167.webp" style="cursor: pointer;"/>
+<img alt="3 SIKH airlift to NWFP in 1936" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_168.webp" style="cursor: pointer;"/>
+<img alt="Affiliation Ceremony in 2009" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_169.webp" style="cursor: pointer;"/>
+<img alt="INS Kirpan sailing at Sea" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_170.webp" style="cursor: pointer;"/>
+<img alt="Jemadar Sarmund Singh silver statue" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_171.webp" style="cursor: pointer;"/>
+<img alt="Gong of HMS Sikh" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_172.webp" style="cursor: pointer;"/>
+<img alt="HMS Sikh badge" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_173.webp" style="cursor: pointer;"/>
+</div>
+</div>
+<div class="audio-section">
+<audio autoplay="" id="artAudio" src="assets/audio/audio_504.mp3"></audio>
+<button class="play-btn" onclick="toggleAudio()">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
                 Listen to Narration
             </button>
+</div>
+<div class="description-box">
+<strong>Title:</strong> Bonding at Sea and Air<br/>
+<strong>Category:</strong> Beyond Battle Fd<br/>
+<strong>Artist:</strong> Sikh Regimental Centre<br/>
+<strong>Year:</strong> Historical
         </div>
-
-        <div class="description-box">
-            <strong>Title:</strong> Bonding at Sea and Air<br>
-            <strong>Category:</strong> Beyond Battle Fd<br>
-            <strong>Artist:</strong> Sikh Regimental Centre<br>
-            <strong>Year:</strong> Historical
-        </div>
-
-        <div class="description-box">
-            <p>The SIKH Regiment's historical link with the Navy dates back to 1888, when a torpedo boat built at Cowes
+<div class="description-box">
+<p>The SIKH Regiment's historical link with the Navy dates back to 1888, when a torpedo boat built at Cowes
                 for the Royal Indian Marines was christened 'The Sikh'. Another ship named 'The Sikh' was being built in
                 1914 which could not be completed due to the outbreak of the First World War. A third Royal Navy ship
                 named 'HMS Sikh' was built in 1939, which actively participated in the Second World War and was sunk off
@@ -99,7 +80,7 @@
                 commissioned into the Indian Navy in 1991, was formally affiliated to the SIKH Regiment. The ship was
                 decommissioned on 22 July 2023 and gifted to the Vietnam Navy, becoming the first active service warship
                 India has gifted to another country.</p>
-            <p>The Regiment's affiliation with the Air Force goes back to 1922, when 1 SIKH was airlifted for operations
+<p>The Regiment's affiliation with the Air Force goes back to 1922, when 1 SIKH was airlifted for operations
                 against Kurdish Tribes in Iraq. This was the first occasion when Indian troops were airlifted into
                 battle. In 1936, a company of 3 SIKH located at Rawalpindi was airlifted to Chitral for operations along
                 the Frontier. In independent India, 1 SIKH was airlifted from Safdarjung to Srinagar in C-47 Dakotas of
@@ -109,38 +90,34 @@
                 operational airlifts include 4 SIKH's airlift to Walong in 1962 and 16 SIKH flown to NEFA during the
                 Indo-China War. During the Kargil War in 1999, 14 SIKH was inducted by the IAF from Chandigarh to the
                 Leh Sector.</p>
-        </div>
-
-        <div class="navigation">
-            <a href="art503.html" class="nav-link ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
+</div>
+<div class="navigation">
+<a class="nav-link" href="art503.html">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
                 Previous Piece
             </a>
-            <span style="color: #94a3b8;">Piece 7 / 8</span>
-            <a href="art505.html" class="nav-link ">
+<span style="color: #94a3b8;">Piece 7 / 8</span>
+<a class="nav-link" href="art505.html">
                 Next Piece
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_art_504.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this art record in Chrome on your phone.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
+<!-- QR Code Section -->
+<div class="qr-container">
+<div class="qr-wrapper">
+<img alt="Scan for mobile" src="assets/qrcodes/qr_art_504.png"/>
+<div class="qr-info">
+<h3>Open on Mobile</h3>
+<p>Scan to view this art record in Chrome on your phone.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
         document.addEventListener("DOMContentLoaded", function () {
             const audio = document.getElementById('artAudio');
             const btn = document.querySelector('.play-btn');
@@ -196,5 +173,4 @@
         
     </script>
 </body>
-
 </html>

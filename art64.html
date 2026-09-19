@@ -1,125 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brigadier IS Gakhal - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brigadier IS Gakhal - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
 <body class="portrait-page">
-    <div class="gallery-container">
-        
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-        </div>
+<div class="gallery-container">
+<!-- Language Switcher Bar -->
+<div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="art64.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="art64_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="art64_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
 
-        <h1>Brigadier IS Gakhal</h1>
-        
-        <div class="photo-wrapper">
-            <img class="photo-background" src="assets/art/art_64.webp" alt="" onerror="this.style.display='none'">
-            <img class="photo-main" src="assets/art/art_64.webp" alt="Brigadier IS Gakhal" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'">
-        </div>
+<!-- Home Button -->
+<div style="margin-bottom: 20px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+</div>
 
-        <div class="audio-section">
-            <audio id="artAudio" autoplay src="assets/audio/audio_64.mp3"></audio>
-            <button class="play-btn" onclick="toggleAudio()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
-                Listen to Narration
-            </button>
-        </div>
+<h1>Brigadier IS Gakhal</h1>
+<div class="photo-wrapper">
+<img alt="" class="photo-background" onerror="this.style.display='none'" src="assets/art/art_64.webp"/>
+<img alt="Brigadier IS Gakhal" class="photo-main" onerror="this.src='https://placehold.co/1000x600/1e293b/f59e0b?text=Place+Art+Photo+Here'" src="assets/art/art_64.webp"/>
+</div>
 
-        <div class="description-box">
-            <strong>Title:</strong> Brigadier IS Gakhal<br>
-            <strong>Category:</strong> Comdts' Gallery<br>
-            <strong>Artist:</strong> Historical Figure<br>
-            <strong>Year:</strong> June 2004 - September 2006
-        </div>
+<div class="audio-section">
+<audio autoplay="" id="artAudio" src="assets/audio/audio_64.mp3"></audio>
+<button class="play-btn" onclick="toggleAudio()">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+    Listen to Narration
+</button>
+</div>
 
-        <div class="description-box">
-            <strong>BRIGADIER IS GAKHAL (June 2004 - September 2006)</strong><br><br>
-            A third-generation soldier and an alumnus of Indian Military Academy, Dehradun, Brigadier Inderjit Singh Gakhal was commissioned into 1 SIKH in December 1973. A keen sportsman, he excelled in Hockey, Basketball and Golf. During his long and illustrious career, the officer held varied appointments to include Instructor at National Defence Academy, Khadakwasla, DAA&amp;QMG of a Mountain Brigade, Colonel MS at a Corps Headquarters and Colonel Administration of an Infantry Division. He commanded 20 SIKH on the Line of Control and later a Rashtriya Rifles Sector in active Counter-Terrorist Operations, where he was grievously wounded. A graduate of the prestigious LDMC Course, he is also the recipient of one COAS Commendation Card and two GOC-in-C Commendation Cards. The officer is an avid reader and often dubbed as 'the encyclopedia of Sikh Regimental history'.<br><br>
-            His tenure at SRC was remarkable for introduction of modern training methodologies and pioneering efforts for publication of various hand books, précis and co-curricular activity brochures. Sainik Parivar Manoranjan Kendra and Soldiers' Club were established during his tenure, which provide all facilities of an institute to jawans and their families. Various Regimental Sports Teams were also revived with his encouragement, backing and motivation.
-        </div>
+<div class="description-box">
+<strong>Title:</strong> Brigadier IS Gakhal<br/>
+<strong>Category:</strong> Comdts' Gallery<br/>
+<strong>Artist:</strong> Historical Figure<br/>
+<strong>Year:</strong> June 2004 - September 2006
+</div>
 
-        <div class="navigation">
-            <a href="art63.html" class="nav-link ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Previous Piece
-            </a>
-            <span style="color: #94a3b8;">Piece 25 / 32</span>
-            <a href="art65.html" class="nav-link ">
-                Next Piece
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
+<div class="description-box">
+<strong>BRIGADIER IS GAKHAL (June 2004 - September 2006)</strong><br/><br/>
+Brigadier Inderjit Singh Gakhal was commissioned into 1 SIKH in December 1973. A distinguished scholar-soldier and sportsman, he commanded 20 SIKH on the Line of Control and a Rashtriya Rifles Sector in active Counter-Terrorist operations. Commanding the Sikh Regimental Centre from June 2004 to September 2006, he authored extensive historical works, founded the Soldiers' Club and Sainik Parivar Kendra, and revived regimental sports teams.
+</div>
 
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_art_64.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this art record in Chrome on your phone.</p>
-                </div>
-            </div>
-        </div>
+<div class="navigation">
+<a class="nav-link " href="art63.html">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
+    Previous Piece
+</a>
+<span style="color: #94a3b8;">Piece 25 / 32</span>
+<a class="nav-link " href="art65.html">
+    Next Piece
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
 
-    </div>
+<!-- QR Code Section -->
+<div class="qr-container">
+<div class="qr-wrapper">
+<img alt="Scan for mobile" src="assets/qrcodes/qr_art_64.png"/>
+<div class="qr-info">
+<h3>Open on Mobile</h3>
+<p>Scan to view this art record in Chrome on your phone.</p>
+</div>
+</div>
+</div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const audio = document.getElementById('artAudio');
-            const btn = document.querySelector('.play-btn');
+</div>
 
-            audio.addEventListener('play', function() {
-                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
-            });
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const audio = document.getElementById('artAudio');
+        const btn = document.querySelector('.play-btn');
 
-            audio.addEventListener('pause', function() {
-                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
-            });
-
-            audio.addEventListener('ended', function() {
-                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
-            });
-            
-            // Attempt autoplay
-            let playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    console.log("Autoplay prevented by browser:", error);
-                    const startAudioOnInteract = () => {
-                        audio.play();
-                        document.body.removeEventListener('click', startAudioOnInteract);
-                        document.body.removeEventListener('touchstart', startAudioOnInteract);
-                    };
-                    document.body.addEventListener('click', startAudioOnInteract);
-                    document.body.addEventListener('touchstart', startAudioOnInteract);
-                });
-            }
+        audio.addEventListener('play', function() {
+            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
         });
 
-        function toggleAudio() {
-            const audio = document.getElementById('artAudio');
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
+        audio.addEventListener('pause', function() {
+            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+        });
+
+        audio.addEventListener('ended', function() {
+            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Narration`;
+        });
+        
+        // Attempt autoplay
+        let playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Autoplay prevented by browser:", error);
+                const startAudioOnInteract = () => {
+                    audio.play();
+                    document.body.removeEventListener('click', startAudioOnInteract);
+                    document.body.removeEventListener('touchstart', startAudioOnInteract);
+                };
+                document.body.addEventListener('click', startAudioOnInteract);
+                document.body.addEventListener('touchstart', startAudioOnInteract);
+            });
         }
-    </script>
+    });
+
+    function toggleAudio() {
+        const audio = document.getElementById('artAudio');
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
+</script>
 </body>
 </html>

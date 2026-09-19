@@ -1,109 +1,106 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9th Battalion The Sikh Regiment - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>9th Battalion The Sikh Regiment - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
-
 <body>
-    <div class="gallery-container">
-
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-link"
-                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-        </div>
-
-        <h1>9th Battalion The Sikh Regiment</h1>
-
-        <!-- Continuous Image Scroller -->
-        <div class="scroller-container">
-            <div class="scroller-track" style="animation-duration: 72s;">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s1.webp" alt="Sikh soldiers group photograph">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s2.webp" alt="Battalion parade">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s3.webp" alt="Sikh Regiment officers in dress uniform">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s4.webp" alt="Grenade training">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s5.webp" alt="Signallers with equipment">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s6.webp" alt="Officer inspection">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s7.webp" alt="Anti-tank rifle training">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s8.webp" alt="General introducing officers">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s9.webp" alt="VB gun training">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s1.webp" alt="Sikh soldiers group photograph">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s2.webp" alt="Battalion parade">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s3.webp" alt="Sikh Regiment officers in dress uniform">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s4.webp" alt="Grenade training">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s5.webp" alt="Signallers with equipment">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s6.webp" alt="Officer inspection">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s7.webp" alt="Anti-tank rifle training">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s8.webp" alt="General introducing officers">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/art_505_s9.webp" alt="VB gun training">
-            </div>
-        </div>
-        <div class="audio-section">
-            <audio id="artAudio" autoplay src="assets/audio/audio_505.mp3"></audio>
-            <button class="play-btn" onclick="toggleAudio()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="art505.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="art505_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="art505_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+</div>
+<h1>9th Battalion The Sikh Regiment</h1>
+<!-- Continuous Image Scroller -->
+<div class="scroller-container">
+<div class="scroller-track" style="animation-duration: 72s;">
+<img alt="Sikh soldiers group photograph" onclick="openFullscreen(this)" src="assets/art/art_505_s1.webp" style="cursor: pointer;"/>
+<img alt="Battalion parade" onclick="openFullscreen(this)" src="assets/art/art_505_s2.webp" style="cursor: pointer;"/>
+<img alt="Sikh Regiment officers in dress uniform" onclick="openFullscreen(this)" src="assets/art/art_505_s3.webp" style="cursor: pointer;"/>
+<img alt="Grenade training" onclick="openFullscreen(this)" src="assets/art/art_505_s4.webp" style="cursor: pointer;"/>
+<img alt="Signallers with equipment" onclick="openFullscreen(this)" src="assets/art/art_505_s5.webp" style="cursor: pointer;"/>
+<img alt="Officer inspection" onclick="openFullscreen(this)" src="assets/art/art_505_s6.webp" style="cursor: pointer;"/>
+<img alt="Anti-tank rifle training" onclick="openFullscreen(this)" src="assets/art/art_505_s7.webp" style="cursor: pointer;"/>
+<img alt="General introducing officers" onclick="openFullscreen(this)" src="assets/art/art_505_s8.webp" style="cursor: pointer;"/>
+<img alt="VB gun training" onclick="openFullscreen(this)" src="assets/art/art_505_s9.webp" style="cursor: pointer;"/>
+<img alt="Sikh soldiers group photograph" onclick="openFullscreen(this)" src="assets/art/art_505_s1.webp" style="cursor: pointer;"/>
+<img alt="Battalion parade" onclick="openFullscreen(this)" src="assets/art/art_505_s2.webp" style="cursor: pointer;"/>
+<img alt="Sikh Regiment officers in dress uniform" onclick="openFullscreen(this)" src="assets/art/art_505_s3.webp" style="cursor: pointer;"/>
+<img alt="Grenade training" onclick="openFullscreen(this)" src="assets/art/art_505_s4.webp" style="cursor: pointer;"/>
+<img alt="Signallers with equipment" onclick="openFullscreen(this)" src="assets/art/art_505_s5.webp" style="cursor: pointer;"/>
+<img alt="Officer inspection" onclick="openFullscreen(this)" src="assets/art/art_505_s6.webp" style="cursor: pointer;"/>
+<img alt="Anti-tank rifle training" onclick="openFullscreen(this)" src="assets/art/art_505_s7.webp" style="cursor: pointer;"/>
+<img alt="General introducing officers" onclick="openFullscreen(this)" src="assets/art/art_505_s8.webp" style="cursor: pointer;"/>
+<img alt="VB gun training" onclick="openFullscreen(this)" src="assets/art/art_505_s9.webp" style="cursor: pointer;"/>
+</div>
+</div>
+<div class="audio-section">
+<audio autoplay="" id="artAudio" src="assets/audio/audio_505.mp3"></audio>
+<button class="play-btn" onclick="toggleAudio()">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
                 Listen to Narration
             </button>
+</div>
+<div class="description-box">
+<strong>Title:</strong> 9th Battalion The Sikh Regiment<br/>
+<strong>Category:</strong> Beyond Battle Fd<br/>
+<strong>Artist:</strong> Sikh Regimental Centre<br/>
+<strong>Year:</strong> Historical
         </div>
-
-        <div class="description-box">
-            <strong>Title:</strong> 9th Battalion The Sikh Regiment<br>
-            <strong>Category:</strong> Beyond Battle Fd<br>
-            <strong>Artist:</strong> Sikh Regimental Centre<br>
-            <strong>Year:</strong> Historical
-        </div>
-
-        <div class="description-box">
-            <p>The Battalion was raised on 01 April 1964 at Meerut, initially under Major (later Major General) RT Morlin; on 17 September 1964, Lieutenant Colonel Harbans Singh took over as the first Commanding Officer. Post raising, the Battalion moved to Misamari. During Indo-Pakistan War of 1965, it was earmarked to launch a diversionary attack into erstwhile East Pakistan but was re-located to the Western Front. Before it could join the battle, ceasefire was declared and it returned to the Eastern Theatre. It moved to Amritsar in March 1967 for a peace tenure. On 02 March 1968, the Battalion received its first Colours at the Regimental Centre in Meerut. In June 1969, it moved to Tangdhar Sector in Jammu and Kashmir and the Battalion less a company was deployed in a defensive role in Naugam Sub-Sector, over a 10-kilometre frontage and at heights ranging from 9000 feet to 12000 feet.</p>
-            <p>At the outbreak of the 1971 Indo-Pakistan War, the Commanding Officer, Lieutenant Colonel (later, Major General and Colonel of the Sikh Regiment) Sam Chengapa was tasked to plan a limited offensive, with two companies supported by an artillery battery of 4.2-inch Mortars, with one company holding the firm base. Initial objectives were aimed to provide depth to the forward defences and establish a launch pad for further operations. Operations started on night of 06/07 December by Bravo Company, under Major KC Bali which captured enemy post of Thanda Pani. The commando platoon under Captain Karam Singh cut off the enemy rear. The next night, the enemy position at Kaiyan was attacked and captured by Charlie Company under Major Jai Narain and the commandos; among the large booty was a .30 Browning MMG, three POW and 12 enemy killed; the Battalion had one killed and three wounded. Next day, a fierce enemy counter-attack was beaten back under the dynamic leadership of 2nd Lieutenant Pushpinder. Delta Company, under Major Balu Ram was tasked for a special mission, to establish a Road Block on Road Muzaffarabad-Lipa. They infiltrated over 20 Kilometres to establish a Road Block by 0500 hrs on 09 December till 12 December 1971.</p>
-            <p>On 15 December, Alpha and Charlie Companies moved to capture Three Pimples in broad daylight. The enemy suffered heavily; weapons captured included four 3-inch Mortars, one 83mm Rocket Launcher, two LMGs, many rifles with huge quantity of ammunition. Further exploitation was stopped as ceasefire was announced on 17 December. By then, 9 SIKH had single-handedly captured 46 Square Kilometres of enemy territory, by unconventional tactics, speed, and surprise. Awards surprisingly were restricted to three Sena Medals and one Mention-in-Dispatches. An extremely high intensity and brave battle over two days was again fought by 9 SIKH at Three Pimples against a Pakistani Brigade in May 1972.</p>
-            <p>Throughout its service, 9 SIKH excelled in all military spheres — operational, training, sports and administration and was counted amongst the most distinguished Infantry Battalions of the Indian Army. It always lived up to its special motto, <em>'Sir Qaim, Jang Daim'</em> (Till the Head is Firm, Battle will be won!). 9 SIKH won the prestigious General Chaudhary Trophy (awarded to the toughest professional Infantry Battalion of the Army) twice running (1966–67 and 1967–68) and its record of 383.16 points out of 400 was never bettered. The Battalion was sadly disbanded in September 1985 due to post-Operation Blue Star disturbances.</p>
-        </div>
-
-        <div class="navigation">
-            <a href="art504.html" class="nav-link ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
+<div class="description-box">
+<p>The Battalion was raised on 01 April 1964 at Meerut, initially under Major (later Major General) RT Morlin; on 17 September 1964, Lieutenant Colonel Harbans Singh took over as the first Commanding Officer. Post raising, the Battalion moved to Misamari. During Indo-Pakistan War of 1965, it was earmarked to launch a diversionary attack into erstwhile East Pakistan but was re-located to the Western Front. Before it could join the battle, ceasefire was declared and it returned to the Eastern Theatre. It moved to Amritsar in March 1967 for a peace tenure. On 02 March 1968, the Battalion received its first Colours at the Regimental Centre in Meerut. In June 1969, it moved to Tangdhar Sector in Jammu and Kashmir and the Battalion less a company was deployed in a defensive role in Naugam Sub-Sector, over a 10-kilometre frontage and at heights ranging from 9000 feet to 12000 feet.</p>
+<p>At the outbreak of the 1971 Indo-Pakistan War, the Commanding Officer, Lieutenant Colonel (later, Major General and Colonel of the Sikh Regiment) Sam Chengapa was tasked to plan a limited offensive, with two companies supported by an artillery battery of 4.2-inch Mortars, with one company holding the firm base. Initial objectives were aimed to provide depth to the forward defences and establish a launch pad for further operations. Operations started on night of 06/07 December by Bravo Company, under Major KC Bali which captured enemy post of Thanda Pani. The commando platoon under Captain Karam Singh cut off the enemy rear. The next night, the enemy position at Kaiyan was attacked and captured by Charlie Company under Major Jai Narain and the commandos; among the large booty was a .30 Browning MMG, three POW and 12 enemy killed; the Battalion had one killed and three wounded. Next day, a fierce enemy counter-attack was beaten back under the dynamic leadership of 2nd Lieutenant Pushpinder. Delta Company, under Major Balu Ram was tasked for a special mission, to establish a Road Block on Road Muzaffarabad-Lipa. They infiltrated over 20 Kilometres to establish a Road Block by 0500 hrs on 09 December till 12 December 1971.</p>
+<p>On 15 December, Alpha and Charlie Companies moved to capture Three Pimples in broad daylight. The enemy suffered heavily; weapons captured included four 3-inch Mortars, one 83mm Rocket Launcher, two LMGs, many rifles with huge quantity of ammunition. Further exploitation was stopped as ceasefire was announced on 17 December. By then, 9 SIKH had single-handedly captured 46 Square Kilometres of enemy territory, by unconventional tactics, speed, and surprise. Awards surprisingly were restricted to three Sena Medals and one Mention-in-Dispatches. An extremely high intensity and brave battle over two days was again fought by 9 SIKH at Three Pimples against a Pakistani Brigade in May 1972.</p>
+<p>Throughout its service, 9 SIKH excelled in all military spheres — operational, training, sports and administration and was counted amongst the most distinguished Infantry Battalions of the Indian Army. It always lived up to its special motto, <em>'Sir Qaim, Jang Daim'</em> (Till the Head is Firm, Battle will be won!). 9 SIKH won the prestigious General Chaudhary Trophy (awarded to the toughest professional Infantry Battalion of the Army) twice running (1966–67 and 1967–68) and its record of 383.16 points out of 400 was never bettered. The Battalion was sadly disbanded in September 1985 due to post-Operation Blue Star disturbances.</p>
+</div>
+<div class="navigation">
+<a class="nav-link" href="art504.html">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
                 Previous Piece
             </a>
-            <span style="color: #94a3b8;">Piece 8 / 8</span>
-            <a href="#" class="nav-link disabled">
+<span style="color: #94a3b8;">Piece 8 / 8</span>
+<a class="nav-link disabled" href="#">
                 Next Piece
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_art_505.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this art record in Chrome on your phone.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
+<!-- QR Code Section -->
+<div class="qr-container">
+<div class="qr-wrapper">
+<img alt="Scan for mobile" src="assets/qrcodes/qr_art_505.png"/>
+<div class="qr-info">
+<h3>Open on Mobile</h3>
+<p>Scan to view this art record in Chrome on your phone.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
         
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -159,5 +156,4 @@
         
     </script>
 </body>
-
 </html>

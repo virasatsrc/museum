@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirti Chakra - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kirti Chakra - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
         /* Slider Specific Styles */
         .slider-container {
             position: relative;
@@ -198,175 +199,167 @@
     </style>
 </head>
 <body>
-    <div class="gallery-container">
-        
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-            <span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">HALL OF FAME</span>
-        </div>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="kirti_chakra.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="kirti_chakra_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="kirti_chakra_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
 
-        <h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">KIRTI CHAKRA</h1>
-        <p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border); text-decoration: none; align-items: center; transition: all 0.3s ease;">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+<span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; font-size: 1.1rem;">HALL OF FAME</span>
+</div>
+<h1 style="text-align: center; margin-bottom: 10px; color: var(--text-main); font-weight: 700; font-size: 2.5rem; letter-spacing: 1px;">KIRTI CHAKRA</h1>
+<p style="text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">
             Explore the Kirti Chakra awardees of the Sikh Regiment, recognized for conspicuous gallantry other than in the face of the enemy. Double-click either photo to view in fullscreen.
         </p>
-
-        <!-- Slider Section -->
-        <div class="slider-container">
-            <!-- Arrows -->
-            <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button class="slider-arrow arrow-next" onclick="changeSlide(1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-
-            <!-- Slides Wrapper -->
-            <div class="slides-wrapper">
-                
-                <!-- Slide 243 -->
-                <div class="slide active">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_243.webp" class="awardee-img" alt="Havildar Manjit Singh">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Havildar Manjit Singh (Op Rakshak, 2006)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 244 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_244.webp" class="awardee-img" alt="Lance Naik Jagjit Singh">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lance Naik Jagjit Singh (Op Rakshak, 1992)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 245 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_245.webp" class="awardee-img" alt="Lieutenant Colonel SK Razdan">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lieutenant Colonel SK Razdan (Op Rhino, 1994)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 246 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_246.webp" class="awardee-img" alt="Lance Havildar Lashkar Singh">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lance Havildar Lashkar Singh (Op Rakshak, 2001)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 247 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_247.webp" class="awardee-img" alt="Sepoy Sewa Singh">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Sepoy Sewa Singh (Hyderabad Police Action, 1948)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 248 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_248.webp" class="awardee-img" alt="Jemadar Kulwant Singh">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Jemadar Kulwant Singh (Hyderabad Police Action, 1956)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 249 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_249.webp" class="awardee-img" alt="Major Raman Dada">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Major Raman Dada (Op Rhino, 1999)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 250 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_250.webp" class="awardee-img" alt="Major SC Rana">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Major SC Rana (Op Rakshak, 2001)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 251 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_251.webp" class="awardee-img" alt="Naik Hardyal Singh">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Naik Hardyal Singh (Hyderabad Police Action, 1948)</div>
-                    </div>
-                </div>
-
-                <!-- Slide 252 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_252.webp" class="awardee-img" alt="Kirti Chakra Recipient">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Kirti Chakra Recipient</div>
-                    </div>
-                </div>
-
-                <!-- Slide 253 -->
-                <div class="slide">
-                    <div class="slide-images-container">
-                        <img src="assets/art/kc_awardee_253.webp" class="awardee-img" alt="Lieutenant Kanavdeep Singh">
-                        <img src="assets/art/kirti_chakra_medal.webp" class="medal-img" alt="Kirti Chakra Medal">
-                    </div>
-                    <div class="caption-bar">
-                        <div class="caption-text">Lieutenant Kanavdeep Singh (Op Rakshak, 2003)</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Slide Counter -->
-        <div class="slide-counter" id="slideCounter">Slide 1 of 11</div>
-
-        <!-- Dots Indicator -->
-        <div class="slider-dots" id="dotsContainer"></div>
-
-    </div>
-
-    <script>
+<!-- Slider Section -->
+<div class="slider-container">
+<!-- Arrows -->
+<button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<button class="slider-arrow arrow-next" onclick="changeSlide(1)">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+<!-- Slides Wrapper -->
+<div class="slides-wrapper">
+<!-- Slide 243 -->
+<div class="slide active">
+<div class="slide-images-container">
+<img alt="Havildar Manjit Singh" class="awardee-img" src="assets/art/kc_awardee_243.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Havildar Manjit Singh (Op Rakshak, 2006)</div>
+</div>
+</div>
+<!-- Slide 244 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lance Naik Jagjit Singh" class="awardee-img" src="assets/art/kc_awardee_244.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lance Naik Jagjit Singh (Op Rakshak, 1992)</div>
+</div>
+</div>
+<!-- Slide 245 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Colonel SK Razdan" class="awardee-img" src="assets/art/kc_awardee_245.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lieutenant Colonel SK Razdan (Op Rhino, 1994)</div>
+</div>
+</div>
+<!-- Slide 246 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lance Havildar Lashkar Singh" class="awardee-img" src="assets/art/kc_awardee_246.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lance Havildar Lashkar Singh (Op Rakshak, 2001)</div>
+</div>
+</div>
+<!-- Slide 247 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Sepoy Sewa Singh" class="awardee-img" src="assets/art/kc_awardee_247.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Sepoy Sewa Singh (Hyderabad Police Action, 1948)</div>
+</div>
+</div>
+<!-- Slide 248 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Jemadar Kulwant Singh" class="awardee-img" src="assets/art/kc_awardee_248.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Jemadar Kulwant Singh (Hyderabad Police Action, 1956)</div>
+</div>
+</div>
+<!-- Slide 249 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Major Raman Dada" class="awardee-img" src="assets/art/kc_awardee_249.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Major Raman Dada (Op Rhino, 1999)</div>
+</div>
+</div>
+<!-- Slide 250 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Major SC Rana" class="awardee-img" src="assets/art/kc_awardee_250.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Major SC Rana (Op Rakshak, 2001)</div>
+</div>
+</div>
+<!-- Slide 251 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Naik Hardyal Singh" class="awardee-img" src="assets/art/kc_awardee_251.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Naik Hardyal Singh (Hyderabad Police Action, 1948)</div>
+</div>
+</div>
+<!-- Slide 252 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Kirti Chakra Recipient" class="awardee-img" src="assets/art/kc_awardee_252.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Kirti Chakra Recipient</div>
+</div>
+</div>
+<!-- Slide 253 -->
+<div class="slide">
+<div class="slide-images-container">
+<img alt="Lieutenant Kanavdeep Singh" class="awardee-img" src="assets/art/kc_awardee_253.webp"/>
+<img alt="Kirti Chakra Medal" class="medal-img" src="assets/art/kirti_chakra_medal.webp"/>
+</div>
+<div class="caption-bar">
+<div class="caption-text">Lieutenant Kanavdeep Singh (Op Rakshak, 2003)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide Counter -->
+<div class="slide-counter" id="slideCounter">Slide 1 of 11</div>
+<!-- Dots Indicator -->
+<div class="slider-dots" id="dotsContainer"></div>
+</div>
+<script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const slideCounter = document.getElementById('slideCounter');

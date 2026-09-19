@@ -1,178 +1,176 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battle of Ypres (1915) - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-
-    
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Battle of Ypres (1915) - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
-
 <body>
-    <div class="gallery-container">
+<div class="gallery-container">
+<div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+            🏛️ Language Portal
+        </a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="art421.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="art421_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="art421_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
 
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-link"
-                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-        </div>
 
-        <h1>Battle of Ypres (1915)</h1>
-
-        <div class="photo-wrapper">
-            <img class="photo-background" src="assets/battles/art421/wall.webp" alt="" onerror="this.style.display='none'">
-            <img class="photo-main" src="assets/battles/art421/wall.webp" alt="Battle of Ypres (1915)" onclick="openFullscreen(this)" style="cursor: pointer;">
-        </div>
-
-        <!-- Slide Scroller Section -->
-        <h2 style="text-align: center; margin: 40px 0 20px; color: var(--accent-color); font-size: 1.8rem; font-weight: 600; letter-spacing: 0.05em;">BATTLE GALLERY PICTURES</h2>
-        <div class="scroller-container" style="padding: 20px 0; margin: 0 0 40px 0;">
-            <div class="scroller-track" style="animation-duration: 112s;">
-                
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image1.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image2.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Aeriel View of Town near Harbour">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aeriel View of Town near Harbour</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image3.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="State of Defences After the Battle">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">State of Defences After the Battle</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image4.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Aerial view of the Town">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aerial view of the Town</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image5.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Ruins of Ypres">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Ruins of Ypres</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image6.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Defences near a Village">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Defences near a Village</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image7.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Sikhs at France">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Sikhs at France</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image8.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="An Artist&#39;s Impression of Lt John Smyth of XV Sikhs who Won a Victoria Cross for his Gallant Action at Richebourg L&#39;Avoue">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">An Artist's Impression of Lt John Smyth of XV Sikhs who Won a Victoria Cross for his Gallant Action at Richebourg L'Avoue</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image9.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Sikhs Marching to the Battle of Ypres">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Sikhs Marching to the Battle of Ypres</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image10.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Aftermath of the Battle">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aftermath of the Battle</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image11.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="XV Sikh Soldiers Preparing for Battle at Ypres">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">XV Sikh Soldiers Preparing for Battle at Ypres</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image12.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Troops Crossing a damaged Foot Bridge">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Troops Crossing a damaged Foot Bridge</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image13.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Troops Marching in the City">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Troops Marching in the City</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image14.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="State of trenches at Ypres">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">State of trenches at Ypres</div>
-                </div>
-                
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image1.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image2.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Aeriel View of Town near Harbour">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aeriel View of Town near Harbour</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image3.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="State of Defences After the Battle">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">State of Defences After the Battle</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image4.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Aerial view of the Town">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aerial view of the Town</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image5.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Ruins of Ypres">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Ruins of Ypres</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image6.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Defences near a Village">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Defences near a Village</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image7.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Sikhs at France">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Sikhs at France</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image8.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="An Artist&#39;s Impression of Lt John Smyth of XV Sikhs who Won a Victoria Cross for his Gallant Action at Richebourg L&#39;Avoue">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">An Artist's Impression of Lt John Smyth of XV Sikhs who Won a Victoria Cross for his Gallant Action at Richebourg L'Avoue</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image9.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Sikhs Marching to the Battle of Ypres">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Sikhs Marching to the Battle of Ypres</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image10.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Aftermath of the Battle">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aftermath of the Battle</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image11.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="XV Sikh Soldiers Preparing for Battle at Ypres">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">XV Sikh Soldiers Preparing for Battle at Ypres</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image12.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Troops Crossing a damaged Foot Bridge">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Troops Crossing a damaged Foot Bridge</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image13.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="Troops Marching in the City">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Troops Marching in the City</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <img src="assets/battles/art421/image14.webp" onclick="openFullscreen(this)" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);" alt="State of trenches at Ypres">
-                    <div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">State of trenches at Ypres</div>
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="audio-section">
-            <audio id="artAudio" autoplay src="assets/audio/audio_421.mp3"></audio>
-            <button class="play-btn" onclick="toggleAudio()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+</div>
+<h1>Battle of Ypres (1915)</h1>
+<div class="photo-wrapper">
+<img alt="" class="photo-background" onerror="this.style.display='none'" src="assets/battles/art421/wall.webp"/>
+<img alt="Battle of Ypres (1915)" class="photo-main" onclick="openFullscreen(this)" src="assets/battles/art421/wall.webp" style="cursor: pointer;"/>
+</div>
+<!-- Slide Scroller Section -->
+<h2 style="text-align: center; margin: 40px 0 20px; color: var(--accent-color); font-size: 1.8rem; font-weight: 600; letter-spacing: 0.05em;">BATTLE GALLERY PICTURES</h2>
+<div class="scroller-container" style="padding: 20px 0; margin: 0 0 40px 0;">
+<div class="scroller-track" style="animation-duration: 112s;">
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915" onclick="openFullscreen(this)" src="assets/battles/art421/image1.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Aeriel View of Town near Harbour" onclick="openFullscreen(this)" src="assets/battles/art421/image2.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aeriel View of Town near Harbour</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="State of Defences After the Battle" onclick="openFullscreen(this)" src="assets/battles/art421/image3.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">State of Defences After the Battle</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Aerial view of the Town" onclick="openFullscreen(this)" src="assets/battles/art421/image4.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aerial view of the Town</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Ruins of Ypres" onclick="openFullscreen(this)" src="assets/battles/art421/image5.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Ruins of Ypres</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Defences near a Village" onclick="openFullscreen(this)" src="assets/battles/art421/image6.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Defences near a Village</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Sikhs at France" onclick="openFullscreen(this)" src="assets/battles/art421/image7.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Sikhs at France</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="An Artist's Impression of Lt John Smyth of XV Sikhs who Won a Victoria Cross for his Gallant Action at Richebourg L'Avoue" onclick="openFullscreen(this)" src="assets/battles/art421/image8.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">An Artist's Impression of Lt John Smyth of XV Sikhs who Won a Victoria Cross for his Gallant Action at Richebourg L'Avoue</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Sikhs Marching to the Battle of Ypres" onclick="openFullscreen(this)" src="assets/battles/art421/image9.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Sikhs Marching to the Battle of Ypres</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Aftermath of the Battle" onclick="openFullscreen(this)" src="assets/battles/art421/image10.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aftermath of the Battle</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="XV Sikh Soldiers Preparing for Battle at Ypres" onclick="openFullscreen(this)" src="assets/battles/art421/image11.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">XV Sikh Soldiers Preparing for Battle at Ypres</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Troops Crossing a damaged Foot Bridge" onclick="openFullscreen(this)" src="assets/battles/art421/image12.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Troops Crossing a damaged Foot Bridge</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Troops Marching in the City" onclick="openFullscreen(this)" src="assets/battles/art421/image13.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Troops Marching in the City</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="State of trenches at Ypres" onclick="openFullscreen(this)" src="assets/battles/art421/image14.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">State of trenches at Ypres</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915" onclick="openFullscreen(this)" src="assets/battles/art421/image1.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">House Burning on ridge behind headquarters trench, Photographs from the trenches, Ypres 27 April 1915</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Aeriel View of Town near Harbour" onclick="openFullscreen(this)" src="assets/battles/art421/image2.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aeriel View of Town near Harbour</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="State of Defences After the Battle" onclick="openFullscreen(this)" src="assets/battles/art421/image3.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">State of Defences After the Battle</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Aerial view of the Town" onclick="openFullscreen(this)" src="assets/battles/art421/image4.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aerial view of the Town</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Ruins of Ypres" onclick="openFullscreen(this)" src="assets/battles/art421/image5.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Ruins of Ypres</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Defences near a Village" onclick="openFullscreen(this)" src="assets/battles/art421/image6.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Defences near a Village</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Sikhs at France" onclick="openFullscreen(this)" src="assets/battles/art421/image7.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Sikhs at France</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="An Artist's Impression of Lt John Smyth of XV Sikhs who Won a Victoria Cross for his Gallant Action at Richebourg L'Avoue" onclick="openFullscreen(this)" src="assets/battles/art421/image8.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">An Artist's Impression of Lt John Smyth of XV Sikhs who Won a Victoria Cross for his Gallant Action at Richebourg L'Avoue</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Sikhs Marching to the Battle of Ypres" onclick="openFullscreen(this)" src="assets/battles/art421/image9.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Sikhs Marching to the Battle of Ypres</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Aftermath of the Battle" onclick="openFullscreen(this)" src="assets/battles/art421/image10.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Aftermath of the Battle</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="XV Sikh Soldiers Preparing for Battle at Ypres" onclick="openFullscreen(this)" src="assets/battles/art421/image11.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">XV Sikh Soldiers Preparing for Battle at Ypres</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Troops Crossing a damaged Foot Bridge" onclick="openFullscreen(this)" src="assets/battles/art421/image12.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Troops Crossing a damaged Foot Bridge</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="Troops Marching in the City" onclick="openFullscreen(this)" src="assets/battles/art421/image13.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">Troops Marching in the City</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 380px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<img alt="State of trenches at Ypres" onclick="openFullscreen(this)" src="assets/battles/art421/image14.webp" style="cursor: pointer; height: 220px; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"/>
+<div class="nomenclature" style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; text-align: center; font-weight: 500; line-height: 1.4; min-height: 50px; display: flex; align-items: center; justify-content: center;">State of trenches at Ypres</div>
+</div>
+</div>
+</div>
+<div class="audio-section">
+<audio autoplay="" id="artAudio" src="assets/audio/audio_421.mp3"></audio>
+<button class="play-btn" onclick="toggleAudio()">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
                 Listen to Narration
             </button>
-        </div>
-
-        <div class="description-box">
-            <strong>Title:</strong> Battle of Ypres (1915)<br>
-            <strong>Category:</strong> Battle Gallery<br>
-            <strong>Regiment:</strong> Sikh Regiment<br>
-        </div>
-
-        <div class="description-box">
-            <p>In March 1915, XV SIKHS were allotted a prestigious objective. The trench line on the Aubers Ridge,
+</div>
+<div class="description-box">
+<strong>Title:</strong> Battle of Ypres (1915)<br/>
+<strong>Category:</strong> Battle Gallery<br/>
+<strong>Regiment:</strong> Sikh Regiment<br/>
+</div>
+<div class="description-box">
+<p>In March 1915, XV SIKHS were allotted a prestigious objective. The trench line on the Aubers Ridge,
                 Ligny-de-Grande, which was to become the Second Battle of Ypres. The battle raged on for four days,
                 trenches exchanging hands several times. However, the final gain of the entire Corps was only a salient,
                 around 1000 yards deep, with a two mile plus wide frontage. On 27 April 1915, XV SIKHS played a unique
@@ -181,14 +179,14 @@
                 of XV SIKHS to plug the French defences, and save it from falling into German hands. The final action of
                 XV SIKHS hinged around Aubers, where the battalion occupied a trench line, just 200 yards away from that
                 of the Germans.</p>
-            <p>On 16 May 1915, XV SIKHS was moved to the trenches running parallel to the Rue-des-Chevaliers. They
+<p>On 16 May 1915, XV SIKHS was moved to the trenches running parallel to the Rue-des-Chevaliers. They
                 stayed there during the subsequent nights. On 18 May, XV SIKHS occupied the captured German trenches
                 near Richebourg L’Avoue, where they remained till 20 May. The Sikhs were in occupation of a section of a
                 German trench, while the Germans had succeeded in erecting a strong barricade between themselves and the
                 British. A hail of bombs began to fall among the Sikhs, who replied vigorously with considerable effect.
                 Towards noon, their supply of bombs began to run out. The situation turned critical, and only a speedy
                 arrival of a bombing party from the reserve trenches would enable them to hold out.</p>
-            <p>The reserve trench was only 250 yards away. But the ground between was so exposed to enemy fire, that it
+<p>The reserve trench was only 250 yards away. But the ground between was so exposed to enemy fire, that it
                 rendered the dispatch of reinforcements a most desperate undertaking. 10 men were selected and placed
                 under the command of Lieutenant John Smyth, who had already distinguished himself, on more than one
                 occasion, by his dashing courage. He and his small band of Sikhs set out on their perilous enterprise,
@@ -198,58 +196,54 @@
                 ground, and through dead bodies. The enemy had observed them cross, and Rifle and Machine Gun bullets
                 ripped the ground around them, while air bursts scattered shrapnel. It was certain that if a single
                 fragment of shell penetrated one of the boxes of explosives, the men would be blown to smithereens.</p>
-            <p>When they had advanced a little distance on their horrific journey, four Sikhs—Sepoys Fateh Singh, Sucha
+<p>When they had advanced a little distance on their horrific journey, four Sikhs—Sepoys Fateh Singh, Sucha
                 Singh, Ujagar Singh and Surinder Singh—were wounded, leaving Lieutenant Smyth with only six men to
                 propel the boxes along. However, spurred on by the thought of the dire necessity of their comrades
                 ahead, through superhuman effort and good fortune, courage and fortitude, they succeeded in dragging the
                 boxes nearly to the end of the trench.</p>
-            <p>However, in quick succession, two more men—Naik Mangal Singh and Sepoy Ganga Singh—were wounded, and
+<p>However, in quick succession, two more men—Naik Mangal Singh and Sepoy Ganga Singh—were wounded, and
                 three Sepoys—Saran Singh, Haram Singh and Sampooran Singh—killed. The second box of bombs, had therefore
                 to be abandoned. For the two remaining men, to haul even one box along in the face of such difficulties
                 appeared an impossible task. But anxious watchers in the trench ahead saw them wriggling their way, yard
                 by yard, into the open, hauling the box with them.</p>
-            <p>As the bombing party emerged from comparative shelter of the trench, a veritable hail of lead burst upon
+<p>As the bombing party emerged from comparative shelter of the trench, a veritable hail of lead burst upon
                 them. Miraculously eluding them, struggling with their precious burden, the two brave men—Lieutenant
                 John Smyth and Sepoy Lal Singh—were within minutes, amongst their cheering comrades. Both were unhurt,
                 though their clothes were perforated with bullet holes. Scarcely had they reached their trench, when the
                 gallant Sepoy Lal Singh, the last man standing with Smyth, was struck by a bullet, and killed instantly.
             </p>
-            <p>Lieutenant Smyth’s determination was triumphant, the task having been facilitated to the last, by the 10
+<p>Lieutenant Smyth’s determination was triumphant, the task having been facilitated to the last, by the 10
                 brave Sikhs. For his most conspicuous bravery, Lieutenant John Smyth was awarded the Victoria Cross, and
                 each of the brave men who accompanied him were awarded an Indian Distinguished Service Medal (IDSM),
                 while Nk Mangal Singh won an Indian Order of Merit (IOM).</p>
-        </div>
-
-        <div class="navigation">
-            <a href="art401.html" class="nav-link ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
+</div>
+<div class="navigation">
+<a class="nav-link" href="art401.html">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
                 Previous Piece
             </a>
-            <span style="color: #94a3b8;">Piece 2 / 18</span>
-            <a href="art402.html" class="nav-link ">
+<span style="color: #94a3b8;">Piece 2 / 18</span>
+<a class="nav-link" href="art402.html">
                 Next Piece
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_art_421.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this art record in Chrome on your phone.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
+<!-- QR Code Section -->
+<div class="qr-container">
+<div class="qr-wrapper">
+<img alt="Scan for mobile" src="assets/qrcodes/qr_art_421.png"/>
+<div class="qr-info">
+<h3>Open on Mobile</h3>
+<p>Scan to view this art record in Chrome on your phone.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
         document.addEventListener("DOMContentLoaded", function () {
             const audio = document.getElementById('artAudio');
             const btn = document.querySelector('.play-btn');
@@ -298,5 +292,4 @@
         
     </script>
 </body>
-
 </html>

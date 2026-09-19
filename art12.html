@@ -1,216 +1,218 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Khalsa Army - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Khalsa Army - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="gallery-container">
-        
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-link" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-        </div>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="art12.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="art12_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="art12_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
 
-        <h1>The Khalsa Army</h1>
-        
-        <!-- Dynamic Image Scroller (Replaced Main Pic) -->
-        <div class="scroller-container" style="padding: 20px 0; margin-bottom: 30px;">
-            <div class="scroller-track" style="animation-duration: 150s;">
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_17.webp" alt="Khalsa Weapons" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Khalsa Weapons</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_18.webp" alt="Panja" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Panja</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_19.webp" alt="Khalsa Weapons" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Khalsa Weapons</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_20.webp" alt="Sanjo" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Sanjo</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_21.webp" alt="Tegh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_22.webp" alt="Chakar" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Chakar</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_23.webp" alt="Tejh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tejh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_24.webp" alt="Dhal" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dhal</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_25.webp" alt="Katar" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Katar</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_26.webp" alt="Dohra Sua" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dohra Sua</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_27.webp" alt="Dohri Katar" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dohri Katar</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_28.webp" alt="Tegh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_29.webp" alt="Tegh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_30.webp" alt="Tegh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_31.webp" alt="Char Aina" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Char Aina</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_32.webp" alt="Armour" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Armour</div>
-                </div>
-                <!-- Duplicate images for seamless looping -->
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_17.webp" alt="Khalsa Weapons" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Khalsa Weapons</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_18.webp" alt="Panja" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Panja</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_19.webp" alt="Khalsa Weapons" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Khalsa Weapons</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_20.webp" alt="Sanjo" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Sanjo</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_21.webp" alt="Tegh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_22.webp" alt="Chakar" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Chakar</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_23.webp" alt="Tejh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tejh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_24.webp" alt="Dhal" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dhal</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_25.webp" alt="Katar" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Katar</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_26.webp" alt="Dohra Sua" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dohra Sua</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_27.webp" alt="Dohri Katar" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dohri Katar</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_28.webp" alt="Tegh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_29.webp" alt="Tegh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_30.webp" alt="Tegh" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_31.webp" alt="Char Aina" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Char Aina</div>
-                </div>
-                <div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
-                    <img src="assets/art/slide_32.webp" alt="Armour" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';">
-                    <div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Armour</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="audio-section">
-            <audio id="artAudio" autoplay src="assets/audio/audio_12.mp3"></audio>
-            <button class="play-btn" onclick="toggleAudio()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+</div>
+<h1>The Khalsa Army</h1>
+<!-- Dynamic Image Scroller (Replaced Main Pic) -->
+<div class="scroller-container" style="padding: 20px 0; margin-bottom: 30px;">
+<div class="scroller-track" style="animation-duration: 150s;">
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Khalsa Weapons" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_17.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Khalsa Weapons</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Panja" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_18.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Panja</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Khalsa Weapons" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_19.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Khalsa Weapons</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Sanjo" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_20.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Sanjo</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tegh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_21.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Chakar" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_22.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Chakar</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tejh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_23.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tejh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Dhal" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_24.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dhal</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Katar" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_25.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Katar</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Dohra Sua" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_26.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dohra Sua</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Dohri Katar" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_27.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dohri Katar</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tegh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_28.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tegh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_29.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tegh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_30.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Char Aina" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_31.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Char Aina</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Armour" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_32.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Armour</div>
+</div>
+<!-- Duplicate images for seamless looping -->
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Khalsa Weapons" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_17.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Khalsa Weapons</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Panja" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_18.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Panja</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Khalsa Weapons" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_19.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Khalsa Weapons</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Sanjo" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_20.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Sanjo</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tegh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_21.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Chakar" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_22.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Chakar</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tejh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_23.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tejh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Dhal" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_24.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dhal</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Katar" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_25.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Katar</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Dohra Sua" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_26.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dohra Sua</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Dohri Katar" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_27.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Dohri Katar</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tegh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_28.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tegh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_29.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Tegh" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_30.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Tegh</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Char Aina" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_31.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Char Aina</div>
+</div>
+<div class="scroller-item" style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 15px; vertical-align: top; white-space: normal; width: 350px;">
+<img alt="Armour" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--glass-border)';" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='var(--accent-color)';" src="assets/art/slide_32.webp" style="height: 250px; width: 350px; object-fit: cover; border-radius: 12px; border: 2px solid var(--glass-border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer;"/>
+<div class="nomenclature" style="margin-top: 10px; font-size: 0.95rem; color: #cbd5e1; text-align: center; font-weight: 500; max-width: 330px; line-height: 1.4;">Armour</div>
+</div>
+</div>
+</div>
+<div class="audio-section">
+<audio autoplay="" id="artAudio" src="assets/audio/audio_12.mp3"></audio>
+<button class="play-btn" onclick="toggleAudio()">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
                 Listen to Narration
             </button>
+</div>
+<div class="description-box">
+<strong>Title:</strong> The Khalsa Army<br/>
+<strong>Category:</strong> Religious Corner<br/>
+<strong>Artist:</strong> Historical<br/>
+<strong>Year:</strong> 1734 – 1769
         </div>
-
-        <div class="description-box">
-            <strong>Title:</strong> The Khalsa Army<br>
-            <strong>Category:</strong> Religious Corner<br>
-            <strong>Artist:</strong> Historical<br>
-            <strong>Year:</strong> 1734 – 1769
-        </div>
-
-        <div class="description-box">
-            <strong>THE KHALSA ARMY</strong><br><br>
-            The years following Banda Bahadur's death were dire for the Sikhs, until 1734 when Kapur Singh (1697-1753), a battle-hardened Sikh guerilla fighter, organized the community into 'dals', or groups - collectively known as the Dal Khalsa, to offer armed resistance. Kapur Singh (his name now prefixed with the title 'Nawab') along with his close associate, Jassa Singh Ahluwalia (1718-1783) reorganized the Khalsa Army and utilized the period of Mughal-Afghan Conflict to consolidate itself. The Dal Khalsa was divided into twelve misls, which were empowered to undertake independent military actions, under a central authority.<br><br>
-            The Khalsa Army slowly gave up its defensive posture and became offensive, harassing and plundering the armies of Nadir Shah and Ahmad Shah Abdali. The Sikhs inflicted severe damages to the booty-laden and battle-weary Afghan Army after the Third Battle of Panipat, which helped in extending and consolidating the Sikhs' hold over Punjab. Their secret of success was mobility and 'fight-run-fight' guerilla strategy. By 1769, the Mughal administration in Punjab was considerably weakened by repeated Afghan invasions and Sikh consolidation, which created a power vacuum filled by the Sikh misls who further expanded their territories.<br><br>
+<div class="description-box">
+<strong>THE KHALSA ARMY</strong><br/><br/>
+            The years following Banda Bahadur's death were dire for the Sikhs, until 1734 when Kapur Singh (1697-1753), a battle-hardened Sikh guerilla fighter, organized the community into 'dals', or groups - collectively known as the Dal Khalsa, to offer armed resistance. Kapur Singh (his name now prefixed with the title 'Nawab') along with his close associate, Jassa Singh Ahluwalia (1718-1783) reorganized the Khalsa Army and utilized the period of Mughal-Afghan Conflict to consolidate itself. The Dal Khalsa was divided into twelve misls, which were empowered to undertake independent military actions, under a central authority.<br/><br/>
+            The Khalsa Army slowly gave up its defensive posture and became offensive, harassing and plundering the armies of Nadir Shah and Ahmad Shah Abdali. The Sikhs inflicted severe damages to the booty-laden and battle-weary Afghan Army after the Third Battle of Panipat, which helped in extending and consolidating the Sikhs' hold over Punjab. Their secret of success was mobility and 'fight-run-fight' guerilla strategy. By 1769, the Mughal administration in Punjab was considerably weakened by repeated Afghan invasions and Sikh consolidation, which created a power vacuum filled by the Sikh misls who further expanded their territories.<br/><br/>
             The 'Khalsa' was truly a people's army, composed entirely of volunteers drawn from all sections of the society. Their basis of discipline was each soldier's inner conviction and his sense of dedication to the cause. The commanders were elected leaders who strove to carry their followers with them in a democratic manner. In these trying years, leaders like Nawab Kapur Singh and Jassa Singh Ahluwalia not only built up the Khalsa Army but also won back the confidence of the Muslim peasantry in Punjab, thus laying the foundation of the future secular kingdom of Lahore.
         </div>
-
-        <div class="navigation">
-            <a href="art11.html" class="nav-link ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
+<div class="navigation">
+<a class="nav-link" href="art11.html">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
                 Previous Piece
             </a>
-            <span style="color: #94a3b8;">Piece 12 / 20</span>
-            <a href="art13.html" class="nav-link ">
+<span style="color: #94a3b8;">Piece 12 / 20</span>
+<a class="nav-link" href="art13.html">
                 Next Piece
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_art_12.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this art record in Chrome on your phone.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
+<!-- QR Code Section -->
+<div class="qr-container">
+<div class="qr-wrapper">
+<img alt="Scan for mobile" src="assets/qrcodes/qr_art_12.png"/>
+<div class="qr-info">
+<h3>Open on Mobile</h3>
+<p>Scan to view this art record in Chrome on your phone.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
         document.addEventListener("DOMContentLoaded", function() {
             const audio = document.getElementById('artAudio');
             const btn = document.querySelector('.play-btn');

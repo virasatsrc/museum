@@ -1,168 +1,139 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sporting Prowess of the Sikhs - Museum Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sporting Prowess of the Sikhs - Museum Gallery</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
-
 <body>
-    <div class="gallery-container">
-
-        <!-- Home Button -->
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-link"
-                style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    style="margin-right: 8px;">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
-            </a>
-        </div>
-
-        <h1>Sporting Prowess of the Sikhs</h1>
-
-        <!-- Continuous Image Scroller -->
-        <div class="scroller-container">
-            <div class="scroller-track" style="animation-duration: 104s;">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_142.webp" alt="Two legends in one frame"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_143.webp"
-                        alt="Sporting Prowess of the Sikhs" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_144.webp"
-                        alt="Subedar Kaur Singh Vishisht Seva Medal" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_145.webp"
-                        alt="Subedar Manpreet Singh Asian Games" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_146.webp"
-                        alt="Naib Subedar Ranjit Singh Asian Games" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_147.webp"
-                        alt="Loodianah Sikhs Hockey 1907" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_148.webp" alt="Lt Col JC Joshi Padma Shri"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_149.webp"
-                        alt="Lt Col Haripal Kaushik Arjuna Award" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_150.webp"
-                        alt="All-Indian Mount Everest Expedition" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_151.webp" alt="XXXVI Sikhs Tug of War"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_152.webp"
-                        alt="Gentleman Cadet Balbir Singh Arjuna Award" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_153.webp"
-                        alt="Havildar Kaur Singh 9th Asian Games" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_154.webp"
-                        alt="Lt Col Haripal Kaushik in action" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_142.webp" alt="Two legends in one frame"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_143.webp"
-                        alt="Sporting Prowess of the Sikhs" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_144.webp"
-                        alt="Subedar Kaur Singh Vishisht Seva Medal" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_145.webp"
-                        alt="Subedar Manpreet Singh Asian Games" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_146.webp"
-                        alt="Naib Subedar Ranjit Singh Asian Games" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_147.webp"
-                        alt="Loodianah Sikhs Hockey 1907" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_148.webp" alt="Lt Col JC Joshi Padma Shri"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_149.webp"
-                        alt="Lt Col Haripal Kaushik Arjuna Award" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_150.webp"
-                        alt="All-Indian Mount Everest Expedition" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_151.webp" alt="XXXVI Sikhs Tug of War"
-                        loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_152.webp"
-                        alt="Gentleman Cadet Balbir Singh Arjuna Award" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_153.webp"
-                        alt="Havildar Kaur Singh 9th Asian Games" loading="lazy">
-                <img onclick="openFullscreen(this)" style="cursor: pointer;" src="assets/art/slide_154.webp"
-                        alt="Lt Col Haripal Kaushik in action" loading="lazy">
-            </div>
-        </div>
-        <div class="audio-section">
-            <audio id="artAudio" autoplay src="assets/audio/audio_502.mp3"></audio>
-            <button class="play-btn" onclick="toggleAudio()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
+<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+    🏛️ Language Portal
+</a>
+<div style="display: flex; gap: 8px; align-items: center;">
+<a class="nav-link" href="art502.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
+<a class="nav-link" href="art502_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+<a class="nav-link" href="art502_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+</div>
+</div>
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Language Switcher Bar -->
+<!-- Home Button -->
+<div style="margin-bottom: 20px;">
+<a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg> Back to Home</a>
+</div>
+<h1>Sporting Prowess of the Sikhs</h1>
+<!-- Continuous Image Scroller -->
+<div class="scroller-container">
+<div class="scroller-track" style="animation-duration: 104s;">
+<img alt="Two legends in one frame" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_142.webp" style="cursor: pointer;"/>
+<img alt="Sporting Prowess of the Sikhs" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_143.webp" style="cursor: pointer;"/>
+<img alt="Subedar Kaur Singh Vishisht Seva Medal" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_144.webp" style="cursor: pointer;"/>
+<img alt="Subedar Manpreet Singh Asian Games" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_145.webp" style="cursor: pointer;"/>
+<img alt="Naib Subedar Ranjit Singh Asian Games" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_146.webp" style="cursor: pointer;"/>
+<img alt="Loodianah Sikhs Hockey 1907" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_147.webp" style="cursor: pointer;"/>
+<img alt="Lt Col JC Joshi Padma Shri" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_148.webp" style="cursor: pointer;"/>
+<img alt="Lt Col Haripal Kaushik Arjuna Award" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_149.webp" style="cursor: pointer;"/>
+<img alt="All-Indian Mount Everest Expedition" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_150.webp" style="cursor: pointer;"/>
+<img alt="XXXVI Sikhs Tug of War" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_151.webp" style="cursor: pointer;"/>
+<img alt="Gentleman Cadet Balbir Singh Arjuna Award" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_152.webp" style="cursor: pointer;"/>
+<img alt="Havildar Kaur Singh 9th Asian Games" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_153.webp" style="cursor: pointer;"/>
+<img alt="Lt Col Haripal Kaushik in action" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_154.webp" style="cursor: pointer;"/>
+<img alt="Two legends in one frame" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_142.webp" style="cursor: pointer;"/>
+<img alt="Sporting Prowess of the Sikhs" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_143.webp" style="cursor: pointer;"/>
+<img alt="Subedar Kaur Singh Vishisht Seva Medal" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_144.webp" style="cursor: pointer;"/>
+<img alt="Subedar Manpreet Singh Asian Games" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_145.webp" style="cursor: pointer;"/>
+<img alt="Naib Subedar Ranjit Singh Asian Games" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_146.webp" style="cursor: pointer;"/>
+<img alt="Loodianah Sikhs Hockey 1907" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_147.webp" style="cursor: pointer;"/>
+<img alt="Lt Col JC Joshi Padma Shri" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_148.webp" style="cursor: pointer;"/>
+<img alt="Lt Col Haripal Kaushik Arjuna Award" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_149.webp" style="cursor: pointer;"/>
+<img alt="All-Indian Mount Everest Expedition" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_150.webp" style="cursor: pointer;"/>
+<img alt="XXXVI Sikhs Tug of War" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_151.webp" style="cursor: pointer;"/>
+<img alt="Gentleman Cadet Balbir Singh Arjuna Award" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_152.webp" style="cursor: pointer;"/>
+<img alt="Havildar Kaur Singh 9th Asian Games" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_153.webp" style="cursor: pointer;"/>
+<img alt="Lt Col Haripal Kaushik in action" loading="lazy" onclick="openFullscreen(this)" src="assets/art/slide_154.webp" style="cursor: pointer;"/>
+</div>
+</div>
+<div class="audio-section">
+<audio autoplay="" id="artAudio" src="assets/audio/audio_502.mp3"></audio>
+<button class="play-btn" onclick="toggleAudio()">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
                 Listen to Narration
             </button>
+</div>
+<div class="description-box">
+<strong>Title:</strong> Sporting Prowess of the Sikhs<br/>
+<strong>Category:</strong> Beyond Battle Fd<br/>
+<strong>Artist:</strong> Sikh Regimental Centre<br/>
+<strong>Year:</strong> Historical
         </div>
-
-        <div class="description-box">
-            <strong>Title:</strong> Sporting Prowess of the Sikhs<br>
-            <strong>Category:</strong> Beyond Battle Fd<br>
-            <strong>Artist:</strong> Sikh Regimental Centre<br>
-            <strong>Year:</strong> Historical
-        </div>
-
-        <div class="description-box">
-            <p>The SIKH Regiment has not only produced brave soldiers for the battlefield, but also outstanding
+<div class="description-box">
+<p>The SIKH Regiment has not only produced brave soldiers for the battlefield, but also outstanding
                 sportsmen of repute, who have conquered the playing fields in various sports. The regiment took immense
                 pains to discover, groom and train sports talent. From this 'spirit of excellence', emerged outstanding
                 sportsmen who made the regiment, the army and the nation proud.</p>
-            <p>One stellar modern day example of this is the legendary Lieutenant Colonel Haripal Kaushik, VrC, who was
+<p>One stellar modern day example of this is the legendary Lieutenant Colonel Haripal Kaushik, VrC, who was
                 awarded the Vir Chakra for his exemplary leadership and bravery in the Indo-China War of 1962, and later
                 was conferred with the Arjuna Award for his extraordinary contribution towards the game of Hockey, which
                 included two Olympic gold medals.</p>
-            <p>Sports for the Khalsas has been as old as the religion itself, with the second guru, Guru Angad Dev Ji
+<p>Sports for the Khalsas has been as old as the religion itself, with the second guru, Guru Angad Dev Ji
                 holding Wrestling matches to promote good health in Tarn Taran. Guru Gobind Singh played 'Khido Kundi',
                 an ancient type of Field Hockey, as a child, and excelled in Archery, Swordsmanship and Horse Riding.
             </p>
-            <p>Tug of War was very popular in the British Indian Army. In February 1919, XLVII SIKHS athletes won many
+<p>Tug of War was very popular in the British Indian Army. In February 1919, XLVII SIKHS athletes won many
                 laurels at the Central Sports Meet in Cairo, and won the Challenge Cup for Indian Troops at the Egyptian
                 Expeditionary Force Sports Championship in Alexandria. The Regiment has since produced 12 Olympians.
                 Quoit Throwing was another sport where the Sikhs had no match, able to cut a stick in two at 50 yards.
             </p>
-            <p>Hockey was first introduced in the Regiment in 1900. In 1907, the Loodianah Sikhs won the Punjab Native
+<p>Hockey was first introduced in the Regiment in 1900. In 1907, the Loodianah Sikhs won the Punjab Native
                 Army Hockey Tournament. The Sikh Regimental Centre Hockey team was raised at Ambala in 1948, producing
                 players like Brigadier HJS Chimni and Lieutenant Colonel Balbir Singh representing India. Other
                 international sports stars include Subedar Jit Singh (Wrestling), Subedar Prakash Singh (Athletics) and
                 Subedar Kaur Singh (Boxing). Subedar Kaur Singh, VSM, is the only Indian boxer to have fought Muhammad
                 Ali in the ring.</p>
-            <p>In Mountaineering, CHM Gurcharan Singh of 5 SIKH skied down Mount Trishul, creating a world record.
+<p>In Mountaineering, CHM Gurcharan Singh of 5 SIKH skied down Mount Trishul, creating a world record.
                 Lieutenant Colonel JC Joshi (Padma Shri and Arjuna Award) of 9 SIKH was a member of the first successful
                 Indian Everest expedition in May 1965. Recently, Subedar Manpreet Singh (Boxing), Subedar Ranjit Singh
                 (Rowing) won medals at the 2010 Asian Games. Havildar Nittin (Handball), Havildar Sukhminder Singh (Shot
                 Put), Havildar Bharat Bhushan (Karate) and Havildar Jaswinder Singh (Rowing) have continued this proud
                 sporting legacy in international arenas.</p>
-        </div>
-
-        <div class="navigation">
-            <a href="art501.html" class="nav-link ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
+</div>
+<div class="navigation">
+<a class="nav-link" href="art501.html">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
                 Previous Piece
             </a>
-            <span style="color: #94a3b8;">Piece 5 / 8</span>
-            <a href="art503.html" class="nav-link ">
+<span style="color: #94a3b8;">Piece 5 / 8</span>
+<a class="nav-link" href="art503.html">
                 Next Piece
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-
-        <!-- QR Code Section -->
-        <div class="qr-container">
-            <div class="qr-wrapper">
-                <img src="assets/qrcodes/qr_art_502.png" alt="Scan for mobile">
-                <div class="qr-info">
-                    <h3>Open on Mobile</h3>
-                    <p>Scan to view this art record in Chrome on your phone.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+</a>
+</div>
+<!-- QR Code Section -->
+<div class="qr-container">
+<div class="qr-wrapper">
+<img alt="Scan for mobile" src="assets/qrcodes/qr_art_502.png"/>
+<div class="qr-info">
+<h3>Open on Mobile</h3>
+<p>Scan to view this art record in Chrome on your phone.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
         document.addEventListener("DOMContentLoaded", function () {
             const audio = document.getElementById('artAudio');
             const btn = document.querySelector('.play-btn');
@@ -218,5 +189,4 @@
         
     </script>
 </body>
-
 </html>

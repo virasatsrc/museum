@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>16 SIKH - Unit History | Sikh Regiment Museum</title>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="gallery-container">
+        <!-- Language Switcher Bar -->
+        <div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+            <a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+                🏛️ Language Portal
+            </a>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <a class="nav-link" href="art712.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24; padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇬🇧 English</a>
+                <a class="nav-link" href="art712_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+                <a class="nav-link" href="art712_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+            </div>
+        </div>
+
+        <!-- Home Button -->
+        <div style="margin-bottom: 20px;">
+            <a class="nav-link" href="index_en.html" style="display: inline-flex; background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" viewbox="0 0 24 24" width="20">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg> Back to Home
+            </a>
+        </div>
+
+        <!-- Unit Header Crest Card -->
+        <div style="text-align: center; margin-bottom: 2rem; background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(15, 23, 42, 0) 70%); padding: 30px 20px; border-radius: 20px; border: 1px solid rgba(245, 158, 11, 0.25); box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+            <div style="display: inline-block; background: rgba(245, 158, 11, 0.15); border: 2px solid #f59e0b; padding: 12px 24px; border-radius: 50px; font-weight: 700; color: #fbbf24; font-size: 0.95rem; letter-spacing: 0.1em; margin-bottom: 15px;">
+                ⚔️ REGIMENTAL UNIT HISTORY
+            </div>
+            <h1 style="font-size: 2.8rem; margin-bottom: 0.8rem; text-shadow: 0 4px 16px rgba(0,0,0,0.8);">16 SIKH</h1>
+            <p style="color: #94a3b8; font-size: 1.15rem; font-weight: 500;">The Sikh Regiment</p>
+        </div>
+
+        <!-- Audio Player Section -->
+        <div class="audio-section" style="margin-bottom: 2rem;">
+            <audio autoplay="" id="artAudio" src="assets/audio/audio_712.mp3"></audio>
+            <button class="play-btn" onclick="toggleAudio()" style="box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);">
+                <svg fill="currentColor" viewbox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"></path>
+                </svg>
+                Listen to Smart Narration
+            </button>
+        </div>
+
+        <!-- Metadata Box -->
+        <div class="description-box" style="margin-bottom: 2rem;">
+            <strong>Unit Name:</strong> 16 SIKH<br/>
+            <strong>Category:</strong> Unit History<br/>
+            <strong>Affiliation:</strong> The Sikh Regiment<br/>
+        </div>
+
+        <!-- Full Battalion History -->
+        <div class="description-box" style="margin-bottom: 2.5rem; padding: 30px;">
+            <h3 style="color: #f59e0b; font-size: 1.4rem; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+                Detailed Historical Record
+            </h3>
+            <p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>16 Sikh was raised at Ambala Cantt on 29 January 1948 by Lt Col Jaginder Singh as the "First Infantry Battalion of Independent India", comprising Sikhs drawn from veteran battalions of the pre-Partition Indian Army.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>Two companies of the battalion took active part in the Jammu & Kashmir operations of 1947-48, during which Jem Karnail Singh was awarded the Vir Chakra for gallant action and supreme sacrifice.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>In November 1962, the battalion was airlifted from Delhi to Tezpur to meet the Chinese threat and occupied defensive positions in the Bomdila Sector.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>On 2 May 1968, Lt (later Col) A. K. Chatterjee received the Colours of the Battalion from the President of India, Dr Zakir Hussain, at Meerut.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>On 14 October 1987, the battalion was airlifted for Operation Pawan and proved its mettle on foreign soil by helping liberate Jaffna from the LTTE. During the tenure, 78 anti-national elements were killed, while 2nd Lt R. S. Nagar, four JCOs and 38 Other Ranks made the supreme sacrifice.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>In 2002, for its stupendous performance in counter-insurgency operations in the Rajouri Sector, the battalion was awarded the COAS Unit Citation.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>During its tenure at Ustad (J&K-HAA) from 2005 to 2007, the battalion created a record by neutralising the maximum number of terrorists and recovering a large quantity of arms and ammunition without suffering any casualties. For this achievement, it was conferred the GOC-in-C Northern Command Unit Appreciation in 2008.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>For its outstanding performance and achievements during its Pithoragarh tenure, the battalion received the GOC-in-C Central Command Unit Appreciation in 2009.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>The unit continued its impressive record and was awarded the GOC-in-C Northern Command Unit Appreciation in 2014 for operations along the Line of Control at Keri, J&K, completed without any casualties.</p><p style='margin-bottom: 1.2rem; line-height: 1.8; text-align: justify;'>The battalion moved for Operation Meghdoot in July 2015 and, for its excellent performance during the tenure, earned the GOC-in-C Northern Command Unit Appreciation in 2018.</p>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="navigation">
+            <a class="nav-link " href="art711.html">
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                </svg>
+                Previous Unit
+            </a>
+            <span style="color: #94a3b8; font-weight: 600;">Unit 12 / 30</span>
+            <a class="nav-link " href="art713.html">
+                Next Unit
+                <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-container">
+            <div class="qr-wrapper">
+                <img alt="Scan for mobile" src="assets/qrcodes/qr_art_712.png"/>
+                <div class="qr-info">
+                    <h3>Open on Mobile</h3>
+                    <p>Scan to view this unit history record in Chrome on your phone.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('artAudio');
+            const btn = document.querySelector('.play-btn');
+
+            audio.addEventListener('play', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause Audio`;
+            });
+            audio.addEventListener('pause', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Smart Narration`;
+            });
+            audio.addEventListener('ended', function () {
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg> Listen to Smart Narration`;
+            });
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    const startAudio = () => {
+                        audio.play();
+                        document.body.removeEventListener('click', startAudio);
+                        document.body.removeEventListener('touchstart', startAudio);
+                    };
+                    document.body.addEventListener('click', startAudio);
+                    document.body.addEventListener('touchstart', startAudio);
+                });
+            }
+        });
+
+        function toggleAudio() {
+            const audio = document.getElementById('artAudio');
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+</html>
