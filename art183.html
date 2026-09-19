@@ -2,24 +2,38 @@
 
 <html lang="en">
 <head>
+<script>
+(function() {
+    try {
+        var p = new URLSearchParams(window.location.search).get('lang');
+        if (p) localStorage.setItem('museum_lang', p);
+        var l = p || localStorage.getItem('museum_lang');
+        var path = window.location.pathname;
+        if (l === 'hi' && !path.endsWith('_hi.html')) {
+            window.location.replace(path.replace(/(_hi|_pa)?(\.html|\/)?$/, '') + '_hi.html' + window.location.search);
+        } else if (l === 'pa' && !path.endsWith('_pa.html')) {
+            window.location.replace(path.replace(/(_hi|_pa)?(\.html|\/)?$/, '') + '_pa.html' + window.location.search);
+        }
+    } catch(e) {}
+})();
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>New Operational Challenges - Museum Gallery</title>
 <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="gallery-container"><div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
-<a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
-    🏛️ Language Portal
-</a>
-<div style="display: flex; gap: 8px; align-items: center;">
-<a class="nav-link" href="art183.html" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24;">🇬🇧 English</a>
-<a class="nav-link" href="art183_hi.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
-<a class="nav-link" href="art183_pa.html" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
-</div>
-</div>
-<!-- Language Switcher Bar -->
-<!-- Language Switcher Bar -->
+<div class="gallery-container"><!-- Language Switcher Bar -->
+        <div class="lang-switch-bar" style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); padding: 8px 16px; border-radius: 14px; border: 1px solid var(--glass-border); margin-bottom: 20px; backdrop-filter: blur(12px);">
+            <a class="nav-link" href="index.html" style="padding: 6px 14px; font-size: 0.85rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); color: #cbd5e1;">
+                🏛️ Language Portal
+            </a>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <a class="nav-link" href="art183.html?lang=en" onclick="setMuseumLang('en')" style="background: rgba(245, 158, 11, 0.35); border-color: #f59e0b; font-weight: 700; color: #fbbf24; padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇬🇧 English</a>
+                <a class="nav-link" href="art183_hi.html?lang=hi" onclick="setMuseumLang('hi')" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">🇮🇳 हिन्दी</a>
+                <a class="nav-link" href="art183_pa.html?lang=pa" onclick="setMuseumLang('pa')" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px;">ੴ ਪੰਜਾਬੀ</a>
+            </div>
+        </div>
 <!-- Language Switcher Bar -->
 <!-- Home Button -->
 <div style="margin-bottom: 20px;">
@@ -120,5 +134,6 @@
             }
         }
     </script>
+    <script src="js/qr_lang.js"></script>
 </body>
 </html>

@@ -400,7 +400,7 @@
         <div class="language-grid">
             
             <!-- 1. ENGLISH -->
-            <a href="index_en.html" class="lang-card" id="btn-lang-en">
+            <a href="index_en.html?lang=en" onclick="setMuseumLang('en')" class="lang-card" id="btn-lang-en">
                 <div class="lang-badge">🇬🇧</div>
                 <div class="lang-name">ENGLISH</div>
                 <div class="lang-native">English Gallery</div>
@@ -413,7 +413,7 @@
             </a>
 
             <!-- 2. HINDI -->
-            <a href="index_hi.html" class="lang-card" id="btn-lang-hi">
+            <a href="index_hi.html?lang=hi" onclick="setMuseumLang('hi')" class="lang-card" id="btn-lang-hi">
                 <div class="lang-badge">🇮🇳</div>
                 <div class="lang-name">हिन्दी</div>
                 <div class="lang-native">हिंदी गैलरी</div>
@@ -426,7 +426,7 @@
             </a>
 
             <!-- 3. PUNJABI -->
-            <a href="index_pa.html" class="lang-card" id="btn-lang-pa">
+            <a href="index_pa.html?lang=pa" onclick="setMuseumLang('pa')" class="lang-card" id="btn-lang-pa">
                 <div class="lang-badge">ੴ</div>
                 <div class="lang-name">ਪੰਜਾਬੀ</div>
                 <div class="lang-native">ਪੰਜਾਬੀ ਗੈਲਰੀ</div>
@@ -439,6 +439,8 @@
             </a>
 
         </div>
+
+        <script src="js/qr_lang.js"></script>
 
         <!-- Museum Highlights Footer -->
         <div class="museum-features">
