@@ -5,3 +5,5 @@ __pycache__/
 test_*.mp3
 test_cache.py
 translations_cache.json
+._*
+.DS_Store
