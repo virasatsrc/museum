@@ -5,7 +5,7 @@ import json
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
-BASE_URL = "https://virasatsrc.netlify.app"
+BASE_URL = "https://virasatsrc.github.io/museum"
 
 ASSETS_QR_DIR = os.path.join("assets", "qrcodes")
 PRINT_QR_DIR = os.path.join("print QR", "qrcodes")
@@ -27,7 +27,7 @@ special_pages = [
         "filename": "index.html",
         "card_name": "index.png",
         "title": "The Legacy of Sikh Regiment",
-        "url": BASE_URL,
+        "url": f"{BASE_URL}/index.html",
         "assets_qr": "qr_home.png",
         "print_qr": "qr_home.png"
     },
@@ -35,7 +35,7 @@ special_pages = [
         "filename": "coas_citations.html",
         "card_name": "coas_citations.png",
         "title": "COAS CITATIONS GALLERY",
-        "url": f"{BASE_URL}/coas_citations",
+        "url": f"{BASE_URL}/coas_citations.html",
         "assets_qr": "qr_coas_citations.png",
         "print_qr": "qr_coas_citations.png"
     },
@@ -43,7 +43,7 @@ special_pages = [
         "filename": "kirti_chakra.html",
         "card_name": "kirti_chakra.png",
         "title": "KIRTI CHAKRA GALLERY",
-        "url": f"{BASE_URL}/kirti_chakra",
+        "url": f"{BASE_URL}/kirti_chakra.html",
         "assets_qr": "qr_kirti_chakra.png",
         "print_qr": "qr_kirti_chakra.png"
     },
@@ -51,7 +51,7 @@ special_pages = [
         "filename": "mahavir_chakra.html",
         "card_name": "mahavir_chakra.png",
         "title": "MAHAVIR CHAKRA GALLERY",
-        "url": f"{BASE_URL}/mahavir_chakra",
+        "url": f"{BASE_URL}/mahavir_chakra.html",
         "assets_qr": "qr_mahavir_chakra.png",
         "print_qr": "qr_mahavir_chakra.png"
     },
@@ -59,7 +59,7 @@ special_pages = [
         "filename": "weapons_ammunition.html",
         "card_name": "weapons_ammunition.png",
         "title": "WEAPONS & AMMUNITION",
-        "url": f"{BASE_URL}/weapons_ammunition",
+        "url": f"{BASE_URL}/weapons_ammunition.html",
         "assets_qr": "qr_weapons_ammunition.png",
         "print_qr": "qr_weapons_ammunition.png"
     }
@@ -87,7 +87,7 @@ for f in base_arts:
         "filename": f,
         "card_name": f"art{num}.png",
         "title": title,
-        "url": f"{BASE_URL}/art{num}",
+        "url": f"{BASE_URL}/art{num}.html",
         "assets_qr": f"qr_art_{num}.png",
         "print_qr": f"qr_art{num}.png"
     })
@@ -129,9 +129,14 @@ def generate_card(title, qr_path, out_path):
     draw.rectangle([40, 40, W - 40, H - 40], outline='black', width=8)
     
     # Top title: VIRASAT
-    try:
-        font_top = ImageFont.truetype('arialbd.ttf', 72)
-    except:
+    font_top = None
+    for fpath in ['/System/Library/Fonts/Supplemental/Arial Bold.ttf', 'arialbd.ttf']:
+        try:
+            font_top = ImageFont.truetype(fpath, 72)
+            break
+        except:
+            pass
+    if not font_top:
         font_top = ImageFont.load_default()
     
     top_text = "VIRASAT"
@@ -144,9 +149,14 @@ def generate_card(title, qr_path, out_path):
     draw.line([(140, 210), (W - 140, 210)], fill='black', width=4)
     
     # Multilingual Language Patch Badge on Top (y=230 to y=310)
-    try:
-        font_lang = ImageFont.truetype('C:/Windows/Fonts/Nirmala.ttc', 36)
-    except:
+    font_lang = None
+    for fpath in ['/System/Library/Fonts/Supplemental/Arial Unicode.ttf', 'C:/Windows/Fonts/Nirmala.ttc']:
+        try:
+            font_lang = ImageFont.truetype(fpath, 36)
+            break
+        except:
+            pass
+    if not font_lang:
         font_lang = ImageFont.load_default()
     
     patch_text = "ENGLISH   •   हिन्दी   •   ਪੰਜਾਬੀ"
@@ -169,9 +179,14 @@ def generate_card(title, qr_path, out_path):
         img.paste(qr_resized, (qr_x, qr_y))
     
     # Bottom title: wrapped if too long
-    try:
-        font_bottom = ImageFont.truetype('arialbd.ttf', 52)
-    except:
+    font_bottom = None
+    for fpath in ['/System/Library/Fonts/Supplemental/Arial Bold.ttf', 'arialbd.ttf']:
+        try:
+            font_bottom = ImageFont.truetype(fpath, 52)
+            break
+        except:
+            pass
+    if not font_bottom:
         font_bottom = ImageFont.load_default()
         
     words = title.split()

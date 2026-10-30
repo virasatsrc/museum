@@ -43,7 +43,7 @@ function getMuseumLang() {
         // Subpages and scanned QR code pages ping hits.sh to increment visitor count
         if (!isIndexBadgePage) {
             var ping = new Image();
-            ping.src = "https://hits.sh/virasatsrc.netlify.app/visits.svg?label=No%20of%20Visitors&color=f59e0b&labelColor=0f172a&t=" + Date.now();
+            ping.src = "https://hits.sh/virasatsrc.github.io/museum/visits.svg?label=No%20of%20Visitors&color=f59e0b&labelColor=0f172a&t=" + Date.now();
         }
     } catch (e) {}
 })();
