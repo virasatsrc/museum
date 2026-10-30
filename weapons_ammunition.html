@@ -252,19 +252,93 @@
 <div class="slider-dots" id="dotsContainer"></div>
 </div>
 <script>
+        // Names of all 78 historical weapons & artifacts
+        const weaponNames = {
+            254: "Bren Light Machine Gun (Bren Mk II .303 LMG)",
+            255: "MG 34 / Air-Cooled Machine Gun Receiver & Barrel",
+            256: "51mm Light Infantry Mortar with Bipod & Baseplate",
+            257: "British Ordnance SBML 2-Inch Light Patrol Mortar",
+            258: "3.5-Inch M20 Super Bazooka Anti-Tank Rocket Launcher",
+            259: "84mm Carl Gustaf Rocket Launcher (Captured by 17 SIKH during Op Pawan)",
+            260: "Breda Modello 37 Heavy Machine Gun on Tripod Carriage",
+            261: "Japanese Type 96/99 Light Machine Gun with Bipod",
+            262: "Japanese Type 92 7.7mm Heavy Machine Gun ('Woodpecker') on Field Mount",
+            263: "Browning M1919A4 .30 Caliber Medium Machine Gun on Tripod",
+            264: "Mauser Karabiner 98k German Bolt-Action Rifle",
+            265: "Type 56 / SKS-45 Semi-Automatic Carbine with Folding Bayonet",
+            266: "Japanese Arisaka Type 38 6.5mm Infantry Rifle",
+            267: "Pattern 1914 Enfield (P14) .303 Bolt-Action Rifle",
+            268: "Short Magazine Lee-Enfield (SMLE) No. 1 Mk III* .303 Rifle",
+            269: "Lee-Enfield No. 4 Mk I .303 Service Rifle",
+            270: "Japanese Arisaka Type 99 7.7mm Short Rifle (Officers' Mess Trophy)",
+            271: "Japanese Arisaka Type 38 Long Rifle (Burma Campaign War Trophy)",
+            272: "Mauser Karabiner 98k Short Rifle / Carbine",
+            273: "Antique Indian Toradar / Matchlock Musket (Jezail)",
+            274: "Kalashnikov AK-47 / Type 56 7.62mm Assault Rifle (Captured Weapon)",
+            275: "Snider-Enfield .577 Breech-Loading Rifled Musket",
+            276: "Sporting / Hunting Mauser Bolt-Action Sporter Rifle",
+            277: "Mauser Model 1893 / Gewehr 98 Infantry Rifle",
+            278: "Remington Rolling Block Military Rifle (.43 Spanish / .50-70)",
+            279: "Magazine Lee-Enfield (MLE) 'Long Lee' .303 Service Rifle",
+            280: "Antique Toradar / Matchlock Musket with Bound Barrel",
+            281: "Vetterli-Vitali Model 1870/87 10.35mm Bolt-Action Rifle",
+            282: "Antique Ceremonial Gilded Percussion Rifle",
+            283: "Mannlicher M1895 / Carcano Model 1891 Infantry Rifle",
+            284: "Pattern 1853 Enfield Percussion Rifle-Musket (Carbine)",
+            285: "Japanese Arisaka Type 38 6.5mm Infantry Service Rifle",
+            286: "Steyr-Mannlicher M1895 Carbine (Regimental Stamp '104')",
+            287: "Ceremonial Drill Purpose (DP) Rifle with Brass Fittings",
+            288: "Martini-Henry Pattern 1871 / Mark IV Falling-Block Service Rifle",
+            289: "Japanese Training / Ceremonial Arisaka Rifle with Brass Bands",
+            290: "Winchester Model 1866 'Yellow Boy' Brass Frame Lever-Action Carbine",
+            291: "Ceremonial Gilded Percussion Carbine with Brass Barrel",
+            292: "Carcano Model 1891 Cavalry Carbine (Ceremonial Finish)",
+            293: "Mauser Gewehr 98 Training / Honor Guard Rifle",
+            294: "British Pattern 1853 Enfield .577 Three-Band Percussion Rifled Musket",
+            295: "East India Company Pattern 1842 Percussion Smoothbore Musket",
+            296: "Antique Double-Barrel Percussion Shotgun / Cape Gun",
+            297: "Pattern 1853 Enfield Percussion Musket with Full Wood Stock",
+            298: "Snider-Enfield Percussion / Breech-Loading Musket",
+            299: "British / Indian Army Pattern Percussion Musket with Brass Furniture",
+            300: "Beretta Modello 38 (MAB 38) 9mm Submachine Gun",
+            301: "Webley Mk VI .455 Service Revolver (Ceremonial Brass Finish)",
+            302: "Antique Flintlock Horse Pistol with Wire-Inlaid Stock",
+            303: "Antique Indian Matchlock / Percussion Belt Pistol",
+            304: "Antique Brass Flared-Muzzle Blunderbuss Pistol (Dragon Pistol)",
+            305: "German Sniper's Telescopic Sight (Captured on the Ancre, 13 Nov 1916)",
+            306: "Vintage Brass Gunpowder Flask with Leather Harness & Sling",
+            307: "Indian Army Steel Combat Helmet (Model 1974 / Mk IV Pattern)",
+            308: "Enfield No. 2 Mk I* .38/200 Service Revolver",
+            309: "Browning Hi-Power 9mm Semi-Automatic Pistol (Pistol Auto 9mm 1A)",
+            310: "Afghan Jezail / Matchlock Wall Musket with Curved Stock",
+            311: "Heavy Fort Rampart Gun / Wall Piece (Zamburak Wall Gun)",
+            312: "Heavy Fort Wall Percussion Rampart Gun",
+            313: "Antique Smoothbore Fortress Wall Musket",
+            314: "Long Heavy Rampart Musket with Octagonal-to-Round Barrel",
+            315: "Heavy Percussion Rampart Wall Gun with Massive Hammer",
+            316: "Antique Camel Swivel Gun / Zamburak with Integral Rest Peg",
+            317: "3-Inch / 81mm Mortar High Explosive Bomb (Inert Display Shell)",
+            318: "Pair of 25-Pounder Artillery High-Explosive Shell Projectiles",
+            319: "Pattern 1856/1858 Enfield Yataghan Sword Bayonet",
+            320: "Model 1866 / 1874 Yataghan Sabre Bayonet",
+            321: "British Pattern 1853 Triangular Socket Bayonet",
+            322: "Pattern 1796 / Brown Bess Musket Socket Bayonet",
+            323: "Mills Bomb No. 36M Mk I Fragmentation Hand Grenade",
+            324: "Pair of Japanese Type 97 / Type 10 Hand Grenades",
+            325: "Bren Light Machine Gun .303 30-Round Curved Box Magazine",
+            326: "Military Rifle Pull-Through Cleaning Rope with Brass Weight",
+            327: "Japanese Shin Gunto Officer's Sword in Scabbard (Burma War Trophy)",
+            328: "Regimental Copper & Brass Bugle with Sikh Regiment Crest",
+            329: "Brass Military Duty Bugle / Infantry Field Bugle",
+            330: "Regimental Officers' Presentation Mantle Clock (March 1913)",
+            331: "Ceremonial Shamshir / Talwar Sword with Gold Damascene (Koftgari) Blade"
+        };
+
         // Generate the 78 weapons slides data
         const weapons = [];
         for (let i = 0; i < 78; i++) {
             const sNum = 254 + i;
-            let caption = `Weapons & Ammunition - Exhibit ${i + 1}`;
-            
-            // Detailed overrides based on stenciling/models seen in photographs
-            if (sNum === 254) caption = `Bren Light Machine Gun (BREN MK II)`;
-            else if (sNum === 255) caption = `Machine Gun Receiver & Barrel`;
-            else if (sNum === 256) caption = `Light Mortar`;
-            else if (sNum === 257) caption = `Grenade Launcher / Spigot Mortar`;
-            else if (sNum === 264) caption = `German Rifle (RIF GERMAN)`;
-            else if (sNum === 265) caption = `Rifle No. 5 Mk I`;
+            const caption = weaponNames[sNum] || `Weapons & Ammunition - Exhibit ${i + 1}`;
             
             weapons.push({
                 src: `assets/art/weapons/weapon_${sNum}.webp`,

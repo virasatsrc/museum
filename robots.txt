@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Google Search Console & Sitemap
+Sitemap: https://virasatsrc.github.io/museum/sitemap.xml
